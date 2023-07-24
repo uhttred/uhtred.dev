@@ -22,7 +22,8 @@ export default defineNuxtConfig({
   modules: [
     '@vite-pwa/nuxt',
     '@nuxtjs/i18n',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/color-mode',
+    '@nuxtjs/google-fonts'
   ],
   i18n: {
     lazy: true,
@@ -49,6 +50,23 @@ export default defineNuxtConfig({
         file: 'pt.ts'
       }
     ]
+  },
+  colorMode: {
+    classSuffix: ''
+  },
+  googleFonts: {
+    families: {
+      'Noto+Sans': {
+        wght: [
+          700, 600, 500, 400
+        ]
+      },
+      'Josefin+Sans': {
+        wght: [
+          700, 600, 500, 400
+        ]
+      }
+    }
   },
   runtimeConfig: {
     public: {}

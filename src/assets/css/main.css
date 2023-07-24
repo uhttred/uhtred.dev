@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+  body {
+    @apply font-noto;
+  }
+  .text-color-1 {
+    @apply text-gray-950 dark:text-gray-100;
+  }
+  .text-color-2 {
+    @apply text-gray-700 dark:text-gray-400;
+  }
+  .text-color-3 {
+    @apply text-gray-500 dark:text-gray-500;
+  }
+  .text-color-4 {
+    @apply text-gray-400 dark:text-gray-600;
+  }
+
+  .bdr-p,
+  .bdr-1 {
+    @apply border border-gray-950/10 dark:border-gray-100/10;
+  }
+
+  .bdr-b-p,
+  .bdr-b-1 {
+    @apply border-b border-gray-950/10 dark:border-gray-100/10;
+  }
+
+}
+
+@layer utilities {
+  .row {
+    @apply grid grid-cols-4 gap-x-20
+      sm:grid-cols-6
+      md:grid-cols-8
+      lg:grid-cols-10 lg:gap-x-30
+      xl:grid-cols-12;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-8 py-3.5 rounded-md font-bold text-13/4
+      bg-gray-950 text-gray-50 xl:text-14/4
+      dark:text-gray-950 dark:bg-gray-50
+  }
+}
