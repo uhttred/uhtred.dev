@@ -23,5 +23,8 @@
   "engines": {
     "yarn": ">=1.22.x",
     "node": ">=18.17.x"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
   }
 }

@@ -1,7 +1,8 @@
 <template>
   <div
+    ref="menuContainer"
     class="w-full flex flex-col items-center bg-white dark:bg-gray-950 py-4
-      top-0 sticky bdr-b-p lg:py-8"
+      top-0 sticky bdr-b-p lg:border-b-0 z-40 stuck:bg-red-500"
   >
     <div class="row">
       <div class="col-span-full flex justify-between items-center">
@@ -51,7 +52,7 @@
           </nav>
           <!-- CTA -->
           <div class="hidden lg:block">
-            <button class="btn">
+            <button class="btn hover:bg-green-500">
               Start project
             </button>
           </div>
@@ -156,8 +157,31 @@
   </div>
 </template>
 
+<style scoped lang="postcss">
+.menu-is-sticky {
+  @apply lg:border-b
+}
+</style>
+
 <script setup lang="ts">
+import _ from 'lodash'
 const localePath = useLocalePath()
 const showMobileMenu = ref(false)
 const showSocialLink = ref(false)
+const menuContainer = ref(null)
+
+onMounted(() => {
+  if (menuContainer.value) {
+    const element = menuContainer.value as HTMLElement
+    document.addEventListener(
+      "scroll",
+      _.throttle(e => {
+        element.classList.toggle(
+          "menu-is-sticky",
+          element.offsetTop > 1
+        );
+      }, 200)
+    );
+  }
+})
 </script>
