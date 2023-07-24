@@ -56,12 +56,76 @@
             </button>
           </div>
           <!-- profile and social  -->
-          <div class="cursor-pointer">
-            <img
-              src="~/assets/image/uhtred-pofile.png"
-              alt="uhtred profile image"
-              class="w-10 lg:w-[46px] bdr-p rounded-full"
+          <div class="cursor-pointer relative">
+            <button @click="showSocialLink=!showSocialLink">
+              <img
+                src="~/assets/image/uhtred-pofile.png"
+                alt="uhtred profile image"
+                class="w-10 lg:w-[46px] bdr-p rounded-full"
+              >
+            </button>
+            <div
+              v-show="showSocialLink"
+              class="absolute top-full left-1/2 -translate-x-1/2 pt-2
+                flex flex-col items-center gap-y-4"
             >
+              <!-- social link: linkedin -->
+              <div
+                class="bdr-p rounded-full w-12 h-12 flex
+                  justify-center items-center bg-white dark:bg-gray-950"
+              >
+              <a
+                  :href="$config.public.socialLink.linkedin"
+                  target="_blank"
+                >
+                  <IconLinkedinFill />
+                </a>
+              </div>
+              <!-- social link: instagram -->
+              <div
+                class="bdr-p rounded-full w-12 h-12 flex
+                  justify-center items-center bg-white dark:bg-gray-950"
+              >
+              <a
+                  :href="$config.public.socialLink.instagram"
+                  target="_blank"
+                >
+                  <IconInstagramLine/>
+                </a>
+              </div>
+              <!-- social link: dribble -->
+              <div
+                class="bdr-p rounded-full w-12 h-12 flex
+                  justify-center items-center bg-white dark:bg-gray-950"
+              >
+              <a
+                  :href="$config.public.socialLink.dribbble"
+                  target="_blank"
+                >
+                  <IconDribbbleLine />
+                </a>
+              </div>
+              <!-- social link: github -->
+              <div
+                class="bdr-p rounded-full w-12 h-12 flex
+                  justify-center items-center bg-white dark:bg-gray-950"
+              >
+                <a
+                  :href="$config.public.socialLink.github"
+                  target="_blank"
+                >
+                  <IconGithubFill />
+                </a>
+              </div>
+              <!-- social link: close -->
+              <button
+                class="bdr-p rounded-full w-12 h-12 flex
+                  justify-center items-center bg-white dark:bg-gray-950"
+                @click="showSocialLink=false"
+              >
+                <IconX />
+              </button>
+            </div>
           </div>
           <!-- theme change -->
           <UhThemeToggle class="hidden lg:block" />
@@ -95,4 +159,5 @@
 <script setup lang="ts">
 const localePath = useLocalePath()
 const showMobileMenu = ref(false)
+const showSocialLink = ref(false)
 </script>

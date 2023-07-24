@@ -69,6 +69,14 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig: {
-    public: {}
+    public: {
+      socialLink: {
+        instagram: process.env.UH_SOCIAL_INSTAGRAM || 'https://instagram.com/uhtred.dev',
+        linkedin: process.env.UH_SOCIAL_LINKEDIN || 'https://www.linkedin.com/in/uhtredmiller/',
+        dribbble: process.env.UH_SOCIAL_DRIBBBLE || 'https://dribbble.com/uhtredmiller',
+        youtube: process.env.UH_SOCIAL_YOUTUBE || 'https://www.youtube.com/@ageumatheus',
+        github: process.env.UH_SOCIAL_GITHUB || 'https://github.com/txiocoder'
+      }
+    }
   }
 })
