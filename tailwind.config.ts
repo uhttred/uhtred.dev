@@ -50,7 +50,8 @@ module.exports = {
         18: '1.125rem', // 18px
         20: '1.25rem', // 20px
         22: '1.375rem', // 22px
-        24: '1.5rem' // 24px
+        24: '1.5rem', // 24px
+        26: '1.625rem' // 26px
       },
       gridTemplateColumns: {
         4: 'repeat(4, 66px)',
@@ -64,7 +65,8 @@ module.exports = {
         20: '20px'
       },
       spacing: {
-        '5.5': '1.5rem'
+        '5.5': '1.5rem',
+        '120px': '7.5rem'
       }
     },
   },
