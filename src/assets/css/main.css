@@ -59,6 +59,13 @@
 }
 
 @layer utilities {
+  .row-c, .row-container {
+    @apply w-full flex flex-col items-center;
+  }
+  .row-c.-theme,
+  .row-container.-theme {
+    @apply bg-white dark:bg-gray-950;
+  }
   .row {
     @apply grid grid-cols-4 gap-x-20
       sm:grid-cols-6

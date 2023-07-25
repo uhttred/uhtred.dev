@@ -62,6 +62,9 @@ module.exports = {
       gap: {
         30: '30px',
         20: '20px'
+      },
+      spacing: {
+        '5.5': '1.5rem'
       }
     },
   },

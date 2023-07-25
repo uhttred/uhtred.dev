@@ -1,8 +1,6 @@
 <template>
   <div>
     <HeroSolar />
-    <div class="h-[3000px]">
-      a
-    </div>
+    <PageSectionAbout />
   </div>
 </template>

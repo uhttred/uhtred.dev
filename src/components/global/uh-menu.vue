@@ -41,7 +41,7 @@
               class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
               :to="localePath('index')"
             >
-            {{ $t('Insigts') }}
+            {{ $t('Insights') }}
             </NuxtLink>
             <NuxtLink
               class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
@@ -189,7 +189,7 @@
               class="font-semibold text-color-1 text-24/27 active:text-color-2"
               :to="localePath('index')"
             >
-              {{ $t('Insigts') }}
+              {{ $t('Insights') }}
             </NuxtLink>
             <NuxtLink
               @click.native="showMobileMenu=false"
