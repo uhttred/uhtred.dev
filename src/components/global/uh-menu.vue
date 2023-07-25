@@ -29,36 +29,39 @@
               class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
               :to="localePath('index')"
             >
-              Cases
+              {{ $t('Cases') }}
             </NuxtLink>
             <NuxtLink
               class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
               :to="localePath('index')"
             >
-              Services
+            {{ $t('Services') }}
             </NuxtLink>
             <NuxtLink
               class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
               :to="localePath('index')"
             >
-              Insights
+            {{ $t('Insigts') }}
             </NuxtLink>
             <NuxtLink
               class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
               :to="localePath('index')"
             >
-              Store
+            {{ $t('Store') }}
             </NuxtLink>
           </nav>
           <!-- CTA -->
           <div class="hidden lg:block">
             <button class="btn hover:bg-green-500">
-              Start project
+              {{ $t('Start project') }}
             </button>
           </div>
           <!-- profile and social  -->
-          <div class="cursor-pointer relative">
-            <button @click="showSocialLink=!showSocialLink">
+          <div class="cursor-pointer relative z-10">
+            <button
+              :title="$t('pages.index.tagtitle.p3')"
+              @click="showSocialLink=!showSocialLink"
+            >
               <img
                 src="~/assets/image/uhtred-pofile.png"
                 alt="uhtred profile image"
@@ -129,9 +132,17 @@
             </div>
           </div>
           <!-- theme change -->
-          <UhThemeToggle class="hidden lg:block" />
+          <UhThemeToggle
+            class="hidden lg:block"
+            :title="$t('pages.index.tagtitle.p1')"
+          />
+          <!-- theme change mobile -->
+          <UhThemeToggle v-if="showMobileMenu" />
           <!--  -->
-          <UhLocaleToggle class="hidden lg:block"/>
+          <UhLocaleToggle
+            class="hidden lg:block"
+            :title="$t('pages.index.tagtitle.p2')"
+          />
           <!-- show mobile menu -->
           <div class="flex items-center lg:hidden">
             <button
@@ -151,9 +162,52 @@
       </div>
     </div>
     <!-- mobile menu -->
-    <!-- <div class="absolute top-full h-">
-
-    </div> -->
+    <div
+      v-show="showMobileMenu"
+      class="absolute w-full top-full bg-white dark:bg-gray-950 h-screen bdr-t-1
+      flex flex-col items-center"
+    >
+      <div class="row">
+        <div class="col-span-full">
+          <nav class="gap-y-8 flex flex-col mt-12">
+            <NuxtLink
+              @click.native="showMobileMenu=false"
+              class="font-semibold text-color-1 text-24/27 active:text-color-2"
+              :to="localePath('index')"
+            >
+              {{ $t('Cases') }}
+            </NuxtLink>
+            <NuxtLink
+              @click.native="showMobileMenu=false"
+              class="font-semibold text-color-1 text-24/27 active:text-color-2"
+              :to="localePath('index')"
+            >
+              {{ $t('Services') }}
+            </NuxtLink>
+            <NuxtLink
+              @click.native="showMobileMenu=false"
+              class="font-semibold text-color-1 text-24/27 active:text-color-2"
+              :to="localePath('index')"
+            >
+              {{ $t('Insigts') }}
+            </NuxtLink>
+            <NuxtLink
+              @click.native="showMobileMenu=false"
+              class="font-semibold text-color-1 text-24/27 active:text-color-2"
+              :to="localePath('index')"
+            >
+              {{ $t('Store') }}
+            </NuxtLink>
+          </nav>
+          <!-- change locale -->
+          <UhLocaleToggle class="mt-12" />
+          <!-- start project -->
+          <button class="btn active:bg-green-500 w-full mt-12">
+            {{ $t('Start project') }}
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

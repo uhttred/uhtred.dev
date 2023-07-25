@@ -51,6 +51,11 @@
     @apply border-b border-gray-950/10 dark:border-gray-100/10;
   }
 
+  .bdr-t-p,
+  .bdr-t-1 {
+    @apply border-t border-gray-950/10 dark:border-gray-100/10;
+  }
+
 }
 
 @layer utilities {

@@ -26,7 +26,7 @@ const head = useLocaleHead({
 })
 const title = ref('')
 const iconPath = '/icon.svg'
-const description = t('pages.index.description')
+const description = t('pages.index.head.description')
 const titleTemplate = (title) => title
   ? `${title} | Uhtred M.`
   : 'Uhtred M.'

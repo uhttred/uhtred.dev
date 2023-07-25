@@ -13,14 +13,13 @@
           <p
             class="text-14 lg:text-16/5 font-bold text-gradient-3"
           >
-            Hi, I’m a Product Developer
+            {{ $t('pages.index.header.p1') }}
           </p>
           <h1
             class="text-color-1 font-bold
               text-[46px]/[58px] lg:text-5xl/[63px] mt-4"
           >
-            Building digital products and
-            unique experiences<span class="text-green-500">.</span>
+            {{ $t('pages.index.header.p2') }}<span class="text-green-500">.</span>
           </h1>
           <!-- illustration -->
           <img
@@ -58,13 +57,13 @@
         >
           <p
             class="text-12/6 font-normal text-color-3 text-center lg:text-right
-              lg:w-[300px] lg:text-14/6"
+              lg:w-[310px] lg:text-14/6"
           >
-            We create the ideal solution to your problem from scratch.
+            {{ $t('pages.index.header.p3') }}
             <button class="text-color-1 underline">
-              Start your project
+              {{ $t('Start your project') }}
             </button>
-            right now
+            {{ $t('right now') }}
           </p>
         </div>
       </div>
