@@ -19,6 +19,7 @@
 
 <script setup>
 const { t } = useI18n()
+const colorMode = useColorMode()
 const head = useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: 'id',
@@ -31,7 +32,10 @@ const titleTemplate = (title) => title
   ? `${title} | Uhtred M.`
   : 'Uhtred M.'
 useHead({
-  titleTemplate
+  titleTemplate,
+  link: [
+    { rel: 'manifest', href: '/manifest.json' }
+  ]
 })
 useSeoMeta({
   title,
@@ -59,8 +63,8 @@ useSeoMeta({
   mobileWebAppCapable: 'yes',
   ogImageAlt: 'Uhtred M. logo image',
   robots: {
-    index: true,
-    follow: true,
+    index: false,
+    follow: false,
   },
 })
 </script>

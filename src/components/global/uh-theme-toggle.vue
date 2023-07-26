@@ -28,5 +28,15 @@ const toggleTheme = () => {
   } else {
     colorMode.preference = 'system'
   }
+
+  nextTick(() => {
+    if (colorMode.value === 'light') {
+      document.querySelector('meta[name="theme-color"]')
+        .setAttribute('content', '#FFFFFF')
+    } else if (colorMode.value === 'dark') {
+      document.querySelector('meta[name="theme-color"]')
+        .setAttribute('content', '#0A0A0A')
+    }
+  })
 }
 </script>

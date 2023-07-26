@@ -25,6 +25,18 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts'
   ],
+  pwa: {
+    manifest: {
+      lang: 'en',
+      name: 'Uhtred M.',
+      short_name: 'Uhtred M.',
+      theme_color: '#0A0A0A',
+      display: 'fullscreen',
+      background_color: '#0A0A0A',
+      orientation: 'portrait',
+      start_url: '/?from=homescreen'
+    }
+  },
   i18n: {
     lazy: true,
     langDir: 'locale',
@@ -58,12 +70,12 @@ export default defineNuxtConfig({
     families: {
       'Noto+Sans': {
         wght: [
-          700, 600, 500, 400
+          700, 500, 400
         ]
       },
       'Josefin+Sans': {
         wght: [
-          700, 600, 500, 400
+          700, 400
         ]
       }
     }

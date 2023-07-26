@@ -15,7 +15,7 @@ export default {
     Integração e Desenvolvimento de APIs; Configuração e Gerenciamento de Infraestrutura em Nuvem.`,
   'pages.section.caseslist.p1': 'Casos que nos inspiram.',
   'pages.section.processlife.p1': 'Especialistas em todos os aspectos do ciclo de vida do produto.',
-  'pages.section.processlife.p2': `Trabalho com equipas sobre demanda, oferecemos aos nossos clientes o talento
+  'pages.section.processlife.p2': `Trabalho com equipas sob-demanda, oferecemos aos nossos clientes o talento
     criativo, técnico e comercial de que precisam para ter sucesso.`,
   'pages.index.tagtitle.p1': 'Mudar cor do tema',
   'pages.index.tagtitle.p2': 'Mudar idioma',
