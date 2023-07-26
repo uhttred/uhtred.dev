@@ -17,7 +17,8 @@ export default defineNuxtConfig({
     },
   },
   css: [
-    '~/assets/css/main.css'
+    '~/assets/css/main.css',
+    '~/assets/icons/style.css',
   ],
   modules: [
     '@vite-pwa/nuxt',

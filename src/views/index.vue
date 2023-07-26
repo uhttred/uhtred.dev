@@ -5,5 +5,7 @@
     <PageSectionSimpleCaseList />
     <PageSectionProjectLifecycle />
     <PageSectionBigQuote />
+    <PageSectionQuotes />
+    <PageSectionInsightsList />
   </div>
 </template>

@@ -25,6 +25,7 @@
     "node": ">=18.17.x"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "swiper": "^10.0.4"
   }
 }
