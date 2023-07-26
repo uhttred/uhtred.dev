@@ -14,7 +14,11 @@ export default {
   'pages.section.about.p2': `My skills and experience allow me to help you in four main ways.
     Business Analysis for Structuring and Designing Digital Products; Creation of Complete
     Digital Products (Web Applications); Integration and API Development; & Cloud
-    Infrastructure Configuration and Management`,
+    Infrastructure Configuration and Management.`,
+  'pages.section.caseslist.p1': 'Cases that make us inspired.',
+  'pages.section.processlife.p1': 'Experts in every aspect of the product lifecycle.',
+  'pages.section.processlife.p2': `Working with on-demand teams, we provide our clients with the creative,
+    technical and commercial talent they need to succeed.`,
   'pages.index.tagtitle.p1': 'Change color theme',
   'pages.index.tagtitle.p2': 'Change language',
   'pages.index.tagtitle.p3': 'Show social links',
@@ -25,6 +29,14 @@ export default {
   'Years of experience': 'Years of experience',
   'Very happy clients': 'Very happy clients',
   'A Maker and Perfectionist': 'A Maker and Perfectionist',
+  'See all cases': 'See all cases',
+  'Meet the case': 'Meet the case',
+  'Ideation & Validation': 'Ideation & Validation',
+  'Design': 'Design',
+  'Development': 'Development',
+  'Scale': 'Scale',
+  'Maintain, Support & Management': 'Maintain, Support & Management',
+  'Start your project today': 'Start your project today',
   Cases: 'Cases',
   Services: 'Services',
   Insights: 'Insights',

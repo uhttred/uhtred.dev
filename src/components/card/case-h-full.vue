@@ -4,7 +4,7 @@
       :class="[
         'col-span-full xl:col-span-5',
         {
-          'xl:col-start-8 order-last': reverseLayout,
+          'xl:col-start-8 xl:order-last': reverseLayout,
         }
       ]"
     >
@@ -19,7 +19,7 @@
         'col-span-full mt-12 lg:mt-0 xl:mb-14 xl:col-span-5',
         {
           'xl:col-start-7': !reverseLayout,
-          'xl:col-start-2 order-first': reverseLayout,
+          'xl:col-start-2 xl:order-first': reverseLayout,
         }
       ]"
     >
@@ -37,7 +37,7 @@
         :to="localePath('index')"
         class="text-14 text-gray-950 font-bold hover:underline"
       >
-        Meet the case
+      {{ $t('Meet the case') }}
       </NuxtLink>
     </div>
   </article>

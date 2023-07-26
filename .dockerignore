@@ -1,0 +1,7 @@
+node_modules/
+.nuxt/
+.env
+.editorconfig
+.babelrc
+coverage/
+.idea/

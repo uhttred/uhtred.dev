@@ -1,17 +1,17 @@
 <template>
-  <div class="row-c py-120px">
+  <section class="row-c py-120px">
     <div class="row">
       <div class="col-span-full flex justify-between items-center">
-        <p class="text-24 text-gray-950 lg:text-26 font-bold">
-          Cases that make us inspired
-        </p>
+        <h2 class="text-24 text-gray-950 lg:text-26 font-bold">
+          {{ $t('pages.section.caseslist.p1') }}
+        </h2>
         <!--  -->
         <NuxtLink
           :to="localePath('index')"
           class="text-18 text-gray-700 border-b-2 
             border-green-500 hover:text-gray-950 pb-1 hidden lg:block"
         >
-          See all cases
+          {{ $t('See all cases') }}
         </NuxtLink>
       </div>
     </div>
@@ -23,7 +23,7 @@
       :reverse-layout="c.reverseLayout"
       :project-case="c"
     />
-  </div>
+  </section>
 </template>
 
 <script setup lang="ts">

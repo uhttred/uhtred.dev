@@ -1,5 +1,5 @@
 <template>
-  <div class="row-c">
+  <section class="row-c">
     <div class="row mt-20 lg:mt-28 items-end border-b border-gray-950/10 pb-12 lg:pb-24">
       <!-- years of exp -->
       <div class="col-span-2 flex flex-col">
@@ -47,5 +47,5 @@
         </p>
       </div>
     </div>
-  </div>
+  </section>
 </template>

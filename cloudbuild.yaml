@@ -1,0 +1,44 @@
+steps:
+  # build
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - build
+      - '--no-cache'
+      - '-t'
+      - '$_GCR_HOSTNAME/$_PROJECT_ID/$_IMAGE_NAME:$_IMAGE_TAG'
+      - .
+      - '-f'
+      - Dockerfile
+    id: build
+    # push container
+  - name: gcr.io/cloud-builders/docker
+    args:
+      - push
+      - '$_GCR_HOSTNAME/$_PROJECT_ID/$_IMAGE_NAME:$_IMAGE_TAG'
+    id: push
+  # delpoy
+  - name: gcr.io/google.com/cloudsdktool/cloud-sdk
+    args:
+      - run
+      - deploy
+      - $_SERVICE_NAME
+      - '--platform=managed'
+      - '--allow-unauthenticated'
+      - '--image=$_GCR_HOSTNAME/$_PROJECT_ID/$_IMAGE_NAME:$_IMAGE_TAG'
+      - '--region=$_DEPLOY_REGION'
+      # - '--service-account=$_DEPLOY_SA_EMAIL'
+      # - '--use-http2'
+      - '--quiet'
+    id: deploy
+    entrypoint: gcloud
+images:
+  - '$_GCR_HOSTNAME/$_PROJECT_ID/$_IMAGE_NAME:$_IMAGE_TAG'
+options:
+  substitutionOption: ALLOW_LOOSE
+substitutions:
+  _GCR_HOSTNAME: eu.gcr.io
+  _PROJECT_ID: uhtred
+  _IMAGE_NAME: uhtred.dev
+  _IMAGE_TAG: stable
+  _SERVICE_NAME: uhtred-dev
+  _DEPLOY_REGION: europe-west1
