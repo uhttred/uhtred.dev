@@ -62,15 +62,15 @@
           class=""
           @click="prevSlide"
         >
-          <i class="icon-chevron-left text-gray-700 text-26 hover:text-gray-950" />
+          <i class="icon-chevron-left text-color-3 text-26 hover:text-color-1" />
         </button>
         <div class="flex items-center">
           <div
             v-for="(v, index) in 6"
             :key="index"
             :class="['rounded-full', {
-              'w-2 h-2 ml-2 bg-gray-950': swiper && swiper.realIndex === index,
-              'w-[6px] h-[6px] ml-2 bg-gray-950/40': !swiper || swiper.realIndex !== index}]
+              'w-2 h-2 ml-2 bg-1': swiper && swiper.realIndex === index,
+              'w-[6px] h-[6px] ml-2 bg-1/40': !swiper || swiper.realIndex !== index}]
             "
           />
         </div>
@@ -78,7 +78,7 @@
           class=""
           @click="nextSlide"
         >
-          <i class="icon-chevron-right text-gray-700 text-26 hover:text-gray-950" />
+          <i class="icon-chevron-right text-color-3 text-26 hover:text-color-1" />
         </button>
       </div>
     </div>
