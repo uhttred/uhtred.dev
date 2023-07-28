@@ -31,9 +31,9 @@ export default defineNuxtConfig({
       lang: 'en',
       name: 'Uhtred M.',
       short_name: 'Uhtred M.',
-      theme_color: '#0A0A0A',
+      theme_color: '#101010',
       display: 'fullscreen',
-      background_color: '#0A0A0A',
+      background_color: '#101010',
       orientation: 'portrait',
       start_url: '/?from=homescreen'
     }

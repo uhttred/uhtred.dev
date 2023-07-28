@@ -17,6 +17,9 @@ export default {
   'pages.section.processlife.p1': 'Especialistas em todos os aspectos do ciclo de vida do produto.',
   'pages.section.processlife.p2': `Trabalho com equipas sob-demanda, oferecemos aos nossos clientes o talento
     criativo, técnico e comercial de que precisam para ter sucesso.`,
+  'pages.section.bigquote.p1': `Eu construo produtos que permitem que as pessoas façam as coisas
+    de maneira diferente. Compartilhe seu desafio comigo e trabalharei com você para
+    entregar um produto digital revolucionário.`,
   'pages.index.tagtitle.p1': 'Mudar cor do tema',
   'pages.index.tagtitle.p2': 'Mudar idioma',
   'pages.index.tagtitle.p3': 'Mostrar redes sociais',

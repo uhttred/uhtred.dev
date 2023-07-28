@@ -11,7 +11,16 @@
       <NuxtLink
         :to="localePath('index')"
       >
-        <img :src="projectCase.banner" alt="case banner">
+        <img
+          :src="projectCase.banner"
+          class="dark:hidden rounded-md bdr-2"
+          alt="case banner"
+        >
+        <img
+          :src="projectCase.bannerDark"
+          class="hidden dark:block bdr-1 rounded-md"
+          alt="case banner"
+        >
       </NuxtLink>
     </div>
     <div
@@ -25,17 +34,23 @@
     >
       <img
         :src="projectCase.logo"
+        class="dark:hidden"
         alt="case client logo"
       >
-      <h1 class="text-20/[34px] lg:text-22/[36px] text-gray-950 font-bold mt-10">
+      <img
+        :src="projectCase.logoDark"
+        class="hidden dark:block"
+        alt="case client logo dark"
+      >
+      <h1 class="text-18/[34px] lg:text-20/[36px] text-color-1 font-bold mt-10">
         {{ projectCase.title }}
       </h1>
-      <p class="text-14/[34px] lg:text-18/[34px] text-gray-600 font-normal mt-4 mb-4">
+      <p class="text-14/[34px] lg:text-16/[34px] text-color-3 font-normal mt-4 mb-4">
         {{ projectCase.text }}
       </p>
       <NuxtLink
         :to="localePath('index')"
-        class="text-14 text-gray-950 font-bold hover:underline"
+        class="text-14 text-color-1 font-medium hover:underline"
       >
       {{ $t('Meet the case') }}
       </NuxtLink>

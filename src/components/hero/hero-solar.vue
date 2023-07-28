@@ -1,7 +1,7 @@
 <template>
   <UhMenu />
   <header
-    class="bdr-b-p pb-10 lg:pb-[120px] bg-white dark:bg-gray-950"
+    class="bdr-b-p pb-10 lg:pb-[120px] bg-primary"
   >
     <!--  -->
     <div

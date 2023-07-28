@@ -3,9 +3,9 @@
     title="Change color theme"
     @click="toggleTheme"
   >
-    <IconMoon v-show="$colorMode.preference === 'dark'"/>
-    <IconSun v-show="$colorMode.preference === 'light'"/>
-    <template v-if="$colorMode.preference === 'system'">
+    <IconMoon v-if="$colorMode.preference === 'dark'"/>
+    <IconSun v-else-if="$colorMode.preference === 'light'"/>
+    <template v-else-if="$colorMode.preference === 'system'">
       <IconMoon
         class="opacity-70"
         v-show="$colorMode.value === 'dark'"
@@ -32,10 +32,10 @@ const toggleTheme = () => {
   nextTick(() => {
     if (colorMode.value === 'light') {
       document.querySelector('meta[name="theme-color"]')
-        .setAttribute('content', '#FFFFFF')
+        .setAttribute('content', '#F8F9FA')
     } else if (colorMode.value === 'dark') {
       document.querySelector('meta[name="theme-color"]')
-        .setAttribute('content', '#0A0A0A')
+        .setAttribute('content', '#101010')
     }
   })
 }

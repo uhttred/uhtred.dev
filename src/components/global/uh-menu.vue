@@ -1,7 +1,7 @@
 <template>
   <div
     ref="menuContainer"
-    class="w-full flex flex-col items-center bg-white/70 dark:bg-gray-950/70 py-3
+    class="w-full flex flex-col items-center bg-p py-3
       top-0 sticky bdr-b-p lg:border-b-0 z-40 stuck:bg-red-500"
   >
     <div class="row">
@@ -214,7 +214,7 @@
 <style scoped lang="postcss">
 .menu-is-sticky {
   backdrop-filter: blur(12px);
-  @apply lg:border-b;
+  @apply lg:border-b bg-gray-50/70 dark:bg-gray-900/70;
 }
 </style>
 
