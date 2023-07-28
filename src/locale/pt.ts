@@ -21,6 +21,7 @@ export default {
     de maneira diferente. Compartilhe seu desafio comigo e trabalharei com você para
     entregar um produto digital revolucionário.`,
   'pages.index.tagtitle.p1': 'Mudar cor do tema',
+  'pages.section.quotes.p1': "Se eles dizem, é verdade!",
   'pages.index.tagtitle.p2': 'Mudar idioma',
   'pages.index.tagtitle.p3': 'Mostrar redes sociais',
   // words

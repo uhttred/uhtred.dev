@@ -23,6 +23,7 @@ export default {
   'pages.index.tagtitle.p1': 'Change color theme',
   'pages.index.tagtitle.p2': 'Change language',
   'pages.index.tagtitle.p3': 'Show social links',
+  'pages.section.quotes.p1': "If they say, it’s true",
   // words
   'Start project': 'Start project',
   'Start your project': 'Start your project',

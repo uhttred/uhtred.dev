@@ -1,10 +1,10 @@
 <template>
   <section class="row-c">
-    <div class="row border-b border-b-gray-950/10 pb-20 xl:pb-24">
+    <div class="row border-b bdr-b-1 pb-20 xl:pb-24">
       <!-- title -->
       <div class="col-span-full">
-        <h2 class="text-24 text-gray-950 lg:text-26 font-bold">
-          If they say, it’s true
+        <h2 class="text-24 text-color-1 lg:text-26 font-bold">
+          {{ $t('pages.section.quotes.p1') }}
         </h2>
       </div>
       <!-- swiper -->
@@ -17,19 +17,41 @@
             :key="n"
             class="swiper-slide w-[370px] cursor-grab"
           >
-            <img src="/image/brand/logo-wedobrand.svg" alt="">
-            <p class="text-14/[30px] lg:text-18/9 text-gray-600 mt-10">
+            <img
+              class="max-w-[120px] lg:max-w-[140px]"
+              src="/image/brand/logo-wedobrand.svg"
+              alt=""
+            >
+            <p class="text-14/[30px] lg:text-16/7 text-color-3 mt-10">
               Uhtred Miller has an incredible remote culture. It really makes working together easy.
             </p>
-            <div class="flex items-end mt-5.5">
-              <img
-                class="max-w-[120px] lg:max-w-[140px] rounded-lg border border-gray-950/10 w-10 xl:w-[70px] mr-4 xl:mr-7.5"
-                src="/image/people/justo-eliseu.png"
-                alt=""
+            <div
+              class="flex items-end mt-5.5"
+            >
+              <a
+                href="https://www.linkedin.com/in/justo-eliseu-70b317178/"
+                target="_blank"
+                title="See Justo Eliseu on LinkedIn"
               >
-              <p class="text-12 xl:text-16 font-bold text-gray-950">
-                Justo Eliseu <span class="text-12 xl:text-14 font-normal text-gray-600">/ CEO Wedo Brand</span>
-              </p>
+                <img
+                  class="dark:hidden rounded-lg border border-gray-950/10 w-10 xl:w-[60px] mr-4 xl:mr-7.5"
+                  src="/image/people/justo-eliseu.png"
+                  alt=""
+                >
+                <img
+                  class="hidden dark:block rounded-lg border border-gray-950/10 w-10 xl:w-[60px] mr-4 xl:mr-7.5"
+                  src="/image/people/justo-eliseu.png"
+                  alt=""
+                >
+              </a>
+              <a
+                class="text-12 xl:text-16 font-medium text-color-1"
+                href="https://www.linkedin.com/in/justo-eliseu-70b317178/"
+                target="_blank"
+                title="See Justo Eliseu on LinkedIn"
+              >
+                Justo Eliseu <span class="text-12 xl:text-14 font-normal text-color-4">/ CEO Wedo Brand</span>
+              </a>
             </div>
           </div>
         </div>
