@@ -57,12 +57,14 @@ module.exports = {
         4: 'repeat(4, 66px)',
         6: 'repeat(6, 66px)',
         8: 'repeat(8, 66px)',
-        10: 'repeat(10, 70px)',
-        12: 'repeat(12, 70px)'
+        10: 'repeat(10, 66px)',
+        12: 'repeat(12, 66px)'
       },
       gap: {
-        30: '30px',
-        20: '20px'
+        16: '16px',
+        20: '20px',
+        4: '16px',
+        12: '20px'
       },
       spacing: {
         '5.5': '1.5rem',

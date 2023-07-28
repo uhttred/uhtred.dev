@@ -1,7 +1,7 @@
 <template>
   <div
     ref="menuContainer"
-    class="w-full flex flex-col items-center bg-white dark:bg-gray-950 py-4
+    class="w-full flex flex-col items-center bg-white/70 dark:bg-gray-950/70 py-3
       top-0 sticky bdr-b-p lg:border-b-0 z-40 stuck:bg-red-500"
   >
     <div class="row">
@@ -26,25 +26,25 @@
           <!-- nav bar -->
           <nav class="gap-x-8 hidden lg:flex">
             <NuxtLink
-              class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
+              class="font-medium text-color-3 text-14 hover:text-color-1"
               :to="localePath('index')"
             >
               {{ $t('Cases') }}
             </NuxtLink>
             <NuxtLink
-              class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
+              class="font-medium text-color-3 text-14 hover:text-color-1"
               :to="localePath('index')"
             >
             {{ $t('Services') }}
             </NuxtLink>
             <NuxtLink
-              class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
+              class="font-medium text-color-3 text-14 hover:text-color-1"
               :to="localePath('index')"
             >
             {{ $t('Insights') }}
             </NuxtLink>
             <NuxtLink
-              class="font-semibold text-color-3 text-14 xl:text-16 hover:text-color-1"
+              class="font-medium text-color-3 text-14 hover:text-color-1"
               :to="localePath('index')"
             >
             {{ $t('Store') }}
@@ -57,7 +57,7 @@
             </button>
           </div>
           <!-- profile and social  -->
-          <div class="cursor-pointer relative z-10">
+          <div class="relative z-10 flex items-center">
             <button
               :title="$t('pages.index.tagtitle.p3')"
               @click="showSocialLink=!showSocialLink"
@@ -65,7 +65,7 @@
               <img
                 src="~/assets/image/uhtred-pofile.png"
                 alt="uhtred profile image"
-                class="w-10 lg:w-[46px] bdr-p rounded-full"
+                class="w-8 lg:w-10 bdr-p rounded-full"
               >
             </button>
             <div
@@ -213,7 +213,8 @@
 
 <style scoped lang="postcss">
 .menu-is-sticky {
-  @apply lg:border-b
+  backdrop-filter: blur(12px);
+  @apply lg:border-b;
 }
 </style>
 

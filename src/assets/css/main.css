@@ -67,18 +67,18 @@
     @apply bg-white dark:bg-gray-950;
   }
   .row {
-    @apply grid grid-cols-4 gap-x-20
-      sm:grid-cols-6
+    @apply grid grid-cols-4 gap-x-16
+      sm:grid-cols-6 sm:gap-x-20
       md:grid-cols-8
-      lg:grid-cols-10 lg:gap-x-30
+      lg:grid-cols-10
       xl:grid-cols-12;
   }
 }
 
 @layer components {
   .btn {
-    @apply px-8 py-3.5 rounded-md font-bold text-13/4
-      bg-gray-950 text-gray-50 xl:text-14/4
+    @apply px-8 py-3 rounded-md font-medium text-13/4
+      bg-gray-950 text-gray-50 xl:text-14
       dark:text-gray-950 dark:bg-gray-50
       hover:bg-green-500 hover:text-gray-50;
   }

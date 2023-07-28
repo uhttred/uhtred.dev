@@ -71,7 +71,7 @@ export default defineNuxtConfig({
     families: {
       'Noto+Sans': {
         wght: [
-          700, 500, 400
+          700, 500, 600, 400
         ]
       },
       'Josefin+Sans': {
