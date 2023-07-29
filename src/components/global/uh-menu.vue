@@ -75,10 +75,10 @@
             >
               <!-- social link: linkedin -->
               <div
-                class="bdr-p rounded-full w-12 h-12 flex
+                class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
                   justify-center items-center bg-white dark:bg-gray-950"
               >
-              <a
+                <a
                   :href="$config.public.socialLink.linkedin"
                   target="_blank"
                 >
@@ -87,10 +87,10 @@
               </div>
               <!-- social link: instagram -->
               <div
-                class="bdr-p rounded-full w-12 h-12 flex
+                class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
                   justify-center items-center bg-white dark:bg-gray-950"
               >
-              <a
+                <a
                   :href="$config.public.socialLink.instagram"
                   target="_blank"
                 >
@@ -99,10 +99,10 @@
               </div>
               <!-- social link: dribble -->
               <div
-                class="bdr-p rounded-full w-12 h-12 flex
+                class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
                   justify-center items-center bg-white dark:bg-gray-950"
               >
-              <a
+                <a
                   :href="$config.public.socialLink.dribbble"
                   target="_blank"
                 >
@@ -111,7 +111,7 @@
               </div>
               <!-- social link: github -->
               <div
-                class="bdr-p rounded-full w-12 h-12 flex
+                class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
                   justify-center items-center bg-white dark:bg-gray-950"
               >
                 <a
@@ -123,7 +123,7 @@
               </div>
               <!-- social link: close -->
               <button
-                class="bdr-p rounded-full w-12 h-12 flex
+                class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
                   justify-center items-center bg-white dark:bg-gray-950"
                 @click="showSocialLink=false"
               >
@@ -215,6 +215,10 @@
 .menu-is-sticky {
   backdrop-filter: blur(12px);
   @apply lg:border-b bg-gray-50/70 dark:bg-gray-900/70;
+}
+.menu-is-sticky .mn-social-icon {
+  backdrop-filter: blur(12px);
+  @apply bg-gray-50/70 dark:bg-gray-900/70;
 }
 </style>
 

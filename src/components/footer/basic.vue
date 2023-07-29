@@ -1,0 +1,123 @@
+<template>
+  <footer class="row-c bg-2 pt-20 bdr-t-2">
+    <div class="row pb-20 bdr-b-1 gap-y-14 xl:gap-y-0">
+      <!-- logo and address -->
+      <div class="col-span-full xl:col-span-2">
+        <NuxtLink :to="localePath('index')">
+          <img
+            src="~/assets/image/uhtred-logo-menu.svg"
+            class="w-[90px] lg:w-[100px] dark:hidden"
+            alt="uhtred logo"
+          >
+          <img
+            src="~/assets/image/uhtred-logo-menu-light.svg"
+            class="w-[90px] lg:w-[100px] hidden dark:block"
+            alt="uhtred logo"
+          >
+        </NuxtLink>
+        <!--  -->
+        <p class="text-14/6 text-color-3 mt-10">
+          Camama 1, Talatona,
+          Luanda, Angola
+        </p>
+        <a
+          :href="`mailto:${$config.public.contact.email}`"
+          class="text-14/6 text-color-3 hover:underline hover:text-color-1 mt-4 block"
+        >
+          {{ $config.public.contact.email }}
+        </a>
+      </div>
+      <!-- social network -->
+      <div class="col-span-full xl:col-span-3 xl:col-start-4">
+        <h4 class="text-20/[14px] text-color-1 font-bold">
+          Stay connected
+        </h4>
+        <div
+          class="flex flex-wrap mt-10 gap-x-8 gap-y-5.5 max-w-[140px]
+            items-center"
+        >
+          <a
+            :href="$config.public.socialLink.instagram"
+            class="opacity-70 hover:opacity-100"
+            target="_blank"
+          >
+            <IconInstagramLine/>
+          </a>
+          <a
+            :href="$config.public.socialLink.dribbble"
+            class="opacity-70 hover:opacity-100"
+            target="_blank"
+          >
+            <IconDribbbleLine />
+          </a>
+          <a
+          :href="$config.public.socialLink.github"
+          class="opacity-70 hover:opacity-100"
+          target="_blank"
+          >
+          <IconGithubFill />
+        </a>
+        <a
+          :href="$config.public.socialLink.linkedin"
+          class="opacity-70 hover:opacity-100"
+          target="_blank"
+        >
+          <IconLinkedinFill />
+        </a>
+        <a
+          :href="$config.public.socialLink.youtube"
+          class="opacity-70 hover:opacity-100"
+          target="_blank"
+        >
+          <IconYoutubeLine />
+        </a>
+        </div>
+      </div>
+      <!-- social newsletter -->
+      <div class="col-span-full xl:col-span-4 xl:col-start-9">
+        <h4 class="text-20/[14px] text-color-1 font-bold xl:text-right">
+          {{ $t('pages.section.footer.p1') }}
+        </h4>
+        <div
+          class="flex justify-between items-center mt-10 bg-1 rounded-md bdr-1"
+        >
+          <input
+            type="email"
+            :placeholder="$t('pages.section.footer.p2')"
+            class="rounded-tl-md rounded-bl-md bg-transparent text-14 font-medium
+              py-3 px-5.5 outline-none text-color-1"
+          >
+          <button
+            class="text-13 text-color-2 hover:text-color-1 pr-8"
+          >
+            {{ $t('Subscribe') }}
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- copy row -->
+    <div class="row">
+      <div class="col-span-full flex items-center justify-between py-5">
+        <div>
+          <p class="text-12 lg:text-13 text-color-3">
+            &copy; {{ new Date().getFullYear() }} Uhtred M., Ageu Mateus.
+          </p>
+        </div>
+        <div class="flex items-center gap-x-5">
+          <NuxtLink
+            class="text-12 lg:text-13 text-color-3 hover:underline"
+            :to="localePath('index')"
+          >
+            {{ $t('Privacy Policy') }}
+          </NuxtLink>
+          <NuxtLink
+            class="text-12 lg:text-13 text-color-3 hover:underline"
+            :to="localePath('index')"
+          >
+            {{ $t('Terms of Use') }}
+          </NuxtLink>
+        </div>
+      </div>
+    </div>
+  </footer>
+</template>

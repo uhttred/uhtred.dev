@@ -58,6 +58,10 @@
     @apply border border-gray-950/[4%] dark:border-gray-100/[4%];
   }
 
+  .bdr-t-2 {
+    @apply border-t border-gray-950/[4%] dark:border-gray-100/[4%];
+  }
+
   .bdr-b-p,
   .bdr-b-1 {
     @apply border-b border-gray-950/10 dark:border-gray-100/10;

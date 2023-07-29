@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <main>
     <HeroSolar />
     <PageSectionAbout />
     <PageSectionSimpleCaseList />
@@ -7,5 +7,6 @@
     <PageSectionBigQuote />
     <PageSectionQuotes />
     <PageSectionInsightsList />
-  </div>
+    <FooterBasic />
+  </main>
 </template>
