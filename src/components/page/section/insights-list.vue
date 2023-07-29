@@ -15,5 +15,13 @@
         </NuxtLink>
       </div>
     </div>
+    <!--  -->
+    <div class="row pt-20 gap-y-10">
+      <CardInsightBasic
+        v-for="n in 6"
+        :key="n"
+        class="col-span-4"
+      />
+    </div>
   </div>
 </template>

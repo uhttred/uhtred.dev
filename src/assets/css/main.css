@@ -55,11 +55,14 @@
   }
 
   .bdr-2 {
-    @apply border border-gray-950/[4%] dark:border-gray-100/[4%];
+    @apply border border-gray-950/[5%] dark:border-gray-100/[5%];
   }
 
   .bdr-t-2 {
-    @apply border-t border-gray-950/[4%] dark:border-gray-100/[4%];
+    @apply border-t border-gray-950/[5%] dark:border-gray-100/[5%];
+  }
+  .bdr-b-2 {
+    @apply border-b border-gray-950/[5%] dark:border-gray-100/[5%];
   }
 
   .bdr-b-p,

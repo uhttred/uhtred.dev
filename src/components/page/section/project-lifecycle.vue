@@ -1,5 +1,5 @@
 <template>
-  <section class="row-c bg-2">
+  <section class="row-c bg-2 bdr-t-2 bdr-b-2">
     <div class="row">
       <div class="col-span-full xl:col-span-5 mt-20 lg:mt-120px">
         <!--  -->

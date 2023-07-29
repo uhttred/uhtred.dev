@@ -30,7 +30,7 @@
       <!-- social network -->
       <div class="col-span-full xl:col-span-3 xl:col-start-4">
         <h4 class="text-20/[14px] text-color-1 font-bold">
-          Stay connected
+          {{ $t('Stay connected') }}
         </h4>
         <div
           class="flex flex-wrap mt-10 gap-x-8 gap-y-5.5 max-w-[140px]
@@ -39,6 +39,7 @@
           <a
             :href="$config.public.socialLink.instagram"
             class="opacity-70 hover:opacity-100"
+            title="Instagram"
             target="_blank"
           >
             <IconInstagramLine/>
@@ -46,6 +47,7 @@
           <a
             :href="$config.public.socialLink.dribbble"
             class="opacity-70 hover:opacity-100"
+            title="dribbble"
             target="_blank"
           >
             <IconDribbbleLine />
@@ -53,6 +55,7 @@
           <a
           :href="$config.public.socialLink.github"
           class="opacity-70 hover:opacity-100"
+            title="GitHub"
           target="_blank"
           >
           <IconGithubFill />
@@ -67,6 +70,7 @@
         <a
           :href="$config.public.socialLink.youtube"
           class="opacity-70 hover:opacity-100"
+            title="YouTube"
           target="_blank"
         >
           <IconYoutubeLine />
