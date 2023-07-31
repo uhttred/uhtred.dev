@@ -1,13 +1,6 @@
 <template>
-  <article class="row items-end">
-    <div
-      :class="[
-        'col-span-full xl:col-span-5',
-        {
-          'xl:col-start-8 xl:order-last': reverseLayout,
-        }
-      ]"
-    >
+  <article class="flex items-center pb-12">
+    <div class="w-[14.875rem]" >
       <NuxtLink
         :to="localePath({
           name: 'cases-slug',
@@ -29,28 +22,22 @@
       </NuxtLink>
     </div>
     <div
-      :class="[
-        'col-span-full mt-12 lg:mt-0 xl:mb-14 xl:col-span-5',
-        {
-          'xl:col-start-7': !reverseLayout,
-          'xl:col-start-2 xl:order-first': reverseLayout,
-        }
-      ]"
+      class="w-full max-w-[22.9rem] ml-12"
     >
       <img
         :src="projectCase.logo"
-        class="dark:hidden"
+        class="dark:hidden max-w-[80px]"
         alt="case client logo"
       >
       <img
         :src="projectCase.logoDark"
-        class="hidden dark:block"
+        class="hidden dark:block max-w-[80px]"
         alt="case client logo dark"
       >
-      <h1 class="text-18/[34px] lg:text-20/[36px] text-color-1 font-bold mt-10">
+      <h1 class="text-18/[34px] text-color-1 font-bold mt-4">
         {{ projectCase.title }}
       </h1>
-      <p class="text-14/[34px] lg:text-16/[34px] text-color-3 font-normal mt-4 mb-4">
+      <p class="text-14/[34px] text-color-3 font-normal mt-1 mb-4">
         {{ projectCase.text }}
       </p>
       <NuxtLink
@@ -70,10 +57,6 @@
 
 <script setup lang="ts">
 const props = defineProps({
-  reverseLayout: {
-    type: Boolean,
-    default: false
-  },
   projectCase: {
     type: Object
   }

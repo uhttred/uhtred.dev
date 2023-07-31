@@ -30,8 +30,8 @@
               :class="[
                 'font-medium text-14 hover:text-color-1',
                 {
-                  'text-color-1': routePath.path.includes('/cases'),
-                  'text-color-3': !routePath.path.includes('/cases')
+                  'text-color-1': route.path.includes('/cases'),
+                  'text-color-3': !route.path.includes('/cases')
                 }
               ]"
             >
@@ -48,8 +48,8 @@
               :class="[
                 'font-medium text-14 hover:text-color-1',
                 {
-                  'text-color-1': routePath.path.includes('/insights'),
-                  'text-color-3': !routePath.path.includes('/insights')
+                  'text-color-1': route.path.includes('/insights'),
+                  'text-color-3': !route.path.includes('/insights')
                 }
               ]"
             >
@@ -60,8 +60,8 @@
               :class="[
                 'font-medium text-14 hover:text-color-1',
                 {
-                  'text-color-1': routePath.path.includes('/store'),
-                  'text-color-3': !routePath.path.includes('/store')
+                  'text-color-1': route.path.includes('/store'),
+                  'text-color-3': !route.path.includes('/store')
                 }
               ]"
             >
@@ -246,7 +246,7 @@ const localePath = useLocalePath()
 const showMobileMenu = ref(false)
 const showSocialLink = ref(false)
 const menuContainer = ref(null)
-const routePath = useRoute()
+const route = useRoute()
 
 onMounted(() => {
   if (menuContainer.value) {

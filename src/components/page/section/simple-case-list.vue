@@ -37,6 +37,7 @@ const cases = ref([
     title: 'More sales after a well-consolidated process',
     text: 'Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.',
     reverseLayout: false,
+    slug: 'zaki'
   },
   {
     id: 2,
@@ -47,6 +48,7 @@ const cases = ref([
     title: "A space that doesn't let you miss anything",
     text: 'Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.',
     reverseLayout: true,
+    slug: 'muve'
   }
 ])
 </script>
