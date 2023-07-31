@@ -94,6 +94,17 @@ const cases = ref([
     text: 'Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.',
     reverseLayout: true,
     slug: 'muve'
+  },
+  {
+    id: 3,
+    banner: '/image/temp/case-banner-zaki.png',
+    bannerDark: '/image/temp/case-banner-zaki-dark.png',
+    logo: '/image/brand/logo-zaki.svg',
+    logoDark: '/image/brand/logo-zaki-light.svg',
+    title: 'More sales after a well-consolidated process',
+    text: 'Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.',
+    reverseLayout: false,
+    slug: 'zaki'
   }
 ])
 </script>
