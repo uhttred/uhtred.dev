@@ -53,7 +53,18 @@ module.exports = {
         20: '1.25rem', // 20px
         22: '1.375rem', // 22px
         24: '1.5rem', // 24px
-        26: '1.625rem' // 26px
+        26: '1.625rem', 
+        28: '1.75rem', 
+        30: '1.875rem', 
+        32: '2rem', 
+        34: '2.125rem', 
+        36: '2.25rem', 
+        38: '2.375rem', 
+        40: '2.5rem', 
+        42: '2.625rem', 
+        44: '2.75rem', 
+        46: '2.875rem', 
+        48: '3rem'
       },
       gridTemplateColumns: {
         4: 'repeat(4, 66px)',

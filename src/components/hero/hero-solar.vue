@@ -1,5 +1,4 @@
 <template>
-  <UhMenu />
   <header
     class="bdr-b-p pb-10 lg:pb-[120px] bg-primary"
   >

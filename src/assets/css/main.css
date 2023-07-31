@@ -97,6 +97,22 @@
       lg:grid-cols-10
       xl:grid-cols-12;
   }
+  .linex-1 {
+    height: 0px;
+    @apply border-t border-gray-950/10 dark:border-gray-100/10;
+  }
+  .linex-2 {
+    height: 0px;
+    @apply border-t border-gray-950/[5%] dark:border-gray-100/[5%];
+  }
+  .liney-1 {
+    width: 0px;
+    @apply border-l border-gray-950/10 dark:border-gray-100/10;
+  }
+  .liney-2 {
+    width: 0px;
+    @apply border-l border-gray-950/[5%] dark:border-gray-100/[5%];
+  }
 }
 
 @layer components {

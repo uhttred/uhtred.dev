@@ -26,26 +26,44 @@
           <!-- nav bar -->
           <nav class="gap-x-8 hidden lg:flex">
             <NuxtLink
-              class="font-medium text-color-3 text-14 hover:text-color-1"
-              :to="localePath('index')"
+              :to="localePath('cases')"
+              :class="[
+                'font-medium text-14 hover:text-color-1',
+                {
+                  'text-color-1': routePath.path.includes('/cases'),
+                  'text-color-3': !routePath.path.includes('/cases')
+                }
+              ]"
             >
               {{ $t('Cases') }}
             </NuxtLink>
             <NuxtLink
-              class="font-medium text-color-3 text-14 hover:text-color-1"
               :to="localePath('index')"
+              class="font-medium text-color-3 text-14 hover:text-color-1"
             >
             {{ $t('Services') }}
             </NuxtLink>
             <NuxtLink
-              class="font-medium text-color-3 text-14 hover:text-color-1"
-              :to="localePath('index')"
+              :to="localePath('insights')"
+              :class="[
+                'font-medium text-14 hover:text-color-1',
+                {
+                  'text-color-1': routePath.path.includes('/insights'),
+                  'text-color-3': !routePath.path.includes('/insights')
+                }
+              ]"
             >
             {{ $t('Insights') }}
             </NuxtLink>
             <NuxtLink
-              class="font-medium text-color-3 text-14 hover:text-color-1"
-              :to="localePath('index')"
+              :to="localePath('store')"
+              :class="[
+                'font-medium text-14 hover:text-color-1',
+                {
+                  'text-color-1': routePath.path.includes('/store'),
+                  'text-color-3': !routePath.path.includes('/store')
+                }
+              ]"
             >
             {{ $t('Store') }}
             </NuxtLink>
@@ -171,30 +189,30 @@
         <div class="col-span-full">
           <nav class="gap-y-8 flex flex-col mt-12">
             <NuxtLink
-              @click.native="showMobileMenu=false"
+              :to="localePath('cases')"
               class="font-semibold text-color-1 text-24/27 active:text-color-2"
-              :to="localePath('index')"
+              @click.native="showMobileMenu=false"
             >
               {{ $t('Cases') }}
             </NuxtLink>
             <NuxtLink
-              @click.native="showMobileMenu=false"
-              class="font-semibold text-color-1 text-24/27 active:text-color-2"
               :to="localePath('index')"
-            >
+              class="font-semibold text-color-1 text-24/27 active:text-color-2"
+              @click.native="showMobileMenu=false"
+              >
               {{ $t('Services') }}
             </NuxtLink>
             <NuxtLink
+              :to="localePath('insights')"
               @click.native="showMobileMenu=false"
               class="font-semibold text-color-1 text-24/27 active:text-color-2"
-              :to="localePath('index')"
             >
               {{ $t('Insights') }}
             </NuxtLink>
             <NuxtLink
               @click.native="showMobileMenu=false"
               class="font-semibold text-color-1 text-24/27 active:text-color-2"
-              :to="localePath('index')"
+              :to="localePath('store')"
             >
               {{ $t('Store') }}
             </NuxtLink>
@@ -228,6 +246,7 @@ const localePath = useLocalePath()
 const showMobileMenu = ref(false)
 const showSocialLink = ref(false)
 const menuContainer = ref(null)
+const routePath = useRoute()
 
 onMounted(() => {
   if (menuContainer.value) {

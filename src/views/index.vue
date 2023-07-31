@@ -7,6 +7,5 @@
     <PageSectionBigQuote />
     <PageSectionQuotes />
     <PageSectionInsightsList />
-    <FooterBasic />
   </main>
 </template>

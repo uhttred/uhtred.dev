@@ -11,7 +11,9 @@
         </template>
       </Head>
       <Body>
+        <UhMenu />
         <NuxtPage />
+        <FooterBasic />
       </Body>
     </Html>
   </div>
