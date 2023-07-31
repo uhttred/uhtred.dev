@@ -3,11 +3,11 @@
     <section class="row">
       <!-- left container -->
       <div class="col-span-full xl:col-span-8 min-h-screen">
-        <h1 class="text-40 text-color-1 font-bold mt-12">
+        <h1 class="text-40 text-color-1 font-bold mt-6 lg:mt-12">
           {{ $t('Cases') }}
         </h1>
         <!-- serach bar and applied topics -->
-        <div class="py-8 sticky top-14 bg-1">
+        <div class="py-4 lg:pt-8 sticky top-14 bg-1">
           <InputSearchBar />
           <div class="flex flex-wrap mt-4 gap-2 justify-center items-center">
             <p class="text-12 font-medium text-color-3">
@@ -25,7 +25,7 @@
           <CardCase
             v-for="c in cases"
             :key="c.id"
-            class="mt-12 bdr-b-2 last:border-b-0"
+            class="first:mt-8 mt-12 bdr-b-2 last:border-b-0"
             :reverse-layout="c.reverseLayout"
             :project-case="c"
           />
@@ -67,7 +67,7 @@
       </aside>
     </section>
     <!--  -->
-    <PageSectionInsightsList />
+    <PageSectionInsightsList class="py-16 lg:py-120px" />
   </div>
 </template>
 

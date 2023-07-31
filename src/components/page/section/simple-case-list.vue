@@ -7,7 +7,7 @@
         </h2>
         <!--  -->
         <NuxtLink
-          :to="localePath('index')"
+          :to="localePath('cases')"
           class="text-16 text-color-2 border-b-2 
             border-green-500 hover:text-color-1 pb-1 hidden lg:block"
         >

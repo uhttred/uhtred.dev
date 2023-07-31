@@ -6,6 +6,6 @@
     <PageSectionProjectLifecycle />
     <PageSectionBigQuote />
     <PageSectionQuotes />
-    <PageSectionInsightsList />
+    <PageSectionInsightsList class="py-120px" />
   </main>
 </template>

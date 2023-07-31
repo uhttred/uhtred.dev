@@ -1,6 +1,6 @@
 <template>
-  <article class="flex items-center pb-12">
-    <div class="w-[14.875rem]" >
+  <article class="flex flex-col xl:flex-row items-center pb-12">
+    <div class="w-full lg:w-[14.875rem]" >
       <NuxtLink
         :to="localePath({
           name: 'cases-slug',
@@ -22,7 +22,7 @@
       </NuxtLink>
     </div>
     <div
-      class="w-full max-w-[22.9rem] ml-12"
+      class="w-full lg:max-w-[22.9rem] mt-8 lg:mt-0 lg:ml-12"
     >
       <img
         :src="projectCase.logo"

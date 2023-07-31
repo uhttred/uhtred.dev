@@ -1,5 +1,5 @@
 <template>
-  <div class="row-c py-120px">
+  <div class="row-c">
     <div class="row">
       <div class="col-span-full flex justify-between items-center">
         <h2 class="text-24 text-color-1 lg:text-26 font-bold">
@@ -7,7 +7,7 @@
         </h2>
         <!--  -->
         <NuxtLink
-          :to="localePath('index')"
+          :to="localePath('insights')"
           class="text-16 text-color-2 border-b-2 
             border-green-500 hover:text-color-1 pb-1 hidden lg:block"
         >
