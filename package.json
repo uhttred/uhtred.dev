@@ -13,6 +13,8 @@
     "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/google-fonts": "^3.0.2",
     "@nuxtjs/i18n": "^8.0.0-beta.13",
+    "@tailwindcss/typography": "^0.5.9",
+    "@types/markdown-it": "^12.2.3",
     "@types/node": "^18.16.19",
     "@vite-pwa/nuxt": "^0.1.0",
     "autoprefixer": "^10.4.14",
@@ -26,6 +28,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "swiper": "^10.0.4"
+    "swiper": "^10.0.4",
+    "vue-markdown-render": "^2.0.1"
   }
 }

@@ -20,6 +20,11 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     '~/assets/icons/style.css',
   ],
+  vite: {
+    assetsInclude: [
+      '**/*.md'
+    ]
+  },
   modules: [
     '@vite-pwa/nuxt',
     '@nuxtjs/i18n',
