@@ -27,8 +27,14 @@
     "node": ">=18.17.x"
   },
   "dependencies": {
+    "highlight.js": "^11.8.0",
     "lodash": "^4.17.21",
-    "swiper": "^10.0.4",
-    "vue-markdown-render": "^2.0.1"
+    "markdown-it": "^13.0.1",
+    "markdown-it-abbr": "^1.0.4",
+    "markdown-it-deflist": "^2.1.0",
+    "markdown-it-emoji": "^2.0.2",
+    "markdown-it-footnote": "^3.0.3",
+    "markdown-it-mark": "^3.0.1",
+    "swiper": "^10.0.4"
   }
 }
