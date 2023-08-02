@@ -1,7 +1,7 @@
 <template>
   <div
     v-html="renderedContent"
-    class="prose prose-h1:text-40/[3.30rem] prose-headings:text-color-1
+    class="w-full prose max-w-none prose-h1:text-40/[3.30rem] prose-headings:text-color-1
       prose-h2:text-32/[3rem] prose-h3:text-28/[2.75rem] prose-h4:text-24/[2.4rem]
       prose-h5:text-22/[2.4rem] prose-h6:text-20/[2.4rem]
       prose-p:text-color-2 prose-p:text-18/9
@@ -12,6 +12,7 @@
       prose-blockquote:border-green-500 prose-blockquote:py-0.5 prose-blockquote:pl-8
       prose-pre:bg-gray-800 prose-pre:bdr-2
       prose-th:text-color-1 prose-td:text-color-3
+      dark:prose-tr:border-gray-50/[5%] prose-tr:border-gray-900/[5%]
     "
   />
 </template>
@@ -31,9 +32,11 @@ dt {
 dd {
   @apply text-color-3;
 }
-p code:not([class^="language-"]) {
-  @apply text-green-500 bg-green-50 dark:bg-green-50/10 font-normal;
-  font-size: 90%;
+p code:not([class^="language-"]),
+td code:not([class^="language-"]),
+li code:not([class^="language-"]) {
+  @apply text-green-700 dark:text-green-500 bg-green-50 dark:bg-green-50/10 font-normal;
+  font-size: 80%;
   border-radius: 4px;
   padding: 2px 4px;
 }
@@ -43,7 +46,7 @@ abbr {
 </style>
 
 <script setup lang="ts">
-import 'highlight.js/styles/night-owl.css' //  monokai-sublime
+import 'highlight.js/styles/stackoverflow-dark.css' //  monokai-sublime
 import hljs from 'highlight.js/lib/core'
 import javascript from 'highlight.js/lib/languages/javascript'
 import python from 'highlight.js/lib/languages/python'

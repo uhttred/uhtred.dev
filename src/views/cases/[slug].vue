@@ -4,7 +4,7 @@
       class="row-c relative before:block before:absolute before:bg-gray-100 dark:before:bg-gray-800
         before:h-[33.125rem] before:w-full before:-inset-1 before:-z-10"
     >
-      <div class="row min-h-scree">
+      <div class="row bdr-b-1">
         <!-- share icons -->
         <div
           class="col-span-1 hidden xl:block"
@@ -59,10 +59,18 @@
           </section>
           <!-- markdown conten -->
           <article
-            class="flex flex-col items-center w-full max-w-[46.75rem] mt-14"
+            class="flex flex-col items-center w-full max-w-[46.75rem] my-14"
           >
             <UhMarkdown :content="data" />
           </article>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="row-c my-14">
+      <div class="row">
+        <div class="col-span-full bg-2 bdr-2 rounded-lg">
+          a
         </div>
       </div>
     </div>
@@ -70,12 +78,12 @@
 </template>
 
 <script setup lang="ts">
-// import VueMarkdown from 'vue-markdown-render'
-// import markdownEmoji from 'markdown-it-emoji'
-
 const data = ref('')
+const route = useRoute()
+const url = ref('https://raw.githubusercontent.com/txiocoder/django-proxypay/master/README.md')
+url.value = route.query?.url || url.value
 const loadData = () => {
-  useFetch('http://localhost:8000/post1').then((r) => {
+  useFetch(url.value).then((r) => {
     data.value = r.data.value || ''
   })
 }
