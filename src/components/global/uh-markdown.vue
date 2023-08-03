@@ -73,6 +73,7 @@ const props = defineProps({
 const md = new MarkdownIt({
   linkify: true,
   typographer: true,
+  html: true,
   highlight (str, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
