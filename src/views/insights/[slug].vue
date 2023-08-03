@@ -2,14 +2,14 @@
   <div>
     <div
       class="row-c relative before:block before:absolute before:bg-gray-100 dark:before:bg-gray-800
-        before:h-[36.125rem] before:bdr-b-2 before:w-full before:-inset-1 before:-z-10"
+        before:h-[36.125rem] before:w-full before:-inset-1 before:-z-10"
     >
-      <div class="row bdr-b-1">
+      <div class="row bdr-b-1 relative">
         <!-- share icons -->
         <div
-          class="col-span-1 hidden pb-14"
+          class="col-span-1 absolute h-full right-full hidden xl:block pb-14 mr-8"
         >
-          <div class="flex-col flex gap-y-4 mt-24 sticky top-24">
+          <div class="flex-col flex gap-y-4 mt-40 sticky top-24">
             <!-- social link: linkedin -->
             <div
               class="bdr-p rounded-full w-10 h-10 flex mn-social-icon
@@ -39,9 +39,18 @@
         <!-- content -->
         <div
           class="col-span-full flex flex-col items-center xl:col-span-8
-            pt-16 lg:pt-24"
+            pt-16 lg:pt-14"
         >
           <section class="flex flex-col w-full">
+            <div class="flex items-center mb-4 gap-x-3">
+              <p class="text-13 text-color-3">
+                12, September 2023 at 12:45
+              </p>
+              <span class="text-2 text-color-3">•</span>
+              <p class="text-13 text-color-2">
+                1.345.234 views
+              </p>
+            </div>
             <h1
               @click="loadData"
               class="font-bold text-32 lg:text-40/[3.75rem] max-w-[41.75rem] text-color-1"
@@ -55,13 +64,32 @@
                 :tag="tag"
               />
             </div>
+            <!-- author -->
+            <div class="mt-5.5 flex items-center gap-x-4">
+              <div class="w-12 h-12 rounded-full bdr-2 bg-2 overflow-hidden">
+                <img
+                  src="/image/people/uhtred.png"
+                  alt=""
+                  class="w-full h-full object-cover"
+                >
+              </div>
+              <div class="">
+                <p class="text-14 text-color-1 font-bold">
+                  Uhtred M.
+                </p>
+                <p class="text-14 text-color-2 mt-1">
+                  Product Developer
+                  <span class="text-color-3">/ Freelancer</span>
+                </p>
+              </div>
+            </div>
             <!-- cover -->
             <div
               class="w-screen xl:w-full xl:h-[23rem] bg-2 xl:bdr-2 xl:rounded-md
                 overflow-hidden mt-10 lg:mt-14"
             >
               <img
-                src="https://www.threegirlsmedia.com/wp-content/uploads/2021/11/blog-scaled.jpg"
+                src="https://websitehurdles.com/wp-content/uploads/2023/07/Ways-to-improve-python-coding-skills.webp"
                 class="w-full h-full object-cover"
                 alt=""
               >
@@ -75,7 +103,7 @@
           </article>
         </div>
         <!--  -->
-        <aside class="col-span-3 col-start-10 hidden xl:block">
+        <aside class="col-span-3 col-start-10 hidden xl:block pb-14">
           <!-- sticky content -->
           <div class="sticky top-[90px]">
             <!-- content block -->
@@ -107,85 +135,13 @@
       </div>
     </div>
     <!-- scope -->
-    <div class="row-c my-14">
+    <div class="row-c mt-14">
       <div class="row min-h-[14rem] bg-2 bdr-2 rounded-lg py-12 gap-y-8">
-        <div
-          v-for="(g, i) in ssd"
-          :key="i"
-          class="col-span-full xl:col-span-3 pl-8 xl:pl-0 xl:first:pl-8"
-        >
-          <div>
-            <h4 class="uppercase text-14 font-bold text-color-1">
-              {{ g.title }}
-            </h4>
-            <ul class="mt-8">
-              <li
-                v-for="(t, ii) in g.items"
-                :key="ii"
-                class="text-14 text-color-3 mb-2"
-              >
-                {{ t }}
-              </li>
-            </ul>
-          </div>
-        </div>
+        
       </div>
     </div>
-    <!-- team and respo -->
-    <section class="row-c">
-      <div class="row">
-        <div class="col-span-full">
-          <h1 class="font-bold text-color-1 text-32">
-            Core team and responsibilities
-          </h1>
-        </div>
-      </div>
-      <div class="row gap-y-10 mt-10 bdr-b-1 pb-14">
-        <div
-          v-for="(user, i) in team"
-          :key="i"
-          class="col-span-full xl:col-span-3 flex flex-col"
-        >
-          <div class="bdr-2 rounded bg-2 overflow-hidden w-12 h-12">
-            <img
-              :src="user.avatar"
-              alt=""
-              class="w-full h-full object-cover"
-            >
-          </div>
-          <div class="py-3 hover:underline">
-            <a
-              href="#"
-              target="_blank"
-            >
-              <h2 class="text-13 font-bold text-color-1">
-                {{ user.name }}
-              </h2>
-            </a>
-            <a
-              href="#"
-              target="_blank"
-            >
-              <p class="text-color-3 font-normal text-12 mt-1">
-                {{ user.title }}
-              </p>
-            </a>
-          </div>
-          <div class="linex-2 w-1/6" />
-          <ul>
-            <li
-              v-for="(r, index) in user.responsibilities"
-              :key="index"
-              class="text-12 font-normal text-color-2 mt-2"
-            >
-              {{ r }}
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
     <!-- rknow more cases -->
-    <PageSectionKnowMoreCases class="py-24" />
+    <PageSectionGetMoreInsights class="py-24" />
     <!-- products -->
     <PageSectionProductListSimple class="mb-24" />
   </div>
