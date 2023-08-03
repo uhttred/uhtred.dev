@@ -2,7 +2,7 @@
   <div class="row-c">
     <div class="row">
       <div class="col-span-full flex justify-between items-center">
-        <h2 class="text-24 text-color-1 lg:text-26 font-bold">
+        <h2 class="text-26 text-color-1 lg:text-28 font-bold">
           Products you may be interested
         </h2>
         <!--  -->

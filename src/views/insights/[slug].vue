@@ -1,0 +1,272 @@
+<template>
+  <div>
+    <div
+      class="row-c relative before:block before:absolute before:bg-gray-100 dark:before:bg-gray-800
+        before:h-[36.125rem] before:bdr-b-2 before:w-full before:-inset-1 before:-z-10"
+    >
+      <div class="row bdr-b-1">
+        <!-- share icons -->
+        <div
+          class="col-span-1 hidden pb-14"
+        >
+          <div class="flex-col flex gap-y-4 mt-24 sticky top-24">
+            <!-- social link: linkedin -->
+            <div
+              class="bdr-p rounded-full w-10 h-10 flex mn-social-icon
+                justify-center items-center bg-white dark:bg-gray-950"
+            >
+              <a
+                href="#"
+                target="_blank"
+              >
+                <IconLinkedinFill />
+              </a>
+            </div>
+            <!-- social link: github -->
+            <div
+              class="bdr-p rounded-full w-10 h-10 flex mn-social-icon
+                justify-center items-center bg-white dark:bg-gray-950"
+            >
+              <a
+                href="#"
+                target="_blank"
+              >
+                <IconGithubFill />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- content -->
+        <div
+          class="col-span-full flex flex-col items-center xl:col-span-8
+            pt-16 lg:pt-24"
+        >
+          <section class="flex flex-col w-full">
+            <h1
+              @click="loadData"
+              class="font-bold text-32 lg:text-40/[3.75rem] max-w-[41.75rem] text-color-1"
+            >
+              5 Tech Trends That Drive Digital Acceleration in 2023
+            </h1>
+            <div class="flex flex-wrap mt-4 gap-2 items-center">
+              <UhInsightTag
+                v-for="tag in ['Python', 'Django', 'Ruby',]"
+                :key="tag"
+                :tag="tag"
+              />
+            </div>
+            <!-- cover -->
+            <div
+              class="w-screen xl:w-full xl:h-[23rem] bg-2 xl:bdr-2 xl:rounded-md
+                overflow-hidden mt-10 lg:mt-14"
+            >
+              <img
+                src="https://www.threegirlsmedia.com/wp-content/uploads/2021/11/blog-scaled.jpg"
+                class="w-full h-full object-cover"
+                alt=""
+              >
+            </div>
+          </section>
+          <!-- markdown conten -->
+          <article
+            class="flex flex-col items-center w-full my-14"
+          >
+            <UhMarkdown :content="data" />
+          </article>
+        </div>
+        <!--  -->
+        <aside class="col-span-3 col-start-10 hidden xl:block">
+          <!-- sticky content -->
+          <div class="sticky top-[90px]">
+            <!-- content block -->
+            <div class="mt-8">
+              <!-- <h3 class="text-20 text-color-1 font-bold mb-5.5">
+                Announcement
+              </h3> -->
+              <!--  -->
+              <div class="w-full h-[14.875rem] rounded-md bg-2 bdr-2">
+  
+              </div>
+            </div>
+            <!-- content block -->
+            <div class="mt-8">
+              <h3 class="text-20 text-color-1 font-bold mb-5.5">
+                More topics
+              </h3>
+              <!--  -->
+              <div class="flex flex-wrap mt-4 gap-2 items-center">
+                <UhInsightTag
+                  v-for="tag in ['Python', 'Django', 'Ruby',]"
+                  :key="tag"
+                  :tag="tag"
+                />
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <!-- scope -->
+    <div class="row-c my-14">
+      <div class="row min-h-[14rem] bg-2 bdr-2 rounded-lg py-12 gap-y-8">
+        <div
+          v-for="(g, i) in ssd"
+          :key="i"
+          class="col-span-full xl:col-span-3 pl-8 xl:pl-0 xl:first:pl-8"
+        >
+          <div>
+            <h4 class="uppercase text-14 font-bold text-color-1">
+              {{ g.title }}
+            </h4>
+            <ul class="mt-8">
+              <li
+                v-for="(t, ii) in g.items"
+                :key="ii"
+                class="text-14 text-color-3 mb-2"
+              >
+                {{ t }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- team and respo -->
+    <section class="row-c">
+      <div class="row">
+        <div class="col-span-full">
+          <h1 class="font-bold text-color-1 text-32">
+            Core team and responsibilities
+          </h1>
+        </div>
+      </div>
+      <div class="row gap-y-10 mt-10 bdr-b-1 pb-14">
+        <div
+          v-for="(user, i) in team"
+          :key="i"
+          class="col-span-full xl:col-span-3 flex flex-col"
+        >
+          <div class="bdr-2 rounded bg-2 overflow-hidden w-12 h-12">
+            <img
+              :src="user.avatar"
+              alt=""
+              class="w-full h-full object-cover"
+            >
+          </div>
+          <div class="py-3 hover:underline">
+            <a
+              href="#"
+              target="_blank"
+            >
+              <h2 class="text-13 font-bold text-color-1">
+                {{ user.name }}
+              </h2>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+            >
+              <p class="text-color-3 font-normal text-12 mt-1">
+                {{ user.title }}
+              </p>
+            </a>
+          </div>
+          <div class="linex-2 w-1/6" />
+          <ul>
+            <li
+              v-for="(r, index) in user.responsibilities"
+              :key="index"
+              class="text-12 font-normal text-color-2 mt-2"
+            >
+              {{ r }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- rknow more cases -->
+    <PageSectionKnowMoreCases class="py-24" />
+    <!-- products -->
+    <PageSectionProductListSimple class="mb-24" />
+  </div>
+</template>
+
+<script setup lang="ts">
+const data = ref('')
+const route = useRoute()
+
+const ssd = [
+  {
+    title: 'Services Scope',
+    items: [
+      'UI/UX Design',
+      'Responsive PWA',
+      'Consulting & Research',
+      'Backend System'
+    ]
+  },
+  {
+    title: 'Tech. and Techniques',
+    items: [
+      'Gitlab CI',
+      'Google Cloud Platform',
+      'Nuxt.js',
+      'Django REST Framework'
+    ]
+  },
+  {
+    title: 'Year',
+    items: [
+      '2019 - Present'
+    ]
+  }
+]
+
+const team = [
+  {
+    avatar: '/image/people/uhtred.png',
+    name: 'Uhtred M.',
+    title: 'Product Developer',
+    responsibilities: [
+      'Software Architecture',
+      'Product Development',
+      'Management'
+    ]
+  },
+  {
+    avatar: '/image/people/uhtred.png',
+    name: 'Eulalio Francisco',
+    title: 'UI Designer',
+    responsibilities: [
+      'UI/UX Design',
+      'UI Style Guide'
+    ]
+  },
+  {
+    avatar: '/image/people/justo-eliseu.png',
+    name: 'Justo Eliseu',
+    title: 'CEO at Wedo Brand',
+    responsibilities: [
+      'UI/UX Design',
+      'UI Style Guide'
+    ]
+  },
+  {
+    avatar: '/image/people/justo-eliseu.png',
+    name: 'Milton Bernardo',
+    title: 'Frontend Developer at Mirantes SA',
+    responsibilities: [
+      'Frontend Development',
+    ]
+  }
+]
+
+const url = ref('https://raw.githubusercontent.com/txiocoder/dj-cloud-task/master/README.md')
+url.value = route.query?.url || url.value
+const loadData = () => {
+  useFetch(url.value).then((r) => {
+    data.value = r.data.value || ''
+  })
+}
+loadData()
+</script>
