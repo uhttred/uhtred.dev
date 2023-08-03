@@ -31,7 +31,7 @@
       </div>
     </div>
     <!--  -->
-    <div class="row mt-14">
+    <div class="row mt-14 gap-y-10">
       <div
         v-for="n in 3"
         :key="n"

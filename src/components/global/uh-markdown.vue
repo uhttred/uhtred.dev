@@ -1,12 +1,12 @@
 <template>
   <div
     v-html="renderedContent"
-    class="w-full prose max-w-none prose-h1:text-40/[3.30rem] prose-headings:text-color-1
+    class="w-full prose max-w-none prose-h1:text-34/[3rem] lg:prose-h1:text-40/[3.30rem] prose-headings:text-color-1
       prose-h2:text-32/[3rem] prose-h3:text-28/[2.75rem] prose-h4:text-24/[2.4rem]
       prose-h5:text-22/[2.4rem] prose-h6:text-20/[2.4rem]
-      prose-p:text-color-2 prose-p:text-18/9
+      prose-p:text-color-2 prose-p:text-16/7 lg:prose-p:text-18/9
       prose-hr:border-gray-900/10 dark:prose-hr:border-gray-50/10
-      prose-ul:list-none prose-li:text-18 prose-li:text-color-2
+      prose-ul:list-none prose-li:text-16 lg:prose-li:text-18 prose-li:text-color-2
       prose-a:text-color-1 prose-a:decoration-green-500 prose-a:underline
       prose-strong:text-color-1
       prose-blockquote:border-green-500 prose-blockquote:py-0.5 prose-blockquote:pl-8

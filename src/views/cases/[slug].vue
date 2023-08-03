@@ -2,7 +2,7 @@
   <div>
     <div
       class="row-c relative before:block before:absolute before:bg-gray-100 dark:before:bg-gray-800
-        before:h-[33.125rem] before:w-full before:-inset-1 before:-z-10"
+        before:h-[36.125rem] before:bdr-b-2 before:w-full before:-inset-1 before:-z-10"
     >
       <div class="row bdr-b-1">
         <!-- share icons -->
@@ -37,18 +37,24 @@
           </div>
         </div>
         <!-- content -->
-        <div class="col-span-full flex flex-col items-center xl:col-span-10 xl:col-start-2 pt-24">
+        <div
+          class="col-span-full flex flex-col items-center xl:col-span-10
+            xl:col-start-2 pt-16 lg:pt-24"
+        >
           <section class="flex flex-col items-center w-full">
-            <h1 @click="loadData" class="font-bold text-40/[3.75rem] max-w-[41.75rem] text-center text-color-1">
+            <h1
+              @click="loadData"
+              class="font-bold text-32 lg:text-40/[3.75rem] max-w-[41.75rem] text-center text-color-1"
+            >
               More sales after a well-consolidated process
             </h1>
-            <p class="text-18/8 text-color-2 text-center max-w-[41.75rem] font-normal mt-8">
+            <p class="text-16/7 lg:text-18/8 text-color-2 text-center max-w-[41.75rem] font-normal mt-8">
               Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.
             </p>
             <!-- cover -->
             <div
               class="w-screen xl:w-[calc(100%+40px)] xl:h-[26.875rem] bg-2 xl:bdr-2 xl:rounded-md
-                overflow-hidden mt-14 text-center"
+                overflow-hidden mt-10 lg:mt-14 text-center"
             >
               <img
                 src="https://www.threegirlsmedia.com/wp-content/uploads/2021/11/blog-scaled.jpg"
@@ -68,11 +74,11 @@
     </div>
     <!-- scope -->
     <div class="row-c my-14">
-      <div class="row min-h-[14rem] bg-2 bdr-2 rounded-lg py-12">
+      <div class="row min-h-[14rem] bg-2 bdr-2 rounded-lg py-12 gap-y-8">
         <div
           v-for="(g, i) in ssd"
           :key="i"
-          class="col-span-full xl:col-span-3 first:ml-8"
+          class="col-span-full xl:col-span-3 pl-8 xl:pl-0 xl:first:pl-8"
         >
           <div>
             <h4 class="uppercase text-14 font-bold text-color-1">
@@ -100,7 +106,7 @@
           </h1>
         </div>
       </div>
-      <div class="row gap-y-8 mt-10 bdr-b-1 pb-14">
+      <div class="row gap-y-10 mt-10 bdr-b-1 pb-14">
         <div
           v-for="(user, i) in team"
           :key="i"
