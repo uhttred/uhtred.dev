@@ -1,7 +1,8 @@
 <template>
   <div>
     <div
-      class="row-c relative before:block before:absolute before:bg-gray-100 dark:before:bg-gray-800
+      class="row-c relative before:block before:absolute
+        before:bg-gray-100 xl:before:bg-transparent dark:before:bg-gray-800
         before:h-[36.125rem] before:w-full before:-inset-1 before:-z-10"
     >
       <div class="row bdr-b-1 relative">
@@ -85,7 +86,7 @@
             </div>
             <!-- cover -->
             <div
-              class="w-screen xl:w-full xl:h-[23rem] bg-2 xl:bdr-2 xl:rounded-md
+              class="w-full xl:w-full xl:h-[23rem] bg-2 xl:bdr-2 rounded-md
                 overflow-hidden mt-10 lg:mt-14"
             >
               <img
@@ -101,6 +102,10 @@
           >
             <UhMarkdown :content="data" />
           </article>
+        </div>
+        <!-- vertical line -->
+        <div class="col-span-1 col-start-9 hidden xl:flex justify-center">
+          <div class="liney-1" />
         </div>
         <!--  -->
         <aside class="col-span-3 col-start-10 hidden xl:block pb-14">

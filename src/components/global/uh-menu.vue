@@ -70,9 +70,12 @@
           </nav>
           <!-- CTA -->
           <div class="hidden lg:block">
-            <button class="btn hover:bg-green-500">
+            <NuxtLink
+              :to="localePath('get-started')"
+              class="btn hover:bg-green-500 block h-10"
+            >
               {{ $t('Start project') }}
-            </button>
+            </NuxtLink>
           </div>
           <!-- profile and social  -->
           <div class="relative z-10 flex items-center">

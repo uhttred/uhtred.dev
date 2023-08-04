@@ -8,8 +8,7 @@
             :to="localePath('cases')"
             class="text-green-500 hover:underline"
           >
-            success cases
-          </NuxtLink>!
+            success cases</NuxtLink>!
         </h1>
         <p class="text-16/8 text-color-3 mt-5.5 max-w-[40rem] text-center">
           My team and I deliver the best solution for your particular case. <br>
