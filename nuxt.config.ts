@@ -89,7 +89,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       contact: {
-        email: process.env.UH_CONTACT_EMAIL || 'um@uhtred.dev',
+        email: process.env.UH_CONTACT_EMAIL || 'am@uhtred.dev',
       },
       socialLink: {
         instagram: process.env.UH_SOCIAL_INSTAGRAM || 'https://instagram.com/uhtred.dev',

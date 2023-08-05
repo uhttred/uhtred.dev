@@ -1,11 +1,11 @@
 <template>
   <div
     ref="menuContainer"
-    class="w-full flex flex-col items-center bg-p py-3
+    class="w-full flex flex-col items-center justify-center bg-p py-3m h-16
       top-0 sticky bdr-b-p lg:border-b-0 z-40 stuck:bg-red-500"
   >
-    <div class="row">
-      <div class="col-span-full flex justify-between items-center">
+    <div class="row h-full">
+      <div class="col-span-full h-full flex justify-between items-center">
         <!-- logo -->
         <div>
           <NuxtLink :to="localePath('index')">
@@ -22,9 +22,9 @@
           </NuxtLink>
         </div>
         <!-- navgation container -->
-        <div class="flex justify-end items-center gap-x-6 lg:gap-x-8">
+        <div class="flex h-full justify-end items-center gap-x-6 lg:gap-x-8">
           <!-- nav bar -->
-          <nav class="gap-x-8 hidden lg:flex">
+          <nav class="gap-x-8 hidden lg:flex h-full items-center">
             <NuxtLink
               :to="localePath('cases')"
               :class="[
@@ -37,12 +37,14 @@
             >
               {{ $t('Cases') }}
             </NuxtLink>
-            <NuxtLink
-              :to="localePath('index')"
-              class="font-medium text-color-3 text-14 hover:text-color-1"
+            <button
+              class="font-medium text-color-3 h-full -i-sv-dropdown
+                text-14 hover:text-color-1 cursor-default"
+              @mouseover="showServicesDropdown=true"
+              @mouseout="showServicesDropdown=false"
             >
-            {{ $t('Services') }}
-            </NuxtLink>
+              {{ $t('Services') }}
+            </button>
             <NuxtLink
               :to="localePath('insights')"
               :class="[
@@ -71,7 +73,7 @@
           <!-- CTA -->
           <div class="hidden lg:block">
             <NuxtLink
-              :to="localePath('get-started')"
+              :to="localePath('start')"
               class="btn hover:bg-green-500 block h-10"
             >
               {{ $t('Start project') }}
@@ -182,6 +184,39 @@
         </div>
       </div>
     </div>
+    <!-- services dropdown -->
+    <div
+      v-show="showServicesDropdown"
+      class="row-c absolute bg-2 top-full w-full bdr-b-2 bdr-t-2"
+      @mouseover="showServicesDropdown=true"
+      @mouseout="showServicesDropdown=false"
+    >
+      <div class="row pt-10 pb-14">
+        <div
+          v-for="(group, i) in serviceGroup"
+          :key="i"
+          class="col-span-3"
+        >
+          <h5 class="font-bold text-13 text-color-1">
+            {{ group.title }}
+          </h5>
+          <ul class="mt-8">
+            <li
+              v-for="(service, ii) in group.services"
+              :key="ii"
+              class="text-12 text-color-3 font-normal hover:text-color-2 mt-2 first:mt-0"
+            >
+              <NuxtLink
+                :to="localePath('start')"
+                @click.native="showServicesDropdown=false"
+              >
+                {{ service }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
     <!-- mobile menu -->
     <div
       v-show="showMobileMenu"
@@ -198,13 +233,13 @@
             >
               {{ $t('Cases') }}
             </NuxtLink>
-            <NuxtLink
+            <!-- <NuxtLink
               :to="localePath('index')"
               class="font-semibold text-color-1 text-24/27 active:text-color-2"
               @click.native="showMobileMenu=false"
               >
               {{ $t('Services') }}
-            </NuxtLink>
+            </NuxtLink> -->
             <NuxtLink
               :to="localePath('insights')"
               @click.native="showMobileMenu=false"
@@ -237,6 +272,7 @@
   backdrop-filter: blur(12px);
   @apply lg:border-b bg-gray-50/70 dark:bg-gray-900/70;
 }
+
 .menu-is-sticky .mn-social-icon {
   backdrop-filter: blur(12px);
   @apply bg-gray-50/70 dark:bg-gray-900/70;
@@ -248,8 +284,44 @@ import _ from 'lodash'
 const localePath = useLocalePath()
 const showMobileMenu = ref(false)
 const showSocialLink = ref(false)
+const showServicesDropdown = ref(false)
 const menuContainer = ref(null)
 const route = useRoute()
+
+const serviceGroup = [
+  {
+    title: 'Consulting and Ideation',
+    services: [
+      'Consulting',
+      'Product Validation'
+    ]
+  },
+  {
+    title: 'Design',
+    services: [
+      'User Interface Design',
+      'UI Style Guide',
+      'Design System',
+      'Drand Design'
+    ]
+  },
+  {
+    title: 'Development',
+    services: [
+      'Web Application',
+      'Backend Services',
+      'System Integration',
+      'Automation'
+    ]
+  },
+  {
+    title: 'Management',
+    services: [
+      'Cloud Infrastructure Management ',
+      'CI/CD Automations'
+    ]
+  }
+]
 
 onMounted(() => {
   if (menuContainer.value) {

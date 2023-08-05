@@ -3,9 +3,7 @@
     title="Change color theme"
     @click="toggleTheme"
   >
-    <IconMoon v-if="$colorMode.preference === 'dark'"/>
-    <IconSun v-else-if="$colorMode.preference === 'light'"/>
-    <template v-else-if="$colorMode.preference === 'system'">
+    <template v-if="$colorMode.preference === 'system'">
       <IconMoon
         class="opacity-70"
         v-show="$colorMode.value === 'dark'"
@@ -15,6 +13,8 @@
         v-show="$colorMode.value === 'light'"
       />
     </template>
+    <IconMoon v-else-if="$colorMode.preference === 'dark'"/>
+    <IconSun v-else-if="$colorMode.preference === 'light'"/>
   </button>
 </template>
 
