@@ -34,9 +34,18 @@
         class="hidden dark:block max-w-[80px]"
         alt="case client logo dark"
       >
-      <h1 class="text-18/[34px] text-color-1 font-bold mt-4">
-        {{ projectCase.title }}
-      </h1>
+      <NuxtLink
+        :to="localePath({
+          name: 'cases-slug',
+          params: {
+            slug: projectCase.slug
+          }
+        })"
+      >
+        <h1 class="text-18/[34px] text-color-1 font-bold mt-4">
+          {{ projectCase.title }}
+        </h1>
+      </NuxtLink>
       <p class="text-14/[34px] text-color-3 font-normal mt-1 mb-4">
         {{ projectCase.text }}
       </p>

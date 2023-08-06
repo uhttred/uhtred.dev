@@ -59,9 +59,12 @@
               lg:w-[310px] lg:text-14/6"
           >
             {{ $t('pages.index.header.p3') }}
-            <button class="text-color-1 underline">
+            <NuxtLink
+              :to="localePath('start')"
+              class="text-color-1 underline"
+            >
               {{ $t('Start your project') }}
-            </button>
+            </NuxtLink>
             {{ $t('right now') }}
           </p>
         </div>
