@@ -2,7 +2,7 @@
   <div>
     <div
       class="row-c relative before:block before:absolute
-        before:bg-gray-100 xl:before:bg-transparent dark:before:bg-gray-800
+        before:bg-gray-100 xl:before:bg-transparent dark:before:bg-transparent
         before:h-[36.125rem] before:w-full before:-inset-1 before:-z-10"
     >
       <div class="row bdr-b-1 relative">

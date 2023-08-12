@@ -14,21 +14,32 @@
               Applied clients:
             </p>
             <UhInsightTag
-              v-for="tag in ['ZAKI Digital, LDA', 'Wedo Brand', 'Muve',]"
+              v-for="tag in ['ZAKI Digital, LDA', 'Wedo Brand', 'Muve']"
               :key="tag"
               :tag="tag"
             />
           </div>
         </div>
         <!-- cases listing -->
-        <div>
+        <div class="w-full flex flex-col items-center">
           <CardCase
-            v-for="c in cases"
-            :key="c.id"
-            class="first:mt-8 mt-12 bdr-b-2 last:border-b-0"
-            :reverse-layout="c.reverseLayout"
-            :project-case="c"
+            v-for="entry in entries"
+            :key="entry.slug"
+            class="first:mt-8 mt-12 bdr-b-2 last:border-b-0 w-full"
+            :project-case="entry"
           />
+          <UhSpinner
+            v-show="loading"
+            class="mt-8"
+          />
+          <!--  -->
+          <button
+            v-if="canLoadMore && !loading"
+            class="text-14 mt-8 text-color-1 hover:underline"
+            @click="loadMore"
+          >
+            load more cases
+          </button>
         </div>
       </div>
       <!-- vertical line -->
@@ -57,7 +68,7 @@
             <!--  -->
             <div class="flex flex-wrap mt-4 gap-2 items-center">
               <UhInsightTag
-                v-for="tag in ['ZAKI Digital, LDA', 'Wedo Brand', 'Muve',]"
+                v-for="tag in ['ZAKI Digital, LDA', 'Wedo Brand', 'Muve']"
                 :key="tag"
                 :tag="tag"
               />
@@ -72,39 +83,12 @@
 </template>
 
 <script setup lang="ts">
-const cases = ref([
-  {
-    id: 1,
-    banner: '/image/temp/case-banner-zaki.png',
-    bannerDark: '/image/temp/case-banner-zaki-dark.png',
-    logo: '/image/brand/logo-zaki.svg',
-    logoDark: '/image/brand/logo-zaki-light.svg',
-    title: 'More sales after a well-consolidated process',
-    text: 'Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.',
-    reverseLayout: false,
-    slug: 'zaki'
-  },
-  {
-    id: 2,
-    banner: '/image/temp/case-banner-muve.png',
-    bannerDark: '/image/temp/case-banner-muve-dark.png',
-    logo: '/image/brand/logo-muve.svg',
-    logoDark: '/image/brand/logo-muve-light.svg',
-    title: "A space that doesn't let you miss anything",
-    text: 'Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.',
-    reverseLayout: true,
-    slug: 'muve'
-  },
-  {
-    id: 3,
-    banner: '/image/temp/case-banner-zaki.png',
-    bannerDark: '/image/temp/case-banner-zaki-dark.png',
-    logo: '/image/brand/logo-zaki.svg',
-    logoDark: '/image/brand/logo-zaki-light.svg',
-    title: 'More sales after a well-consolidated process',
-    text: 'Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.',
-    reverseLayout: false,
-    slug: 'zaki'
-  }
-])
+const {
+  entries,
+  loadMore,
+  loading,
+  canLoadMore
+} = await usePaginator('cases', {
+  pageLimit: 8
+})
 </script>

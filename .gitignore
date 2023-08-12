@@ -7,11 +7,12 @@ dist
 .sakey.json
 # Node dependencies
 node_modules
-
+aa.js
+aa.html
 # Logs
 logs
 *.log
-
+service-account.json
 # Misc
 .DS_Store
 .fleet

@@ -10,12 +10,12 @@
         })"
       >
         <img
-          :src="projectCase.banner"
+          :src="projectCase.banner?.url"
           class="dark:hidden rounded-md bdr-2"
           alt="case banner"
         >
         <img
-          :src="projectCase.bannerDark"
+          :src="projectCase.banner_dark?.url"
           class="hidden dark:block bdr-1 rounded-md"
           alt="case banner"
         >
@@ -25,12 +25,12 @@
       class="w-full lg:max-w-[22.9rem] mt-8 lg:mt-0 lg:ml-12"
     >
       <img
-        :src="projectCase.logo"
+        :src="projectCase.brand_logo?.url"
         class="dark:hidden max-w-[80px]"
         alt="case client logo"
       >
       <img
-        :src="projectCase.logoDark"
+        :src="projectCase.brand_logo_dark?.url"
         class="hidden dark:block max-w-[80px]"
         alt="case client logo dark"
       >
@@ -43,11 +43,19 @@
         })"
       >
         <h1 class="text-18/[34px] text-color-1 font-bold mt-4">
-          {{ projectCase.title }}
+          {{
+            locale === 'pt'
+              ? projectCase.pt_title
+              : projectCase.title
+          }}
         </h1>
       </NuxtLink>
       <p class="text-14/[34px] text-color-3 font-normal mt-1 mb-4">
-        {{ projectCase.text }}
+        {{
+          locale === 'pt'
+            ? projectCase.pt_description
+            : projectCase.description
+        }}
       </p>
       <NuxtLink
         :to="localePath({
@@ -65,6 +73,7 @@
 </template>
 
 <script setup lang="ts">
+const { locale } = useI18n()
 const props = defineProps({
   projectCase: {
     type: Object

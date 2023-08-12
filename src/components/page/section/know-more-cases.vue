@@ -32,21 +32,52 @@
     <!--  -->
     <div class="row mt-14 gap-y-10">
       <div
-        v-for="n in 3"
-        :key="n"
+        v-for="entry in entries"
+        :key="entry.slug"
         class="col-span-4"
       >
         <div class="w-full h-[9.875rem] bg-2 bdr-2 rounded-lg overflow-hidden">
-          <img
-            src=""
-            alt=""
-            class="w-full h-full object-cover hidden"
+          <NuxtLink
+            :to="localePath({
+              name: 'cases-slug',
+              params: {
+                slug: entry.slug
+              }
+            })"
           >
+            <img
+              :src="entry.cover.url"
+              alt="case cover"
+              class="w-full h-full object-cover"
+            >
+          </NuxtLink>
         </div>
-        <h3 class="text-18/9 font-medium text-color-1 mt-5.5">
-          Muve: A space that don’t let you lose anything
-        </h3>
+        <NuxtLink
+          :to="localePath({
+            name: 'cases-slug',
+            params: {
+              slug: entry.slug
+            }
+          })"
+        >
+          <h3 class="text-18/9 hover:underline font-medium text-color-1 mt-5.5">
+            {{ 
+              locale === 'pt'
+                ? entry.pt_title
+                : entry.title
+            }}
+          </h3>
+        </NuxtLink>
+      </div>
+      <!--  -->
+      <div class="col-span-full flex flex-col items-center">
+        <UhSpinner v-if="loading" />
       </div>
     </div>
   </section>
 </template>
+
+<script setup>
+const { entries, loading } = await usePaginator('cases', { pageLimit: 3 })
+const { locale } = useI18n()
+</script>

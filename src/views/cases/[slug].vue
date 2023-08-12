@@ -160,7 +160,6 @@
 <script setup lang="ts">
 const data = ref('')
 const route = useRoute()
-
 const ssd = [
   {
     title: 'Services Scope',
@@ -226,13 +225,4 @@ const team = [
     ]
   }
 ]
-
-const url = ref('https://raw.githubusercontent.com/txiocoder/django-proxypay/master/README.md')
-url.value = route.query?.url || url.value
-const loadData = () => {
-  useFetch(url.value).then((r) => {
-    data.value = r.data.value || ''
-  })
-}
-loadData()
 </script>

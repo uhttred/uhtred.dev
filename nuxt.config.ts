@@ -88,6 +88,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      baseURL: process.env.API_BASE_URL || 'https://api.uhtred.dev',
       contact: {
         email: process.env.UH_CONTACT_EMAIL || 'am@uhtred.dev',
       },
