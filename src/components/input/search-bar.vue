@@ -8,13 +8,22 @@
         appearance-none"
       type="text"
       name="search:cases"
-      id=""
       placeholder="Search for cases"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+      @keydown.enter="$emit('search')"
     >
-    <button>
+    <button
+      @click="$emit('search')"
+    >
       <i
-        class="icon-search text-24 text-color-1"
+        class="icon-search text-18 text-color-1"
       />
     </button>
   </div>
 </template>
+
+<script setup>
+defineProps(['modelValue'])
+defineEmits(['update:modelValue', 'search'])
+</script>

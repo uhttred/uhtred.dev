@@ -1,6 +1,7 @@
 type UsePaginatorOptions = {
   pageLimit?: MaybeRef<number>,
   entries?: MaybeRef<object[]>,
+  query?: MaybeRef<object>
 }
 
 type PaginatorData = {
@@ -29,6 +30,7 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
 
   const loading = ref(false)
   const entries = ref(options?.entries ?? [])
+  const query = ref(options?.query ?? {})
   const pageLimit = ref(options?.pageLimit ?? 10)
   const paginator: Ref<PaginatorData> = ref({})
 
@@ -36,8 +38,10 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
     return paginator.value.next ? true : false
   })
 
-  const updatePaginator = (data: PaginatorData) => {
-    entries.value = entries.value.concat(data?.entries ?? [])
+  const updatePaginator = (data: PaginatorData, reset: boolean = false) => {
+    entries.value = reset
+      ? data?.entries ?? []
+      : entries.value.concat(data?.entries ?? [])
     paginator.value = {
       ...data
     }
@@ -48,6 +52,7 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
       loading.value = true
       const { data, status } = await useFetch(path, {
         query: {
+          ...query.value,
           ...paginator.value.next
         }
       })
@@ -62,23 +67,25 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
     loading.value = true
     const { data, status } = await useFetch(path, {
       query: {
+        ...query.value,
         init: 0,
         limit: pageLimit.value
       }
     })
     loading.value = false
     if (status.value === 'success') {
-      updatePaginator(data.value as PaginatorData)
+      updatePaginator(data.value as PaginatorData, true)
     }
   }
 
   await paginatorFetch()
-
+  
   return {
     entries,
     paginator,
     loading,
     loadMore,
-    canLoadMore
+    canLoadMore,
+    reset: paginatorFetch
   }
 }

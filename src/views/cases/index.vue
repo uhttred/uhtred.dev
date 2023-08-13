@@ -8,8 +8,11 @@
         </h1>
         <!-- serach bar and applied topics -->
         <div class="py-4 lg:pt-8 sticky top-14 bg-1">
-          <InputSearchBar />
-          <div class="flex flex-wrap mt-4 gap-2 justify-center items-center">
+          <InputSearchBar
+            v-model="query.search"
+            @search="reset"
+          />
+          <!-- <div class="flex flex-wrap mt-4 gap-2 justify-center items-center">
             <p class="text-12 font-medium text-color-3">
               Applied clients:
             </p>
@@ -18,7 +21,7 @@
               :key="tag"
               :tag="tag"
             />
-          </div>
+          </div> -->
         </div>
         <!-- cases listing -->
         <div class="w-full flex flex-col items-center">
@@ -63,12 +66,12 @@
           <!-- content block -->
           <div class="mt-8">
             <h3 class="text-20 text-color-1 font-bold mb-5.5">
-              Clients
+              Insights topics
             </h3>
             <!--  -->
             <div class="flex flex-wrap mt-4 gap-2 items-center">
               <UhInsightTag
-                v-for="tag in ['ZAKI Digital, LDA', 'Wedo Brand', 'Muve']"
+                v-for="tag in ['Django', 'Python', 'Web']"
                 :key="tag"
                 :tag="tag"
               />
@@ -83,12 +86,15 @@
 </template>
 
 <script setup lang="ts">
+const query = ref({ search: '' })
 const {
   entries,
   loadMore,
   loading,
-  canLoadMore
+  canLoadMore,
+  reset
 } = await usePaginator('cases', {
-  pageLimit: 8
+  query,
+  pageLimit: 8,
 })
 </script>
