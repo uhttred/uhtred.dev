@@ -20,11 +20,11 @@
       </h1>
     </NuxtLink>
     <div class="flex flex-wrap mt-4 gap-2">
-      <UhInsightTag
+      <!-- <UhInsightTag
         v-for="tag in ['e-Book', 'Design']"
         :key="tag"
         :tag="tag"
-      />
+      /> -->
     </div>
   </article>
 </template>

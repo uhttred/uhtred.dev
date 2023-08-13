@@ -42,38 +42,79 @@
             xl:col-start-2 pt-16 lg:pt-24"
         >
           <section class="flex flex-col items-center w-full">
-            <h1
-              @click="loadData"
-              class="font-bold text-32 lg:text-40/[3.75rem] max-w-[41.75rem] text-center text-color-1"
+            <template
+              v-if="error || pending"
             >
-              More sales after a well-consolidated process
-            </h1>
-            <p class="text-16/7 lg:text-18/8 text-color-2 text-center max-w-[41.75rem] font-normal mt-8">
-              Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.
-            </p>
-            <!-- cover -->
-            <div
-              class="w-screen xl:w-[calc(100%+40px)] xl:h-[26.875rem] bg-2 xl:bdr-2 xl:rounded-md
-                overflow-hidden mt-10 lg:mt-14 text-center"
-            >
-              <img
-                src="https://www.threegirlsmedia.com/wp-content/uploads/2021/11/blog-scaled.jpg"
-                class="w-full h-full object-cover"
-                alt=""
+              <UhSpinner v-if="pending" />
+              <p
+                v-if="error && !pending"
+                class="text-14 text-color-2"
               >
-            </div>
+                Erro ao carregar.
+                <button
+                  class="hover:underline text-red-500"
+                  @click="refresh"
+                >
+                  Recarregar
+                </button>
+              </p>
+            </template>
+            <template v-else>
+              <h1
+                class="font-bold text-32 lg:text-40/[3.75rem]
+                  max-w-[41.75rem] text-center text-color-1"
+              >
+                {{ 
+                  locale === 'pt'
+                    ? data.pt_title ?? data.title
+                    : data.title
+                }}
+              </h1>
+              <p
+                class="text-16/7 lg:text-18/8 text-color-2
+                  text-center max-w-[41.75rem] font-normal mt-8"
+              >
+                {{ 
+                  locale === 'pt'
+                    ? data.pt_description ?? data.description
+                    : data.title
+                }}
+              </p>
+              <!-- cover -->
+              <div
+                class="w-screen xl:w-[calc(100%+40px)] xl:h-[26.875rem] bg-2 xl:bdr-2 xl:rounded-md
+                  overflow-hidden mt-10 lg:mt-14 text-center"
+              >
+                <img
+                  :src="data.cover.url"
+                  class="w-full h-full object-cover"
+                  alt=""
+                >
+              </div>
+            </template>
           </section>
           <!-- markdown conten -->
           <article
+            v-if="!pending && !error"
             class="flex flex-col items-center w-full max-w-[46.75rem] my-14"
           >
-            <UhMarkdown :content="data" />
+            <UhMarkdown
+              v-if="locale === 'pt'"
+              :content="data.pt_content"
+            />
+            <UhMarkdown
+              v-else
+              :content="data.content"
+            />
           </article>
         </div>
       </div>
     </div>
     <!-- scope -->
-    <div class="row-c my-14">
+    <div
+      v-if="false"
+      class="row-c my-14"
+    >
       <div class="row min-h-[14rem] bg-2 bdr-2 rounded-lg py-12 gap-y-8">
         <div
           v-for="(g, i) in ssd"
@@ -98,7 +139,10 @@
       </div>
     </div>
     <!-- team and respo -->
-    <section class="row-c">
+    <section
+      v-if="false"
+      class="row-c"
+    >
       <div class="row">
         <div class="col-span-full">
           <h1 class="font-bold text-color-1 text-32">
@@ -158,8 +202,16 @@
 </template>
 
 <script setup lang="ts">
-const data = ref('')
+const { locale } = useI18n()
 const route = useRoute()
+const slug = computed(() => route.params.slug)
+const { data, error, refresh, pending } = useFetch(`cases/${slug.value}`)
+
+definePageMeta({
+  validate: async (route) => {
+    return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.params.slug)
+  }
+})
 const ssd = [
   {
     title: 'Services Scope',
@@ -186,7 +238,6 @@ const ssd = [
     ]
   }
 ]
-
 const team = [
   {
     avatar: '/image/people/uhtred.png',

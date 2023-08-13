@@ -64,19 +64,7 @@
             </div>
           </div>
           <!-- content block -->
-          <div class="mt-8">
-            <h3 class="text-20 text-color-1 font-bold mb-5.5">
-              Insights topics
-            </h3>
-            <!--  -->
-            <div class="flex flex-wrap mt-4 gap-2 items-center">
-              <UhInsightTag
-                v-for="tag in ['Django', 'Python', 'Web']"
-                :key="tag"
-                :tag="tag"
-              />
-            </div>
-          </div>
+          <PageAsideInsightsTopics class="mt-8" />
         </div>
       </aside>
     </section>

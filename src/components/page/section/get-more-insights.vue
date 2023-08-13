@@ -19,11 +19,11 @@
     </div>
     <!--  -->
     <div class="row mt-14 gap-y-10">
-      <CardInsightBasic
+      <!-- <CardInsightBasic
         v-for="n in 3"
         :key="n"
         class="col-span-4"
-      />
+      /> -->
     </div>
   </section>
 </template>

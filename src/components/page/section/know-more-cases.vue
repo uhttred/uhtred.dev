@@ -11,7 +11,7 @@
             success cases</NuxtLink>!
         </h1>
         <p class="text-16/8 text-color-3 mt-5.5 max-w-[40rem] text-center">
-          My team and I deliver the best solution for your particular case. <br>
+          My team and I deliver the best solution for your particular case.<br>
           <NuxtLink
             :to="localePath('cases')"
             class="text-color-1 underline"
@@ -20,7 +20,7 @@
           </NuxtLink>
           or
           <NuxtLink
-            to="#"
+            :to="localePath('start')"
             class="text-color-1 underline"
           >
             start your project
