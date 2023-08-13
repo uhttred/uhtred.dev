@@ -21,8 +21,6 @@
 
 <script setup>
 const { t } = useI18n()
-const colorMode = useColorMode()
-const { $configFetch } = useNuxtApp()
 const head = useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: 'id',

@@ -9,32 +9,11 @@
         <div
           class="col-span-1 hidden xl:block pb-14"
         >
-          <div class="flex-col flex gap-y-4 mt-24 sticky top-24">
-            <!-- social link: linkedin -->
-            <div
-              class="bdr-p rounded-full w-10 h-10 flex mn-social-icon
-                justify-center items-center bg-white dark:bg-gray-950"
-            >
-              <a
-                href="#"
-                target="_blank"
-              >
-                <IconLinkedinFill />
-              </a>
-            </div>
-            <!-- social link: github -->
-            <div
-              class="bdr-p rounded-full w-10 h-10 flex mn-social-icon
-                justify-center items-center bg-white dark:bg-gray-950"
-            >
-              <a
-                href="#"
-                target="_blank"
-              >
-                <IconGithubFill />
-              </a>
-            </div>
-          </div>
+          <PageAsideSocialShare
+            v-if="data"
+            :url-path="`/cases/${data.slug}`"
+            class="mt-24 sticky top-24"
+          />
         </div>
         <!-- content -->
         <div
@@ -112,26 +91,34 @@
     </div>
     <!-- scope -->
     <div
-      v-if="false"
+      v-if="data?.data?.list_groups"
       class="row-c my-14"
     >
       <div class="row min-h-[14rem] bg-2 bdr-2 rounded-lg py-12 gap-y-8">
         <div
-          v-for="(g, i) in ssd"
+          v-for="(group, i) in data.data.list_groups"
           :key="i"
           class="col-span-full xl:col-span-3 pl-8 xl:pl-0 xl:first:pl-8"
         >
           <div>
             <h4 class="uppercase text-14 font-bold text-color-1">
-              {{ g.title }}
+              {{ 
+                locale === 'pt'
+                  ? group.pt_title ?? group.title
+                  : group.title
+              }}
             </h4>
             <ul class="mt-8">
               <li
-                v-for="(t, ii) in g.items"
+                v-for="(item, ii) in group.items"
                 :key="ii"
                 class="text-14 text-color-3 mb-2"
               >
-                {{ t }}
+                {{ 
+                  locale === 'pt'
+                    ? item.pt_name ?? item.name
+                    : item.name
+                }}
               </li>
             </ul>
           </div>
@@ -140,7 +127,7 @@
     </div>
     <!-- team and respo -->
     <section
-      v-if="false"
+      v-if="data?.data?.team_responsibilities"
       class="row-c"
     >
       <div class="row">
@@ -152,43 +139,25 @@
       </div>
       <div class="row gap-y-10 mt-10 bdr-b-1 pb-14">
         <div
-          v-for="(user, i) in team"
+          v-for="(author, i) in data.data.team_responsibilities"
           :key="i"
           class="col-span-full xl:col-span-3 flex flex-col"
         >
-          <div class="bdr-2 rounded bg-2 overflow-hidden w-12 h-12">
-            <img
-              :src="user.avatar"
-              alt=""
-              class="w-full h-full object-cover"
-            >
-          </div>
-          <div class="py-3 hover:underline">
-            <a
-              href="#"
-              target="_blank"
-            >
-              <h2 class="text-13 font-bold text-color-1">
-                {{ user.name }}
-              </h2>
-            </a>
-            <a
-              href="#"
-              target="_blank"
-            >
-              <p class="text-color-3 font-normal text-12 mt-1">
-                {{ user.title }}
-              </p>
-            </a>
-          </div>
+          <CardPersonForTeamResp
+            :person-id="author.person_id"
+          />
           <div class="linex-2 w-1/6" />
           <ul>
             <li
-              v-for="(r, index) in user.responsibilities"
-              :key="index"
+              v-for="(responsability, ii) in author.responsibilities"
+              :key="ii"
               class="text-12 font-normal text-color-2 mt-2"
             >
-              {{ r }}
+              {{ 
+                locale === 'pt'
+                  ? responsability.pt_name ?? responsability.name
+                  : responsability.name
+              }}
             </li>
           </ul>
         </div>
@@ -206,74 +175,10 @@ const { locale } = useI18n()
 const route = useRoute()
 const slug = computed(() => route.params.slug)
 const { data, error, refresh, pending } = useFetch(`cases/${slug.value}`)
-
+const config = useRuntimeConfig()
 definePageMeta({
   validate: async (route) => {
     return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.params.slug)
   }
 })
-const ssd = [
-  {
-    title: 'Services Scope',
-    items: [
-      'UI/UX Design',
-      'Responsive PWA',
-      'Consulting & Research',
-      'Backend System'
-    ]
-  },
-  {
-    title: 'Tech. and Techniques',
-    items: [
-      'Gitlab CI',
-      'Google Cloud Platform',
-      'Nuxt.js',
-      'Django REST Framework'
-    ]
-  },
-  {
-    title: 'Year',
-    items: [
-      '2019 - Present'
-    ]
-  }
-]
-const team = [
-  {
-    avatar: '/image/people/uhtred.png',
-    name: 'Uhtred M.',
-    title: 'Product Developer',
-    responsibilities: [
-      'Software Architecture',
-      'Product Development',
-      'Management'
-    ]
-  },
-  {
-    avatar: '/image/people/uhtred.png',
-    name: 'Eulalio Francisco',
-    title: 'UI Designer',
-    responsibilities: [
-      'UI/UX Design',
-      'UI Style Guide'
-    ]
-  },
-  {
-    avatar: '/image/people/justo-eliseu.png',
-    name: 'Justo Eliseu',
-    title: 'CEO at Wedo Brand',
-    responsibilities: [
-      'UI/UX Design',
-      'UI Style Guide'
-    ]
-  },
-  {
-    avatar: '/image/people/justo-eliseu.png',
-    name: 'Milton Bernardo',
-    title: 'Frontend Developer at Mirantes SA',
-    responsibilities: [
-      'Frontend Development',
-    ]
-  }
-]
 </script>
