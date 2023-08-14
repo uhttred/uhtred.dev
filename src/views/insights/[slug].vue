@@ -10,32 +10,12 @@
         <div
           class="col-span-1 absolute h-full right-full hidden xl:block pb-14 mr-8"
         >
-          <div class="flex-col flex gap-y-4 mt-40 sticky top-24">
-            <!-- social link: linkedin -->
-            <div
-              class="bdr-p rounded-full w-10 h-10 flex mn-social-icon
-                justify-center items-center bg-white dark:bg-gray-950"
-            >
-              <a
-                href="#"
-                target="_blank"
-              >
-                <IconLinkedinFill />
-              </a>
-            </div>
-            <!-- social link: github -->
-            <div
-              class="bdr-p rounded-full w-10 h-10 flex mn-social-icon
-                justify-center items-center bg-white dark:bg-gray-950"
-            >
-              <a
-                href="#"
-                target="_blank"
-              >
-                <IconGithubFill />
-              </a>
-            </div>
-          </div>
+          <PageAsideSocialShare
+            v-if="data"
+            :url-path="route.path"
+            :title="locale === 'pt' ? data.pt_title || data.title : data.title"
+            class="mt-40 sticky top-24"
+          />
         </div>
         <!-- content -->
         <div
@@ -43,64 +23,109 @@
             pt-16 lg:pt-14"
         >
           <section class="flex flex-col w-full">
-            <div class="flex items-center mb-4 gap-x-3">
-              <p class="text-13 text-color-3">
-                12, September 2023 at 12:45
+            <template v-if="error || pending">
+              <UhSpinner v-if="pending" />
+              <p
+                v-if="error && !pending"
+                class="text-14 text-color-2"
+              >
+                Erro ao carregar.
+                <button
+                  class="hover:underline text-red-500"
+                  @click="refresh"
+                >
+                  Recarregar
+                </button>
               </p>
-              <span class="text-2 text-color-3">•</span>
-              <p class="text-13 text-color-2">
-                1.345.234 views
-              </p>
-            </div>
-            <h1
-              @click="loadData"
-              class="font-bold text-32 lg:text-40/[3.75rem] max-w-[41.75rem] text-color-1"
-            >
-              5 Tech Trends That Drive Digital Acceleration in 2023
-            </h1>
-            <div class="flex flex-wrap mt-4 gap-2 items-center">
-              <UhInsightTag
-                v-for="tag in ['Python', 'Django', 'Ruby',]"
-                :key="tag"
-                :tag="tag"
-              />
-            </div>
-            <!-- author -->
-            <div class="mt-5.5 flex items-center gap-x-4">
-              <div class="w-12 h-12 rounded-full bdr-2 bg-2 overflow-hidden">
+            </template>
+            <template v-else>
+              <div class="flex items-center mb-4 gap-x-3">
+                <p class="text-13 text-color-3">
+                  {{ data.created_at }}
+                </p>
+                <span class="text-2 text-color-3">•</span>
+                <p class="text-13 text-color-2">
+                  {{ data.visualisations }} views
+                </p>
+              </div>
+              <h1
+                class="font-bold text-32 lg:text-40/[3.56rem] max-w-[41.75rem] text-color-1"
+              >
+                {{
+                  locale === 'pt'
+                    ? data.pt_title || data.title
+                    : data.title
+                }}
+              </h1>
+              <div class="flex flex-wrap mt-4 gap-2 items-center">
+                <UhTag
+                  v-for="tag in data.tags"
+                  :key="tag"
+                  :tag="tag"
+                />
+              </div>
+              <!-- author -->
+              <div
+                v-if="data.author"
+                class="mt-5.5 flex items-center gap-x-4"
+              >
+                <div class="w-12 h-12 rounded-full bdr-2 bg-2 overflow-hidden">
+                  <a
+                    :href="data.author.website"
+                    target="_blank"
+                  >
+                    <img
+                      :src="data.author.avatar.url"
+                      alt=""
+                      class="w-full h-full object-cover"
+                    >
+                  </a>
+                </div>
+                <div>
+                  <a
+                    :href="data.author.website"
+                    target="_blank"
+                  >
+                    <p class="text-14 text-color-1 font-bold hover:underline">
+                      {{ data.author.name }}
+                    </p>
+                  </a>
+                  <a
+                    :href="data.author.website"
+                    target="_blank"
+                  >
+                    <p class="text-14 text-color-2 mt-1 hover:underline">
+                      {{ data.author.job_title }}
+                      <span class="text-color-3">/ {{ data.author.company_name }}</span>
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <!-- cover -->
+              <div
+                class="w-full xl:w-full xl:h-[23rem] bg-2 xl:bdr-2 rounded-md
+                  overflow-hidden mt-10 lg:mt-12"
+              >
                 <img
-                  src="/image/people/uhtred.png"
-                  alt=""
+                  :src="data.cover.url"
                   class="w-full h-full object-cover"
+                  alt="insight cover"
                 >
               </div>
-              <div class="">
-                <p class="text-14 text-color-1 font-bold">
-                  Uhtred M.
-                </p>
-                <p class="text-14 text-color-2 mt-1">
-                  Product Developer
-                  <span class="text-color-3">/ Freelancer</span>
-                </p>
-              </div>
-            </div>
-            <!-- cover -->
-            <div
-              class="w-full xl:w-full xl:h-[23rem] bg-2 xl:bdr-2 rounded-md
-                overflow-hidden mt-10 lg:mt-14"
-            >
-              <img
-                src="https://websitehurdles.com/wp-content/uploads/2023/07/Ways-to-improve-python-coding-skills.webp"
-                class="w-full h-full object-cover"
-                alt=""
-              >
-            </div>
+            </template>
           </section>
           <!-- markdown conten -->
           <article
             class="flex flex-col items-center w-full my-14"
           >
-            <UhMarkdown :content="data" />
+            <UhMarkdown
+              v-if="locale === 'pt' && data && data.pt_content"
+              :content="data.pt_content"
+            />
+            <UhMarkdown
+              v-else-if="data"
+              :content="data.content"
+            />
           </article>
         </div>
         <!-- vertical line -->
@@ -122,24 +147,12 @@
               </div>
             </div>
             <!-- content block -->
-            <div class="mt-8">
-              <h3 class="text-20 text-color-1 font-bold mb-5.5">
-                More topics
-              </h3>
-              <!--  -->
-              <div class="flex flex-wrap mt-4 gap-2 items-center">
-                <UhInsightTag
-                  v-for="tag in ['Python', 'Django', 'Ruby',]"
-                  :key="tag"
-                  :tag="tag"
-                />
-              </div>
-            </div>
+            <PageAsideInsightsTopics class="mt-8" />
           </div>
         </aside>
       </div>
     </div>
-    <!-- scope -->
+    <!-- ads -->
     <div class="row-c mt-14">
       <div class="row min-h-[14rem] bg-2 bdr-2 rounded-lg py-12 gap-y-8">
         
@@ -153,81 +166,14 @@
 </template>
 
 <script setup lang="ts">
-const data = ref('')
+const { locale } = useI18n()
 const route = useRoute()
+const slug = computed(() => route.params.slug)
+const { data, error, refresh, pending } = useFetch(`insights/${slug.value}`)
 
-const ssd = [
-  {
-    title: 'Services Scope',
-    items: [
-      'UI/UX Design',
-      'Responsive PWA',
-      'Consulting & Research',
-      'Backend System'
-    ]
-  },
-  {
-    title: 'Tech. and Techniques',
-    items: [
-      'Gitlab CI',
-      'Google Cloud Platform',
-      'Nuxt.js',
-      'Django REST Framework'
-    ]
-  },
-  {
-    title: 'Year',
-    items: [
-      '2019 - Present'
-    ]
+definePageMeta({
+  validate: async (route) => {
+    return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.params.slug)
   }
-]
-
-const team = [
-  {
-    avatar: '/image/people/uhtred.png',
-    name: 'Uhtred M.',
-    title: 'Product Developer',
-    responsibilities: [
-      'Software Architecture',
-      'Product Development',
-      'Management'
-    ]
-  },
-  {
-    avatar: '/image/people/uhtred.png',
-    name: 'Eulalio Francisco',
-    title: 'UI Designer',
-    responsibilities: [
-      'UI/UX Design',
-      'UI Style Guide'
-    ]
-  },
-  {
-    avatar: '/image/people/justo-eliseu.png',
-    name: 'Justo Eliseu',
-    title: 'CEO at Wedo Brand',
-    responsibilities: [
-      'UI/UX Design',
-      'UI Style Guide'
-    ]
-  },
-  {
-    avatar: '/image/people/justo-eliseu.png',
-    name: 'Milton Bernardo',
-    title: 'Frontend Developer at Mirantes SA',
-    responsibilities: [
-      'Frontend Development',
-    ]
-  }
-]
-
-const url = ref('https://raw.githubusercontent.com/txiocoder/dj-cloud-task/master/README.md')
-url.value = route.query?.url || url.value
-const loadData = () => {
-  useFetch(url.value).then((r) => {
-    data.value = r.data.value || ''
-  })
-}
-loadData()
+})
 </script>

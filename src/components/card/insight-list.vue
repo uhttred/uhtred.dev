@@ -40,7 +40,7 @@
             <h2 class="text-22/9 font-bold text-color-1 hover:underline">
               {{
                 locale === 'pt'
-                  ? insight.pt_title ?? insight.title
+                  ? insight.pt_title || insight.title
                   : insight.title
               }}
             </h2>
@@ -48,7 +48,7 @@
           <p class="text-14/7 text-color-2 mt-3 font-normal">
             {{
                 locale === 'pt'
-                  ? insight.pt_description ?? insight.description
+                  ? insight.pt_description || insight.description
                   : insight.description
               }}
           </p>
@@ -62,11 +62,20 @@
         </div>
         <!-- cover -->
         <div class="hidden xl:block w-[9.5rem] h-[4.625rem] rounded bdr-2 overflow-hidden bg-2 shrink-0">
-          <img
-            :src="insight.cover.url"
-            alt="insight cover"
-            class="w-full h-full object-cover"
+          <NuxtLink
+            :to="localePath({
+              name: 'insights-slug',
+              params: {
+                slug: insight.slug
+              }
+            })"
           >
+            <img
+              :src="insight.cover.url"
+              alt="insight cover"
+              class="w-full h-full object-cover"
+            >
+          </NuxtLink>
         </div>
       </div>
     </article>

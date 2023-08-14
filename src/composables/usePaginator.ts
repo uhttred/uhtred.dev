@@ -29,6 +29,7 @@ type PaginatorData = {
 export const usePaginator = async (path: string, options?: UsePaginatorOptions) => {
 
   const loading = ref(true)
+  const error = ref(false)
   const entries = ref(options?.entries ?? [])
   const query = ref(options?.query ?? {})
   const pageLimit = ref(options?.pageLimit ?? 10)
@@ -75,6 +76,8 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
     loading.value = false
     if (status.value === 'success') {
       updatePaginator(data.value as PaginatorData, true)
+    } else {
+      error.value = true
     }
   }
 
@@ -86,6 +89,7 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
     loading,
     loadMore,
     canLoadMore,
+    error,
     reset: paginatorFetch
   }
 }

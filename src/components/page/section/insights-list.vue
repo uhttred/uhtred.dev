@@ -18,10 +18,29 @@
     <!--  -->
     <div class="row pt-20 gap-y-10">
       <CardInsightBasic
-        v-for="n in 3"
-        :key="n"
+        v-for="insight in entries"
+        :key="insight.id"
+        :insight="insight"
         class="col-span-4"
       />
+      <!--  -->
+      <div class="col-span-full flex flex-col items-center">
+        <UhSpinner v-show="loading" />
+        <button
+          v-if="error"
+          title="Error! Retry"
+          @click="reset"
+        >
+          <i class="icon-refresh-cw text-red-500" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
+
+
+<script setup lang="ts">
+const { entries, loading, reset, error } = await usePaginator('insights', {
+  pageLimit: 3
+})
+</script>
