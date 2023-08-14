@@ -42,43 +42,47 @@
             title="Instagram"
             target="_blank"
           >
-            <IconInstagramLine/>
+            <!-- <IconInstagramLine/> -->
+            <i class="icon-instagram text-18 text-color-2 hover:text-color-1" />
           </a>
           <a
-            :href="$config.public.socialLink.dribbble"
+            :href="$config.public.socialLink.linkedin"
             class="opacity-70 hover:opacity-100"
-            title="dribbble"
             target="_blank"
           >
-            <IconDribbbleLine />
+            <!-- <IconLinkedinFill /> -->
+            <i class="icon-linkedin text-18 text-color-2 hover:text-color-1" />
           </a>
           <a
-          :href="$config.public.socialLink.github"
-          class="opacity-70 hover:opacity-100"
-            title="GitHub"
-          target="_blank"
+            :href="$config.public.socialLink.twitter"
+            class="opacity-70 hover:opacity-100"
+            target="_blank"
           >
-          <IconGithubFill />
-        </a>
-        <a
-          :href="$config.public.socialLink.linkedin"
-          class="opacity-70 hover:opacity-100"
-          target="_blank"
-        >
-          <IconLinkedinFill />
-        </a>
-        <a
-          :href="$config.public.socialLink.youtube"
-          class="opacity-70 hover:opacity-100"
-            title="YouTube"
-          target="_blank"
-        >
-          <IconYoutubeLine />
-        </a>
+            <!-- <IconLinkedinFill /> -->
+            <i class="icon-twitter text-18 text-color-2 hover:text-color-1" />
+          </a>
+          <a
+            :href="$config.public.socialLink.github"
+            class="opacity-70 hover:opacity-100"
+              title="GitHub"
+            target="_blank"
+            >
+            <!-- <IconGithubFill /> -->
+            <i class="icon-github text-18 text-color-2 hover:text-color-1" />
+          </a>
+          <a
+            :href="$config.public.socialLink.youtube"
+            class="opacity-70 hover:opacity-100"
+              title="GitHub"
+            target="_blank"
+            >
+            <!-- <IconGithubFill /> -->
+            <i class="icon-youtube text-18 text-color-2 hover:text-color-1" />
+          </a>
         </div>
       </div>
       <!-- social newsletter -->
-      <div class="col-span-full xl:col-span-4 xl:col-start-9">
+      <div class="col-span-full xl:col-span-4 xl:col-start-9 opacity-40 pointer-events-none">
         <h4 class="text-20/[14px] text-color-1 font-bold xl:text-right">
           {{ $t('pages.section.footer.p1') }}
         </h4>

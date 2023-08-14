@@ -17,38 +17,43 @@
     </div>
     <!--  -->
     <CardCaseHFull
-      v-for="c in cases"
-      :key="c.id"
+      v-for="project in projects"
+      :key="project.id"
       class="mt-16 lg:mt-24"
-      :reverse-layout="c.reverseLayout"
-      :project-case="c"
+      :reverse-layout="project.reverseLayout"
+      :project="project"
     />
+    <!--  -->
+    <div class="row-c mt-8">
+      <div class="row">
+        <div class="col-span-full flex flex-col items-center">
+          <UhSpinner v-show="loading" />
+          <button
+            v-if="error && !loading"
+            title="Error! Retry"
+            @click="reset"
+          >
+            <i class="icon-refresh-cw text-red-500" />
+          </button>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
 
 <script setup lang="ts">
-const cases = ref([
-  {
-    id: 1,
-    banner: '/image/temp/case-banner-zaki.png',
-    bannerDark: '/image/temp/case-banner-zaki-dark.png',
-    logo: '/image/brand/logo-zaki.svg',
-    logoDark: '/image/brand/logo-zaki-light.svg',
-    title: 'More sales after a well-consolidated process',
-    text: 'Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.',
-    reverseLayout: false,
-    slug: 'zaki'
+const { entries, loading, error, reset } = await usePaginator('cases', {
+  query: {
+    featured: 'true'
   },
-  {
-    id: 2,
-    banner: '/image/temp/case-banner-muve.png',
-    bannerDark: '/image/temp/case-banner-muve-dark.png',
-    logo: '/image/brand/logo-muve.svg',
-    logoDark: '/image/brand/logo-muve-light.svg',
-    title: "A space that doesn't let you miss anything",
-    text: 'Find out how ZAKI became the first platform in Angola to sell subscriptions to digital services.',
-    reverseLayout: true,
-    slug: 'muve'
-  }
-])
+  pageLimit: 4
+})
+const projects = computed(() => {
+  let reverse = false
+  return entries.value.map(entry => {
+    entry.reverseLayout = reverse
+    reverse = !reverse
+    return entry
+  })
+})
 </script>

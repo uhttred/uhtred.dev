@@ -10,7 +10,7 @@
           {{ $t('pages.section.processlife.p2') }}
         </p>
         <NuxtLink
-          :to="localePath('index')"
+          :to="localePath('start')"
           class="text-14 text-color-1 border-b-2 font-medium
             border-green-500 hover:text-color-2 pb-1"
         >

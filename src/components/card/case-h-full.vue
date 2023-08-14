@@ -12,17 +12,17 @@
         :to="localePath({
           name: 'cases-slug',
           params: {
-            slug: projectCase.slug
+            slug: project.slug
           }
         })"
       >
         <img
-          :src="projectCase.banner"
+          :src="project.banner.url"
           class="dark:hidden rounded-md bdr-2"
           alt="case banner"
         >
         <img
-          :src="projectCase.bannerDark"
+          :src="project.banner_dark.url"
           class="hidden dark:block bdr-1 rounded-md"
           alt="case banner"
         >
@@ -38,26 +38,43 @@
       ]"
     >
       <img
-        :src="projectCase.logo"
+        :src="project.brand_logo.url"
         class="dark:hidden"
         alt="case client logo"
       >
       <img
-        :src="projectCase.logoDark"
+        :src="project.brand_logo_dark.url"
         class="hidden dark:block"
         alt="case client logo dark"
       >
-      <h1 class="text-18/[34px] lg:text-20/[36px] text-color-1 font-bold mt-10">
-        {{ projectCase.title }}
-      </h1>
+      <NuxtLink
+        :to="localePath({
+          name: 'cases-slug',
+          params: {
+            slug: project.slug
+          }
+        })"
+      >
+        <h1 class="text-18/[34px] lg:text-20/[36px] text-color-1 font-bold mt-10">
+          {{
+            locale === 'pt'
+              ? project.pt_title || project.title
+              : project.title
+          }}
+        </h1>
+      </NuxtLink>
       <p class="text-14/[34px] lg:text-16/[34px] text-color-3 font-normal mt-4 mb-4">
-        {{ projectCase.text }}
+        {{
+          locale === 'pt'
+            ? project.pt_description || project.description
+            : project.description
+        }}
       </p>
       <NuxtLink
         :to="localePath({
           name: 'cases-slug',
           params: {
-            slug: projectCase.slug
+            slug: project.slug
           }
         })"
         class="text-14 text-color-1 font-medium hover:underline"
@@ -69,12 +86,13 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps({
+const { locale } = useI18n()
+const { project, reverseLayout } = defineProps({
   reverseLayout: {
     type: Boolean,
     default: false
   },
-  projectCase: {
+  project: {
     type: Object
   }
 })

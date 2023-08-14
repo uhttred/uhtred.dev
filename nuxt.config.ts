@@ -90,6 +90,7 @@ export default defineNuxtConfig({
     public: {
       baseURL: process.env.API_BASE_URL || 'https://api.uhtred.dev',
       appBaseUrl: process.env.APP_URL || 'https://uhtred.dev',
+      featuredQuoteId: process.env.FEATURED_QUOTE_ID || 1,
       contact: {
         email: process.env.UH_CONTACT_EMAIL || 'am@uhtred.dev',
       },
@@ -97,6 +98,7 @@ export default defineNuxtConfig({
         instagram: process.env.UH_SOCIAL_INSTAGRAM || 'https://instagram.com/uhtred.dev',
         linkedin: process.env.UH_SOCIAL_LINKEDIN || 'https://www.linkedin.com/in/uhtredmiller/',
         dribbble: process.env.UH_SOCIAL_DRIBBBLE || 'https://dribbble.com/uhtredmiller',
+        twitter: process.env.UH_SOCIAL_TWITTER || 'https://twitter.com/uhtredmiller',
         youtube: process.env.UH_SOCIAL_YOUTUBE || 'https://www.youtube.com/@ageumatheus',
         github: process.env.UH_SOCIAL_GITHUB || 'https://github.com/txiocoder'
       }

@@ -96,6 +96,19 @@
               class="absolute top-full left-1/2 -translate-x-1/2 pt-2
                 flex flex-col items-center gap-y-4"
             >
+              <!-- social link: twitter -->
+              <div
+                  class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
+                    justify-center items-center bg-white dark:bg-gray-950"
+                >
+                <a
+                  :href="$config.public.socialLink.twitter"
+                  target="_blank"
+                >
+                  <!-- <IcontwitterLine/> -->
+                  <i class="block icon-twitter text-18 text-color-2 hover:text-color-1" />
+                </a>
+              </div>
               <!-- social link: linkedin -->
               <div
                 class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
@@ -105,7 +118,8 @@
                   :href="$config.public.socialLink.linkedin"
                   target="_blank"
                 >
-                  <IconLinkedinFill />
+                  <!-- <IconLinkedinFill /> -->
+                  <i class="block icon-linkedin text-18 text-color-2 hover:text-color-1" />
                 </a>
               </div>
               <!-- social link: instagram -->
@@ -117,11 +131,12 @@
                   :href="$config.public.socialLink.instagram"
                   target="_blank"
                 >
-                  <IconInstagramLine/>
+                  <!-- <IconInstagramLine/> -->
+                  <i class="block icon-instagram text-18 text-color-2 hover:text-color-1" />
                 </a>
               </div>
               <!-- social link: dribble -->
-              <div
+              <!-- <div
                 class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
                   justify-center items-center bg-white dark:bg-gray-950"
               >
@@ -131,7 +146,7 @@
                 >
                   <IconDribbbleLine />
                 </a>
-              </div>
+              </div> -->
               <!-- social link: github -->
               <div
                 class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
@@ -141,7 +156,8 @@
                   :href="$config.public.socialLink.github"
                   target="_blank"
                 >
-                  <IconGithubFill />
+                  <!-- <IconGithubFill /> -->
+                  <i class="block icon-github text-18 text-color-2 hover:text-color-1" />
                 </a>
               </div>
               <!-- social link: close -->
@@ -204,7 +220,7 @@
             <li
               v-for="(service, ii) in group.services"
               :key="ii"
-              class="text-12 text-color-3 font-normal hover:text-color-2 mt-2 first:mt-0"
+              class="text-12 text-color-3 font-normal hover:text-color-1 mt-2 first:mt-0"
             >
               <NuxtLink
                 :to="localePath('start')"

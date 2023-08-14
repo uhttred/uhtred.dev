@@ -13,44 +13,61 @@
       >
         <div class="swiper-wrapper flex md:justify-between">
           <div
-            v-for="n in 6"
-            :key="n"
+            v-if="error || loading"
+            class="swiper-slide flex justify-center items-center"
+          >
+            <UhSpinner v-show="loading" />
+            <button
+              v-if="error && !loading"
+              title="Error! Retry"
+              @click="reset"
+            >
+              <i class="icon-refresh-cw text-red-500" />
+            </button>
+          </div>
+          <div
+            v-for="quote in entries"
+            :key="quote.id"
             class="swiper-slide w-[370px] cursor-grab"
           >
             <img
-              class="max-w-[120px] lg:max-w-[140px]"
-              src="/image/brand/logo-wedobrand.svg"
+              v-if="quote.brand_logo"
+              class="max-w-[120px] lg:max-w-[140px] dark:hidden"
+              :src="quote.brand_logo.url"
+              alt=""
+            >
+            <img
+              v-if="quote.brand_logo_dark"
+              class="max-w-[120px] lg:max-w-[140px] hidden dark:block"
+              :src="quote.brand_logo_dark.url"
               alt=""
             >
             <p class="text-14/[30px] lg:text-16/7 text-color-3 mt-10">
-              Uhtred Miller has an incredible remote culture. It really makes working together easy.
+              {{
+                locale === 'pt'
+                  ? quote.pt_text || quote.text
+                  : quote.text
+              }}
             </p>
             <div
               class="flex items-end mt-5.5"
             >
               <a
-                href="https://www.linkedin.com/in/justo-eliseu-70b317178/"
+                :href="quote.author.website"
                 target="_blank"
-                title="See Justo Eliseu on LinkedIn"
               >
                 <img
-                  class="dark:hidden rounded-lg border border-gray-950/10 w-10 xl:w-[60px] mr-4 xl:mr-7.5"
-                  src="/image/people/justo-eliseu.png"
-                  alt=""
-                >
-                <img
-                  class="hidden dark:block rounded-lg border border-gray-950/10 w-10 xl:w-[60px] mr-4 xl:mr-7.5"
-                  src="/image/people/justo-eliseu.png"
-                  alt=""
+                  class="rounded-lg border border-gray-950/10 xl:w-[40px] mr-4 xl:mr-7.5"
+                  :src="quote.author.avatar.url"
+                  alt="author avatar"
                 >
               </a>
               <a
                 class="text-12 xl:text-16 font-medium text-color-1"
-                href="https://www.linkedin.com/in/justo-eliseu-70b317178/"
+                :href="quote.author.website"
                 target="_blank"
-                title="See Justo Eliseu on LinkedIn"
               >
-                Justo Eliseu <span class="text-12 xl:text-14 font-normal text-color-4">/ CEO Wedo Brand</span>
+                {{ quote.author.name }} <span class="text-12 xl:text-14 font-normal text-color-4">/ {{ quote.author.headline }}</span>
               </a>
             </div>
           </div>
@@ -89,6 +106,9 @@
 import { Swiper } from 'swiper'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
+
+const { locale } = useI18n()
+const { entries, error, loading, reset } = await usePaginator('quotes', { pageLimit: 8 })
 
 const swiper = ref(null)
 const nextSlide = () => {
