@@ -28,7 +28,7 @@ type PaginatorData = {
 
 export const usePaginator = async (path: string, options?: UsePaginatorOptions) => {
 
-  const loading = ref(false)
+  const loading = ref(true)
   const entries = ref(options?.entries ?? [])
   const query = ref(options?.query ?? {})
   const pageLimit = ref(options?.pageLimit ?? 10)
