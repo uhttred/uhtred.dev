@@ -18,10 +18,21 @@
     <!--  -->
     <div class="row pt-20 gap-y-10">
       <CardProductBasic
-        v-for="n in 3"
-        :key="n"
+        v-for="product in entries"
+        :key="product.id"
+        :product="product"
         class="col-span-4"
       />
+      <!--  -->
+      <div class="col-span-full flex flex-col items-center">
+        <UhSpinner v-show="loading" />
+      </div>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const { entries, loading } = await usePaginator('products', {
+  pageLimit: 3
+})
+</script>

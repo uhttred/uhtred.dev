@@ -2,29 +2,37 @@
   <article>
     <div class="w-full h-[21.375rem] bg-2 rounded-lg overflow-hidden bdr-2">
       <!-- image -->
-      <NuxtLink to="/">
+      <a
+        :href="product.buy_at"
+        target="_blank"
+      >
         <img
-          src=""
-          alt=""
-          class="hidden w-full h-full object-cover"
+          :src="product.cover.url"
+          alt="product cover"
+          class="w-full h-full object-cover"
         >
-      </NuxtLink>
+      </a>
     </div>
-    <NuxtLink
-      to="/"
+    <a
+      :href="product.buy_at"
+      target="_blank"
     >
       <h1 class="text-18/9 font-medium text-color-1 mt-4 lg:mt-5.5 hover:underline">
-        Behavioral Design - Key Points for a Persuasive Design
+        {{ product.name }}
         <span class="text-color-3 px-2">•</span>
-        <span class=" text-green-500 text-16">$ 14.99</span>
+        <span class=" text-green-500 text-16">$ {{ product.price }}</span>
       </h1>
-    </NuxtLink>
+    </a>
     <div class="flex flex-wrap mt-4 gap-2">
-      <!-- <UhInsightTag
-        v-for="tag in ['e-Book', 'Design']"
-        :key="tag"
+      <UhTag
+        v-for="tag in product.tags"
+        :key="tag.id"
         :tag="tag"
-      /> -->
+      />
     </div>
   </article>
 </template>
+
+<script setup lang="ts">
+const { product } = defineProps(['product'])
+</script>

@@ -11,7 +11,8 @@
         >
           <PageAsideSocialShare
             v-if="data"
-            :url-path="`/cases/${data.slug}`"
+            :url-path="route.path"
+            :title="locale === 'pt' ? data.pt_title : data.title"
             class="mt-24 sticky top-24"
           />
         </div>
@@ -175,7 +176,7 @@ const { locale } = useI18n()
 const route = useRoute()
 const slug = computed(() => route.params.slug)
 const { data, error, refresh, pending } = useFetch(`cases/${slug.value}`)
-const config = useRuntimeConfig()
+
 definePageMeta({
   validate: async (route) => {
     return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.params.slug)

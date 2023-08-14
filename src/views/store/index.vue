@@ -10,12 +10,31 @@
     <!--  -->
     <div class="row py-20 gap-y-10 bdr-b-1">
       <CardProductBasic
-        v-for="n in 8"
-        :key="n"
+        v-for="product in entries"
+        :key="product.uid"
+        :product="product"
         class="col-span-4"
       />
+      <!--  -->
+      <div
+        v-if="loading || canLoadMore"
+        class="col-span-full flex flex-col items-center"
+      >
+        <UhSpinner v-show="loading" />
+        <button
+          v-if="canLoadMore"
+          class="text-14 text-color-2 hover:underline hover:text-color-1"
+          @click="loadMore"
+        >
+          Carregar mais
+        </button>
+      </div>
     </div>
     <!--  -->
     <PageSectionInsightsList class="py-16 lg:py-20" />
   </div>
 </template>
+
+<script setup lang="ts">
+const { entries, loading, loadMore, canLoadMore } = await usePaginator('products')
+</script>
