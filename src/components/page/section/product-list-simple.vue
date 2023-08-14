@@ -27,7 +27,7 @@
       <div class="col-span-full flex flex-col items-center">
         <UhSpinner v-show="loading" />
         <button
-          v-if="error"
+          v-if="error && !loading"
           title="Error! Retry"
           @click="reset"
         >

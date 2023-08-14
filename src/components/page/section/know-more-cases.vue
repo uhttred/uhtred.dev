@@ -72,12 +72,19 @@
       <!--  -->
       <div class="col-span-full flex flex-col items-center">
         <UhSpinner v-if="loading" />
+        <button
+          v-if="error && !loading"
+          title="Error! Retry"
+          @click="reset"
+        >
+          <i class="icon-refresh-cw text-red-500" />
+        </button>
       </div>
     </div>
   </section>
 </template>
 
 <script setup>
-const { entries, loading } = await usePaginator('cases', { pageLimit: 3 })
+const { entries, loading, error, reset } = await usePaginator('cases', { pageLimit: 3 })
 const { locale } = useI18n()
 </script>

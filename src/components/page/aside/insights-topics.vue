@@ -11,10 +11,17 @@
         :tag="tag"
       />
       <UhSpinner v-show="loading" />
+      <button
+        v-if="error && !loading"
+        title="Error! Retry"
+        @click="reset"
+      >
+        <i class="icon-refresh-cw text-red-500" />
+      </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const { entries, loading } = await usePaginator('tags')
+const { entries, loading, error, reset } = await usePaginator('tags')
 </script>

@@ -51,6 +51,7 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
   const loadMore = async () => {
     if (paginator.value.next && !loading.value) {
       loading.value = true
+      error.value = false
       const { data, status } = await useFetch(path, {
         query: {
           ...query.value,
@@ -66,6 +67,7 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
 
   const paginatorFetch = async () => {
     loading.value = true
+    error.value = false
     const { data, status } = await useFetch(path, {
       query: {
         ...query.value,
