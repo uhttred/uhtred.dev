@@ -8,7 +8,7 @@
         appearance-none"
       type="text"
       name="search:cases"
-      placeholder="Search for cases"
+      :placeholder="$t('t015')"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       @keydown.enter="$emit('search')"

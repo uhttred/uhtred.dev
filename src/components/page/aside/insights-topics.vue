@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="text-20 text-color-1 font-bold mb-5.5">
-      Insights topics
+      {{ $t('t014') }}
     </h3>
     <!--  -->
     <div class="flex flex-wrap mt-4 gap-2 items-center">

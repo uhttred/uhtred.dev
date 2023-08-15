@@ -17,10 +17,10 @@
         <p
           class="text-[2.5rem] lg:text-[3rem] text-color-1 font-bold"
         >
-          6<span class="text-green-brand text-[1.875rem] lg:text-[2.5rem]">+</span>
+          5<span class="text-green-brand text-[1.875rem] lg:text-[2.5rem]">+</span>
         </p>
         <p class="text-20 text-color-1 font-normal lg:font-bold mt-5.5">
-          {{ $t('Very happy clients') }} 
+          {{ $t('Great success cases') }} 
         </p>
       </div>
       <!--  -->
@@ -37,13 +37,13 @@
         <p
           class="text-18/[2.125rem] lg:text-24/[2.25rem] text-color-1 font-bold mt-5"
         >
-          {{ $t('pages.section.about.p1') }}
+          {{ $t('t004') }}
         </p>
         <!--  -->
         <p
           class="text-14/[1.875rem] font-normal lg:text-16/[1.875rem] text-color-3 mt-5"
         >
-          {{ $t('pages.section.about.p2') }}
+          {{ $t('t005') }}
         </p>
       </div>
     </div>

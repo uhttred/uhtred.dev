@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-span-full flex justify-between items-center">
         <h2 class="text-24 text-color-1 lg:text-26 font-bold">
-          {{ $t('pages.section.caseslist.p1') }}
+          {{ $t('t006') }}
         </h2>
         <!--  -->
         <NuxtLink

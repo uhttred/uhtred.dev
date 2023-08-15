@@ -29,12 +29,12 @@
                 v-if="error && !pending"
                 class="text-14 text-color-2"
               >
-                Erro ao carregar.
+                {{ $t('Error loading') }}.
                 <button
                   class="hover:underline text-red-500"
                   @click="refresh"
                 >
-                  Recarregar
+                {{ $t('Reload') }}
                 </button>
               </p>
             </template>

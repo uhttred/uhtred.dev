@@ -35,7 +35,7 @@
         </template>
         <!--  -->
         <p class="max-w-[600px] text-12/5 lg:text-14/8 text-color-4 mt-5.5 lg:mt-4 font-normal">
-          {{ $t('pages.section.bigquote.p1') }}
+          {{ $t('t011') }}
         </p>
       </div>
     </div>

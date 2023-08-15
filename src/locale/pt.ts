@@ -1,55 +1,100 @@
 export default {
-  'pages.index.head.description': `Olá, sou Desenvolvedor de Produto. Ajudo empresas e
-    empreendedores com Análise de Negócios para estruturação e design
-    de Produtos Digitais; Criação de Aplicações Web Completas;
-    Integração e Desenvolvimento de API; Configuração e Gerenciamento
-    de Infraestrutura em Nuvem`,
-  'pages.index.header.p1': 'Olá, sou Desenvolvedor de Produtos',
-  'pages.index.header.p2': 'Criando produtos digitais e experiências únicas',
-  'pages.index.header.p3': 'Criamos do zero a solução ideal para o seu problema.',
-  'pages.section.about.p1': `Se precisa de alguém para o ajudar a criar um produto/solução único e específico.
+  t001: 'Olá, sou Desenvolvedor de Produtos',
+  t002: 'Criando produtos digitais e experiências únicas',
+  t003: 'Criamos do zero a solução ideal para o seu problema.',
+  t004: `Se precisa de alguém para o ajudar a criar um produto/solução único e específico.
     Provavelmete eu sou o cara!`,
-  'pages.section.about.p2': `Posso ajudá-lo de quatro maneiras principais.
-    Análise de Negócios para Estruturação e Design de Produtos Digitais;
-    Criação de Produtos Digitais Completos (Aplicações Web);
-    Integração e Desenvolvimento de APIs; Configuração e Gerenciamento de Infraestrutura em Nuvem.`,
-  'pages.section.caseslist.p1': 'Casos que nos inspiram.',
-  'pages.section.processlife.p1': 'Especialistas em todos os aspectos do ciclo de vida do produto.',
-  'pages.section.processlife.p2': `Trabalho com equipas sob-demanda, oferecemos aos nossos clientes o talento
+  t005: `Posso ajudá-lo de quatro maneiras principais.
+      Análise de Negócios para Estruturação e Design de Produtos Digitais;
+      Criação de Produtos Digitais Completos (Aplicações Web);
+      Integração e Desenvolvimento de APIs; Configuração e
+      Gerenciamento de Infraestrutura em Nuvem.`,
+  t006: 'Casos que nos inspiram.',
+  t007: 'Especialistas em todos os aspectos do ciclo de vida do produto.',
+  t008: `Trabalho com equipas sob-demanda, oferecemos aos nossos clientes o talento
     criativo, técnico e comercial de que precisam para ter sucesso.`,
-  'pages.section.bigquote.p1': `Eu construo produtos que permitem que as pessoas façam as coisas
+  t009: 'Começe seu projecto hoje',
+  t010: "Se eles dizem, é verdade!",
+  t011: `Eu construo produtos que permitem que as pessoas façam as coisas
     de maneira diferente. Compartilhe seu desafio comigo e trabalharei com você para
     entregar um produto digital revolucionário.`,
-  'pages.index.tagtitle.p1': 'Mudar cor do tema',
-  'pages.section.quotes.p1': "Se eles dizem, é verdade!",
-  'pages.index.tagtitle.p2': 'Mudar idioma',
-  'pages.index.tagtitle.p3': 'Mostrar redes sociais',
-  'pages.section.footer.p1': 'Receba insights toda semana',
-  'pages.section.footer.p2': 'Seu melhor e-mail',
+  t012: 'Receba bons Insights',
+  t013: 'Receba insights toda semana',
+  t014: 'Tópicos de insights',
+  t015: 'Buscar pelo nome ou título',
+  t016: 'Produtos que talvez interessam-te',
+  t017: 'Ver todos produtos',
+  t018: `Ou entre em contato comigo se quiser compartilhar algum
+    insight sobre negócios, tecnologia, freelancer, design, entre outros.`,
+  t019: 'Minha equipe e eu entregamos a melhor solução para o seu caso particular.',
+  t020: 'Equipe principal e responsabilidades',
+  t021: 'Produtos que te completam',
+  t022: 'Comece seu projecto hoje',
+  t023: 'Você precisa de um parceiro. Estou aqui para você.',
+  t024: 'Em vez de um grande projeto, precisa solicitar apenas um pequeno serviço?',
+  t025: 'Solicite aqui',
+  t026: 'Gostaria de me consultar sobre negócios, freelancer ou desenvolvimento?',
+  t027: 'Agende aqui',
   // words
+  Cases: 'Casos',
+  Submit: 'Submeter',
+  Send: 'Enviar',
+  Subscribe: 'Cadastrar',
+  Reload: 'Recarregar',
+  Services: 'Serviços',
+  Insights: 'Insights',
+  insights: 'insights',
+  today: 'hoje',
+  Store: 'Loja',
+  or: 'ou',
+  Consulting: 'Consultoria',
+  Automation: 'Automação',
+  Development: 'Desenvolvimento',
+  Management: 'Gerenciamento',
+  // 2 - 4 words
+  'Get more great': 'Receba mais bons',
+  'Error loading': 'Erro ao carregar',
+  'Product Validation': 'Validação de Produto',
+  'Load more': 'Carregar mais',
+  'Know more great': 'Conheça mais bons',
+  'success cases': 'casos de sucesso',
+  'Discover all cases': 'Descubra todos os casos',
+  'User Interface Design': 'Design de Interface de Usuário',
+  'UI Style Guide': 'Guia de Estilo de UI',
+  'Design System': 'Sistema de Design',
+  'Drand Design': 'Design de Marca',
+  'Web Application': 'Aplicação Web',
+  'Backend Services': 'Serviços Backend',
+  'System Integration': 'Integração de Sistemas',
+  'Cloud Infrastructure Management': 'Gerenciamento de Infraestrutura em Nuvem',
+  'CI/CD Automations': 'Automação CI/CD',
+  'Consulting and Ideation': 'Consultoria e Ideação',
   'Start project': 'Começar projecto',
   'Start your project': 'Comece seu projecto',
+  'start your project': 'comece seu projecto',
   'right now': 'agora mesmo',
   'Years of experience': 'Anos de experiência',
   'Very happy clients': 'Clientes muito felizes',
   'A Maker and Perfectionist': 'Um Criador e Perfectionista',
   'See all cases': 'Veja todos casos',
-  'pages.section.il.p1': 'Receba bons Insights',
   'See all Insights': 'Veja todos Insights',
   'Meet the case': 'Conheça o caso',
   'Ideation & Validation': 'Ideação & Validação',
   'Design': 'Design',
-  'Development': 'Desenvolvimento',
   'Scale': 'Escala',
   'Stay connected': 'Esteja conectado',
   'Privacy Policy': 'Privacidade',
   'Terms of Use': 'Termos de Uso',
   'Maintain, Support & Management': 'Manutenção, Suporte e Gerenciamento',
-  'Start your project today': 'Começe seu projecto hoje',
-  Cases: 'Casos',
-  Submit: 'Enviar',
-  Subscribe: 'Cadastrar',
-  Services: 'Serviços',
-  Insights: 'Insights',
-  Store: 'Loja'
+  'Great success cases': 'Grandes casos de sucesso',
+  // keys
+  'pages.index.head.description': `Olá, sou Desenvolvedor de Produto. Ajudo empresas e
+    empreendedores com Análise de Negócios para estruturação e design
+    de Produtos Digitais; Criação de Aplicações Web Completas;
+    Integração e Desenvolvimento de API; Configuração e Gerenciamento
+    de Infraestrutura em Nuvem`,
+  'pages.index.tagtitle.p1': 'Mudar cor do tema',
+  'pages.index.tagtitle.p2': 'Mudar idioma',
+  'pages.index.tagtitle.p3': 'Mostrar redes sociais',
+  'pages.section.footer.p2': 'Seu melhor e-mail'
 }

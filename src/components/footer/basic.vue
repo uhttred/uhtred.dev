@@ -84,7 +84,7 @@
       <!-- social newsletter -->
       <div class="col-span-full xl:col-span-4 xl:col-start-9 opacity-40 pointer-events-none">
         <h4 class="text-20/[14px] text-color-1 font-bold xl:text-right">
-          {{ $t('pages.section.footer.p1') }}
+          {{ $t('t013') }}
         </h4>
         <div
           class="flex justify-between items-center mt-10 bg-1 rounded-md bdr-1"

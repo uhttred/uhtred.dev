@@ -42,7 +42,7 @@
               class="text-14 mt-8 text-color-1 hover:underline"
               @click="loadMore"
             >
-              Load more
+              {{ $t('Load more') }}
             </button>
           </div>
         </div>

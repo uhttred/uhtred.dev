@@ -3,29 +3,29 @@
     <div class="row">
       <div class="col-span-full flex flex-col items-center justify-center">
         <h1 class="text-color-1 font-bold text-32 text-center">
-          Know more great
+          {{ $t('Know more great') }}
           <NuxtLink
             :to="localePath('cases')"
             class="text-green-500 hover:underline"
           >
-            success cases</NuxtLink>!
+            {{ $t('success cases') }}</NuxtLink>!
         </h1>
         <p class="text-16/8 text-color-3 mt-5.5 max-w-[40rem] text-center">
-          My team and I deliver the best solution for your particular case.<br>
+          {{ $t('t019')}}<br>
           <NuxtLink
             :to="localePath('cases')"
             class="text-color-1 underline"
           >
-            Discover all cases
+            {{ $t('Discover all cases') }}
           </NuxtLink>
-          or
+          {{ $t('or') }}
           <NuxtLink
             :to="localePath('start')"
             class="text-color-1 underline"
           >
-            start your project
+            {{ $t('start your project') }}
           </NuxtLink>
-          today
+          {{ $t('today') }}
         </p>
       </div>
     </div>

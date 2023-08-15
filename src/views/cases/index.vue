@@ -41,7 +41,7 @@
             class="text-14 mt-8 text-color-1 hover:underline"
             @click="loadMore"
           >
-            load more cases
+            {{ $t('Load more') }}
           </button>
         </div>
       </div>

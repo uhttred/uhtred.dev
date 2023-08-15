@@ -4,7 +4,7 @@
       <!-- title -->
       <div class="col-span-full">
         <h2 class="text-24 text-color-1 lg:text-26 font-bold">
-          {{ $t('pages.section.quotes.p1') }}
+          {{ $t('t010') }}
         </h2>
       </div>
       <!-- swiper -->

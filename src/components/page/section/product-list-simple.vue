@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-span-full flex justify-between items-center">
         <h2 class="text-26 text-color-1 lg:text-28 font-bold">
-          Products you may be interested
+          {{ $t('t016') }}
         </h2>
         <!--  -->
         <NuxtLink
@@ -11,7 +11,7 @@
           class="text-16 text-color-2 border-b-2 
             border-green-500 hover:text-color-1 pb-1 hidden lg:block"
         >
-          See all products
+          {{ $t('t017') }}
         </NuxtLink>
       </div>
     </div>

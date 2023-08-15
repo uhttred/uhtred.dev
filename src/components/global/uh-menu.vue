@@ -214,7 +214,7 @@
           class="col-span-3"
         >
           <h5 class="font-bold text-13 text-color-1">
-            {{ group.title }}
+            {{ $t(group.title) }}
           </h5>
           <ul class="mt-8">
             <li
@@ -226,7 +226,7 @@
                 :to="localePath('start')"
                 @click.native="showServicesDropdown=false"
               >
-                {{ service }}
+                {{ $t(service) }}
               </NuxtLink>
             </li>
           </ul>
@@ -274,9 +274,12 @@
           <!-- change locale -->
           <UhLocaleToggle class="mt-12" />
           <!-- start project -->
-          <button class="btn active:bg-green-500 w-full mt-12">
+          <NuxtLink
+            :to="localePath('start')"
+            class="btn active:bg-green-500 w-full mt-12 block text-center"
+          >
             {{ $t('Start project') }}
-          </button>
+          </NuxtLink>
         </div>
       </div>
     </div>
@@ -333,7 +336,7 @@ const serviceGroup = [
   {
     title: 'Management',
     services: [
-      'Cloud Infrastructure Management ',
+      'Cloud Infrastructure Management',
       'CI/CD Automations'
     ]
   }

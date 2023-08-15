@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-span-full">
         <h1 class="text-34 text-color-1 font-bold mt-6 lg:mt-14">
-          Products that complete you
+          {{ $t('t021' )}}
         </h1>
       </div>
     </div>
@@ -26,7 +26,7 @@
           class="text-14 text-color-2 hover:underline hover:text-color-1"
           @click="loadMore"
         >
-          Carregar mais
+          {{ $t('Load more') }}
         </button>
       </div>
     </div>

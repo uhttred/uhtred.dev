@@ -3,16 +3,15 @@
     <div class="row">
       <div class="col-span-full flex flex-col items-center justify-center">
         <h1 class="text-color-1 font-bold text-32 text-center">
-          Get more great
+          {{ $t('Get more great' )}}
           <NuxtLink
             :to="localePath('cases')"
             class="text-green-500 hover:underline"
           >
-            insights</NuxtLink>!
+            {{ $t('insights') }}</NuxtLink>!
         </h1>
         <p class="text-16/8 text-color-3 mt-5.5 max-w-[40rem] text-center">
-          Or get in touch with me if you want to share any insights
-          about business, technology, freelancing, design, among others.
+          {{ $t('t018') }}
         </p>
       </div>
     </div>

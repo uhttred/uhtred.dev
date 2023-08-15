@@ -12,13 +12,13 @@
           <p
             class="text-14 lg:text-16/5 font-bold text-gradient-3"
           >
-            {{ $t('pages.index.header.p1') }}
+            {{ $t('t001') }}
           </p>
           <h1
             class="text-color-1 font-bold
               text-[46px]/[58px] lg:text-5xl/[63px] mt-4"
           >
-            {{ $t('pages.index.header.p2') }}<span class="text-green-500">.</span>
+            {{ $t('t002') }}<span class="text-green-500">.</span>
           </h1>
           <!-- illustration -->
           <img
@@ -58,7 +58,7 @@
             class="text-12/6 font-normal text-color-3 text-center lg:text-right
               lg:w-[310px] lg:text-14/6"
           >
-            {{ $t('pages.index.header.p3') }}
+            {{ $t('t003') }}
             <NuxtLink
               :to="localePath('start')"
               class="text-color-1 underline"

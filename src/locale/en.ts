@@ -1,35 +1,75 @@
 export default {
-  // keys
-  'pages.index.head.description': `Hello, I'm a Product Developer.
-    I help companies and entrepreneurs with Business Analysis for structuring and designing
-    Digital Products; Creation of Complete Web Applications;
-    Integration and API Development; & Cloud Infrastructure Configuration and
-    Management`,
-  'pages.index.header.p1': 'Hi, I’m a Product Developer',
-  'pages.index.header.p2': 'Building digital products and unique experiences',
-  'pages.index.header.p3': 'We create the ideal solution to your problem from scratch.',
-  'pages.section.about.p1': `If you need someone to help you achieve a
+  t001: 'Hi, I’m a Product Developer',
+  t002: 'Building digital products and unique experiences',
+  t003: 'We create the ideal solution to your problem from scratch.',
+  t004: `If you need someone to help you achieve a
     unique and specific product/solution. Chances are I'm the man!`,
-  'pages.section.about.p2': `My skills and experience allow me to help you in four main ways.
-    Business Analysis for Structuring and Designing Digital Products; Creation of Complete
-    Digital Products (Web Applications); Integration and API Development; & Cloud
-    Infrastructure Configuration and Management.`,
-  'pages.section.caseslist.p1': 'Cases that make us inspired.',
-  'pages.section.processlife.p1': 'Experts in every aspect of the product lifecycle.',
-  'pages.section.processlife.p2': `Working with on-demand teams, we provide our clients with the creative,
+  t005: `My skills and experience allow me to help you in four main ways.
+      Business Analysis for Structuring and Designing Digital Products; Creation of Complete
+      Digital Products (Web Applications); Integration and API Development; & Cloud
+      Infrastructure Configuration and Management.`,
+  t006: 'Cases that make us inspired.',
+  t007: 'Experts in every aspect of the product lifecycle.',
+  t008: `Working with on-demand teams, we provide our clients with the creative,
     technical and commercial talent they need to succeed.`,
-  'pages.section.bigquote.p1': `I build products that let people do things differently.
+  t009: 'Start your project today',
+  t010: "If they say, it’s true",
+  t011: `I build products that let people do things differently.
     Share your challenge with me and I will work with you to deliver a revolutionary digital product.`,
-  'pages.index.tagtitle.p1': 'Change color theme',
-  'pages.index.tagtitle.p2': 'Change language',
-  'pages.index.tagtitle.p3': 'Show social links',
-  'pages.section.il.p1': 'Get great Insights',
-  'pages.section.quotes.p1': "If they say, it’s true",
-  'pages.section.footer.p1': 'Get latest insights every week',
-  'pages.section.footer.p2': 'Your best e-mail',
+  t012: 'Get great Insights',
+  t013: 'Get latest insights every week',
+  t014: 'Insights topics',
+  t015: 'Search for name or title',
+  t016: 'Products you may be interested',
+  t017: 'See all products',
+  t018: `Or get in touch with me if you want to share any insights
+    about business, technology, freelancing, design, among others.`,
+  t019: 'My team and I deliver the best solution for your particular case.',
+  t020: 'Core team and responsibilities',
+  t021: 'Products that complete you',
+  t022: 'Start your project today',
+  t023: "What you need, is a partner. I'm here for you.",
+  t024: 'Instead of a big project, need to order just a small service?',
+  t025: 'Request from here',
+  t026: 'Would you like to consult with me about business, freelancing or development?',
+  t027: 'Schedule here',
   // words
+  Cases: 'Cases',
+  Submit: 'Submit',
+  Send: 'Send',
+  Reload: 'Reload',
+  Subscribe: 'Subscribe',
+  Services: 'Services',
+  Insights: 'Insights',
+  insights: 'insights',
+  today: 'today',
+  Store: 'Store',
+  or: 'or',
+  Consulting: 'Consulting',
+  Automation: 'Automation',
+  Development: 'Development',
+  Management: 'Management',
+  // 2 - 4 words
+  'Load more': 'Load more',
+  'Error loading': 'Error loading',
+  'Get more great': 'Get more great',
+  'Know more great': 'Know more great',
+  'success cases': 'success cases',
+  'Discover all cases': 'Discover all cases',
+  'Product Validation': 'Product Validation',
+  'User Interface Design': 'User Interface Design',
+  'UI Style Guide': 'UI Style Guide',
+  'Design System': 'Design System',
+  'Drand Design': 'Drand Design',
+  'Web Application': 'Web Application',
+  'Backend Services': 'Backend Services',
+  'System Integration': 'System Integration',
+  'Cloud Infrastructure Management': 'Cloud Infrastructure Management',
+  'CI/CD Automations': 'CI/CD Automations',
+  'Consulting and Ideation': 'Consulting and Ideation',
   'Start project': 'Start project',
   'Start your project': 'Start your project',
+  'start your project': 'start your project',
   'right now': 'right now',
   'Years of experience': 'Years of experience',
   'Very happy clients': 'Very happy clients',
@@ -39,17 +79,20 @@ export default {
   'Meet the case': 'Meet the case',
   'Ideation & Validation': 'Ideation & Validation',
   'Design': 'Design',
-  'Development': 'Development',
   'Scale': 'Scale',
   'Stay connected': 'Stay connected',
   'Privacy Policy': 'Privacy Policy',
   'Terms of Use': 'Terms of Use',
   'Maintain, Support & Management': 'Maintain, Support & Management',
-  'Start your project today': 'Start your project today',
-  Cases: 'Cases',
-  Submit: 'Submit',
-  Subscribe: 'Subscribe',
-  Services: 'Services',
-  Insights: 'Insights',
-  Store: 'Store'
+  'Great success cases': 'Great success cases',
+  // keys
+  'pages.index.head.description': `Hello, I'm a Product Developer.
+    I help companies and entrepreneurs with Business Analysis for structuring and designing
+    Digital Products; Creation of Complete Web Applications;
+    Integration and API Development; & Cloud Infrastructure Configuration and
+    Management`,
+  'pages.index.tagtitle.p1': 'Change color theme',
+  'pages.index.tagtitle.p2': 'Change language',
+  'pages.index.tagtitle.p3': 'Show social links',
+  'pages.section.footer.p2': 'Your best e-mail'
 }

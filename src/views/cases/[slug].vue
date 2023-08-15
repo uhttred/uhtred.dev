@@ -30,12 +30,12 @@
                 v-if="error && !pending"
                 class="text-14 text-color-2"
               >
-                Erro ao carregar.
+                {{ $t('Error loading') }}.
                 <button
                   class="hover:underline text-red-500"
                   @click="refresh"
                 >
-                  Recarregar
+                  {{ $t('Reload') }}
                 </button>
               </p>
             </template>
@@ -79,7 +79,7 @@
             class="flex flex-col items-center w-full max-w-[46.75rem] my-14"
           >
             <UhMarkdown
-              v-if="locale === 'pt'"
+              v-if="locale === 'pt' && data.pt_content"
               :content="data.pt_content"
             />
             <UhMarkdown
@@ -134,7 +134,7 @@
       <div class="row">
         <div class="col-span-full">
           <h1 class="font-bold text-color-1 text-32">
-            Core team and responsibilities
+            {{ $t('t020') }}
           </h1>
         </div>
       </div>

@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-span-full flex justify-between items-center">
         <h2 class="text-24 text-color-1 lg:text-26 font-bold">
-          {{ $t('pages.section.il.p1') }}
+          {{ $t('t012') }}
         </h2>
         <!--  -->
         <NuxtLink
@@ -37,7 +37,6 @@
     </div>
   </div>
 </template>
-
 
 <script setup lang="ts">
 const { entries, loading, reset, error } = await usePaginator('insights', {

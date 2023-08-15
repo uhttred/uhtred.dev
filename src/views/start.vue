@@ -4,7 +4,7 @@
       <!-- left container -->
       <div class="col-span-full xl:col-span-7">
         <h1 class="text-34 text-color-1 font-bold mt-6 lg:mt-14">
-          Start your project today
+          {{ $t('t022') }}
         </h1>
         <!-- iframe content -->
         <div class="bg-2 rounded bdr-2 mt-12 w-full min-h-[34rem] flex flex-col items-center overflow-hidden">
@@ -37,26 +37,25 @@
         <!-- sticky content -->
         <div class="xl:sticky top-[90px] xl:pl-6 mt-12 xl:mt-[12rem]">
           <h3 class="text-color-1 text-26/10 font-bold">
-            What you need, is a partner.
-            I’m here for you.
+            {{ $t('t023') }}
           </h3>
           <p class="text-16/8 text-color-3 font-normal mt-8">
-            Instead of a big project, need to order just a small service?
+            {{ $t('t024') }}
             <a
               href="http://"
               target="_blank"
               class="text-color-1 underline"
             >
-              Request from here</a>.
+              {{ $t('t025') }}</a>.
           </p>
           <p class="text-16/8 text-color-3 font-normal mt-5.5">
-            Would you like to consult with me about business, freelancing or development?
+            {{ $t('t026') }}
             <a
               href="http://"
               target="_blank"
               class="text-color-1 underline"
             >
-              Schedule here</a>.
+            {{ $t('t027') }}</a>.
           </p>
           <div class="mt-12">
             <img
