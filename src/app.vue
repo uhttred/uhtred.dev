@@ -20,34 +20,38 @@
 </template>
 
 <script setup>
+const route = useRoute()
 const { t } = useI18n()
 const head = useLocaleHead({
   addDirAttribute: true,
   identifierAttribute: 'id',
   addSeoAttributes: true
 })
-const title = ref('')
+
+// const title = computed(() => t(route.meta.title || 'pages.index.title'))
+const title = computed(() => t('layouts.title', { title: t(route.meta.title || 'pages.index.title') }))
+const description = computed(() => t(route.meta.description || 'pages.index.description'))
 const iconPath = '/icon.svg'
-const description = t('pages.index.head.description')
+
 const titleTemplate = (title) => title
   ? `${title} | Uhtred M.`
   : 'Uhtred M.'
 useHead({
-  titleTemplate,
+  // titleTemplate,
   link: [
     { rel: 'manifest', href: '/manifest.json' }
   ]
 })
 useSeoMeta({
   title,
-  titleTemplate,
+  // titleTemplate,
   description,
-  ogTitle: 'Uhtred M.',
+  ogTitle: title,
   icon: iconPath,
   ogDescription: description,
   twitterCard: 'summary_large_image',
   twitterDescription: description,
-  twitterTitle: 'Uhtred M.',
+  twitterTitle: title,
   twitterImage: iconPath,
   ogImage: iconPath,
   appleMobileWebAppCapable: 'yes',
@@ -64,8 +68,8 @@ useSeoMeta({
   mobileWebAppCapable: 'yes',
   ogImageAlt: 'Uhtred M. logo image',
   robots: {
-    index: false,
-    follow: false,
+    index: true,
+    follow: true,
   },
 })
 </script>

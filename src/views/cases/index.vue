@@ -85,4 +85,9 @@ const {
   query,
   pageLimit: 8,
 })
+
+definePageMeta({
+  title: 'pages.cases.index.title',
+  description: 'pages.cases.index.description'
+})
 </script>

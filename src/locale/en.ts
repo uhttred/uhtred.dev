@@ -86,13 +86,14 @@ export default {
   'Maintain, Support & Management': 'Maintain, Support & Management',
   'Great success cases': 'Great success cases',
   // keys
-  'pages.index.head.description': `Hello, I'm a Product Developer.
-    I help companies and entrepreneurs with Business Analysis for structuring and designing
-    Digital Products; Creation of Complete Web Applications;
-    Integration and API Development; & Cloud Infrastructure Configuration and
-    Management`,
   'pages.index.tagtitle.p1': 'Change color theme',
   'pages.index.tagtitle.p2': 'Change language',
   'pages.index.tagtitle.p3': 'Show social links',
-  'pages.section.footer.p2': 'Your best e-mail'
+  'pages.section.footer.p2': 'Your best e-mail',
+
+  'layouts.title': '{title} - Uhtred M.',
+  'pages.index.title': "Welcome to Uhtred's World",
+  'pages.index.description': "Hi, I'm a Product Developer. I help companies and entrepreneurs with business analysis for structuring, designing and developing scalable digital products. And I write a lot of insights about business, programming, design, etc.",
+  'pages.cases.index.title': 'Success cases',
+  'pages.cases.index.description': "Get to know projects that were aligned with my clients' business specifications and solved their problems in a unique way. True success cases."
 }

@@ -88,13 +88,14 @@ export default {
   'Maintain, Support & Management': 'Manutenção, Suporte e Gerenciamento',
   'Great success cases': 'Grandes casos de sucesso',
   // keys
-  'pages.index.head.description': `Olá, sou Desenvolvedor de Produto. Ajudo empresas e
-    empreendedores com Análise de Negócios para estruturação e design
-    de Produtos Digitais; Criação de Aplicações Web Completas;
-    Integração e Desenvolvimento de API; Configuração e Gerenciamento
-    de Infraestrutura em Nuvem`,
   'pages.index.tagtitle.p1': 'Mudar cor do tema',
   'pages.index.tagtitle.p2': 'Mudar idioma',
   'pages.index.tagtitle.p3': 'Mostrar redes sociais',
-  'pages.section.footer.p2': 'Seu melhor e-mail'
+  'pages.section.footer.p2': 'Seu melhor e-mail',
+
+  'layouts.title': '{title} | Uhtred M.',
+  'pages.index.title': 'Bem-vindo ao mundo Uhtred',
+  'pages.index.description': 'Olá, sou um Desenvolvedor de Produtos. Ajudo empresas e empreendedores com análise de negócios para estruturação, design e desenvolvimento de produtos digitais escaláveis. E escrevo vários insights sobre negócio, programação, design, etc.',
+  'pages.cases.index.title': 'Casos de sucesso',
+  'pages.cases.index.description': 'Conheça projetos que foram alinhados as especificações dos negócios dos meus clientes e solucionaram os seus problemas de maneira única. Verdadeiros casos de sucesso.'
 }

@@ -47,7 +47,6 @@ export default defineNuxtConfig({
     lazy: true,
     langDir: 'locale',
     defaultLocale: 'en',
-    baseUrl: 'https://uhtred.dev',
     dynamicRouteParams: true,
     detectBrowserLanguage: {
       redirectOn: 'root',
@@ -108,7 +107,10 @@ export default defineNuxtConfig({
         ptRequestService: process.env.FORM_PT_RS || '',
         enRequestService: process.env.FORM_EN_RS || '',
         shceduleConsult: process.env.FORM_SCHEDULE || ''
-      }
+      },
+      i18n: {
+        baseUrl: process.env.APP_URL || 'https://uhtred.dev'
+     }
     }
   }
 })

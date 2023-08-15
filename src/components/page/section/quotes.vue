@@ -57,7 +57,7 @@
                 target="_blank"
               >
                 <img
-                  class="rounded-lg border border-gray-950/10 xl:w-[40px] mr-4 xl:mr-7.5"
+                  class="rounded-lg border border-gray-950/10 w-10 mr-4 xl:mr-7.5"
                   :src="quote.author.avatar.url"
                   alt="author avatar"
                 >
