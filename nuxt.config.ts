@@ -101,6 +101,13 @@ export default defineNuxtConfig({
         twitter: process.env.UH_SOCIAL_TWITTER || 'https://twitter.com/uhtredmiller',
         youtube: process.env.UH_SOCIAL_YOUTUBE || 'https://www.youtube.com/@ageumatheus',
         github: process.env.UH_SOCIAL_GITHUB || 'https://github.com/txiocoder'
+      },
+      formsUrl: {
+        ptStartProject: process.env.FORM_PT_SP || '',
+        enStartProject: process.env.FORM_EN_SP || '',
+        ptRequestService: process.env.FORM_PT_RS || '',
+        enRequestService: process.env.FORM_EN_RS || '',
+        shceduleConsult: process.env.FORM_SCHEDULE || ''
       }
     }
   }

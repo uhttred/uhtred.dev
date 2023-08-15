@@ -22,7 +22,11 @@
               style="border: none; min-height: 600px" 
             /> -->
             <iframe
-              src="https://app.hellobonsai.com/f/0f37df25fad231c?embed=true&hide_header=true"
+              :src="
+                locale === 'pt'
+                  ? $config.public.formsUrl.ptStartProject
+                  : $config.public.formsUrl.enStartProject
+              "
               frameborder="0"
               width="100%"
               height="100%"
@@ -42,7 +46,11 @@
           <p class="text-16/8 text-color-3 font-normal mt-8">
             {{ $t('t024') }}
             <a
-              href="http://"
+              :href="
+                locale === 'pt'
+                  ? $config.public.formsUrl.ptRequestService
+                  : $config.public.formsUrl.enRequestService
+              "
               target="_blank"
               class="text-color-1 underline"
             >
@@ -51,7 +59,7 @@
           <p class="text-16/8 text-color-3 font-normal mt-5.5">
             {{ $t('t026') }}
             <a
-              href="http://"
+              :href="$config.public.formsUrl.shceduleConsult"
               target="_blank"
               class="text-color-1 underline"
             >
@@ -71,3 +79,7 @@
     <PageSectionKnowMoreCases class="py-16 lg:py-24" />
   </div>
 </template>
+
+<script setup lang="ts">
+const { locale } = useI18n()
+</script>
