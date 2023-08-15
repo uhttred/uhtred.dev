@@ -3,46 +3,35 @@
   "short_name": "Uhtred M.",
   "start_url": "/?from=pwa-homescreen",
   "display": "fullscreen",
-  "background_color": "#0A0A0A",
-  "theme_color": "#0A0A0A",
+  "background_color": "#101010",
+  "theme_color": "#101010",
   "orientation": "portrait",
-  "description": "Hello, I'm a Product Developer. More than 7 years building beautiful Web Applications",
+  "description": "Hi, I'm a Product Developer. I help companies and entrepreneurs with business analysis for structuring, designing and developing scalable digital products. And I write a lot of insights about business, programming, design, etc.",
   "icons": [
     {
-      "src": "image/apple-touch-icon-180x180.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
-    {
-      "src": "image/maskable-icon-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
-    },
-    {
-      "src": "image/pwa-64x64.png",
-      "sizes": "64x64",
-      "type": "image/png"
-    },
-    {
-      "src": "image/pwa-192x192.png",
+      "src": "image/icon-192x192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "image/pwa-512x512.png",
+      "src": "image/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "image/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "image/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     },
     {
       "src": "icon.png",
-      "sizes": "1080x1080",
+      "sizes": "2878x2878",
       "type": "image/png"
-    },
-    {
-      "src": "icon.svg",
-      "sizes": "1080x1080",
-      "type": "image/svg"
     }
   ]
 }
