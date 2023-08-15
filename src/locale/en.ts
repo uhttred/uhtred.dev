@@ -91,9 +91,15 @@ export default {
   'pages.index.tagtitle.p3': 'Show social links',
   'pages.section.footer.p2': 'Your best e-mail',
 
-  'layouts.title': '{title} - Uhtred M.',
+  'layouts.title': "{title}{' | Uhtred M.'}",
   'pages.index.title': "Welcome to Uhtred's World",
   'pages.index.description': "Hi, I'm a Product Developer. I help companies and entrepreneurs with business analysis for structuring, designing and developing scalable digital products. And I write a lot of insights about business, programming, design, etc.",
   'pages.cases.index.title': 'Success cases',
-  'pages.cases.index.description': "Get to know projects that were aligned with my clients' business specifications and solved their problems in a unique way. True success cases."
+  'pages.cases.index.description': "Get to know projects that were aligned with my clients' business specifications and solved their problems in a unique way. True success cases.",
+  'pages.insights.index.title': 'Insights that ship you to next level',
+  'pages.insights.index.description': 'Get weekly insights that get you to next level. Gain insights on a range of topics from business, coding, design, finance, freelancing and more.',
+  'pages.store.index.title': 'Products that complete you',
+  'pages.store.index.description': 'Discover the range of digital products that complete you and take you to the next level of knowledge and business.',
+  'pages.start.index.title': 'Start your project today',
+  'pages.start.index.description': "Start your project today, request a service or schedule a consultation with me. What you need is a partner, I'm here for you."
 }

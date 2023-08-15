@@ -33,9 +33,9 @@ const title = computed(() => t('layouts.title', { title: t(route.meta.title || '
 const description = computed(() => t(route.meta.description || 'pages.index.description'))
 const iconPath = '/icon.svg'
 
-const titleTemplate = (title) => title
-  ? `${title} | Uhtred M.`
-  : 'Uhtred M.'
+// const titleTemplate = (title) => title
+//   ? `${title} | Uhtred M.`
+//   : 'Uhtred M.'
 useHead({
   // titleTemplate,
   link: [
@@ -66,7 +66,7 @@ useSeoMeta({
   publisher: 'Uhtred M.',
   creator: 'Uhtred M.',
   mobileWebAppCapable: 'yes',
-  ogImageAlt: 'Uhtred M. logo image',
+  ogImageAlt: 'Uhtred M. image',
   robots: {
     index: true,
     follow: true,

@@ -37,4 +37,9 @@
 
 <script setup lang="ts">
 const { entries, loading, loadMore, canLoadMore } = await usePaginator('products')
+
+definePageMeta({
+  title: 'pages.store.index.title',
+  description: 'pages.store.index.description'
+})
 </script>

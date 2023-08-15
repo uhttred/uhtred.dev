@@ -93,9 +93,15 @@ export default {
   'pages.index.tagtitle.p3': 'Mostrar redes sociais',
   'pages.section.footer.p2': 'Seu melhor e-mail',
 
-  'layouts.title': '{title} | Uhtred M.',
+  'layouts.title': "{title}{' | Uhtred M.'}",
   'pages.index.title': 'Bem-vindo ao mundo Uhtred',
   'pages.index.description': 'Olá, sou um Desenvolvedor de Produtos. Ajudo empresas e empreendedores com análise de negócios para estruturação, design e desenvolvimento de produtos digitais escaláveis. E escrevo vários insights sobre negócio, programação, design, etc.',
   'pages.cases.index.title': 'Casos de sucesso',
-  'pages.cases.index.description': 'Conheça projetos que foram alinhados as especificações dos negócios dos meus clientes e solucionaram os seus problemas de maneira única. Verdadeiros casos de sucesso.'
+  'pages.cases.index.description': 'Conheça projetos que foram alinhados as especificações dos negócios dos meus clientes e solucionaram os seus problemas de maneira única. Verdadeiros casos de sucesso.',
+  'pages.insights.index.title': 'Insights que levam você ao próximo nível',
+  'pages.insights.index.description': 'Obtenha insights semanais que o levarão ao próximo nível. Obtenha insights sobre diversos tópicos, desde negócios, programação, design, finanças, freelancing e mais.',
+  'pages.store.index.title': 'Produtos que te completam',
+  'pages.store.index.description': 'Conheça a gama de produtos digitais que o completam e o levam para o próximo nível de conhecimento e negócios.',
+  'pages.start.index.title': 'Comece seu projecto hoje',
+  'pages.start.index.description': 'Comece o seu projeto hoje, solicite um serviço ou agende uma consulta comigo. O que precisas é de um parceiro, estou aqui para si.'
 }

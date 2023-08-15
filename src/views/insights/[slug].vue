@@ -13,7 +13,8 @@
           <PageAsideSocialShare
             v-if="data"
             :url-path="route.path"
-            :title="locale === 'pt' ? data.pt_title || data.title : data.title"
+            :title="title"
+            :description="description"
             class="mt-40 sticky top-24"
           />
         </div>
@@ -169,11 +170,51 @@
 const { locale } = useI18n()
 const route = useRoute()
 const slug = computed(() => route.params.slug)
-const { data, error, refresh, pending } = useFetch(`insights/${slug.value}`)
+const { data, error, refresh, pending } = await useFetch(`insights/${slug.value}`)
 
 definePageMeta({
   validate: async (route) => {
     return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.params.slug)
   }
+})
+
+const title = computed(() => {
+  if (data.value) {
+    const t =  locale.value === 'pt'
+      ? data.value.pt_title || data.value.title
+      : data.value.title
+    return `${t} | Uhtred M.`
+  }
+  return '404 Error - Insights | Uhtred M.'
+})
+
+const description = computed(() => {
+  if (data.value) {
+    return locale.value === 'pt'
+      ? data.value.pt_description || data.value.description
+      : data.value.description
+  }
+  return ''
+})
+
+const image = computed(() => {
+  if (data.value) {
+    return data.value.cover.url
+  }
+  return '/icon.png'
+})
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  twitterTitle: title,
+  ogDescription: description,
+  twitterDescription: description,
+  twitterImage: image,
+  ogImage: image,
+  ogImageUrl: image
+}, {
+  mode: 'all'
 })
 </script>

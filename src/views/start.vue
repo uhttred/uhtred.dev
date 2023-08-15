@@ -82,4 +82,9 @@
 
 <script setup lang="ts">
 const { locale } = useI18n()
+
+definePageMeta({
+  title: 'pages.start.index.title',
+  description: 'pages.start.index.description'
+})
 </script>
