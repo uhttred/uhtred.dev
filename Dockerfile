@@ -1,9 +1,11 @@
 # Use the official lightweight Node.js 12 image.
 # https://hub.docker.com/_/node
-FROM node:18-slim
+FROM node:16-slim
 
 ARG PORT=3000
 ENV PORT $PORT
+
+ENV NODE_ENV=production
 
 EXPOSE $PORT 9229 9230
 

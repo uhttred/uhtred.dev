@@ -87,29 +87,29 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: process.env.API_BASE_URL || 'https://api.uhtred.dev',
-      appBaseUrl: process.env.APP_URL || 'https://uhtred.dev',
-      featuredQuoteId: process.env.FEATURED_QUOTE_ID || 1,
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'https://api.uhtred.dev',
+      appBaseUrl: process.env.NUXT_PUBLIC_APP_BASE_URL || 'https://uhtred.dev',
+      featuredQuoteId: process.env.NUXT_PUBLIC_FEATURED_QUOTE_ID || '1',
       contact: {
-        email: process.env.UH_CONTACT_EMAIL || 'am@uhtred.dev',
+        email: process.env.NUXT_PUBLIC_CONTATC_EMAIL || 'am@uhtred.dev',
       },
       socialLink: {
-        instagram: process.env.UH_SOCIAL_INSTAGRAM || 'https://instagram.com/uhtred.dev',
-        linkedin: process.env.UH_SOCIAL_LINKEDIN || 'https://www.linkedin.com/in/uhtredmiller/',
-        dribbble: process.env.UH_SOCIAL_DRIBBBLE || 'https://dribbble.com/uhtredmiller',
-        twitter: process.env.UH_SOCIAL_TWITTER || 'https://twitter.com/uhtredmiller',
-        youtube: process.env.UH_SOCIAL_YOUTUBE || 'https://www.youtube.com/@ageumatheus',
-        github: process.env.UH_SOCIAL_GITHUB || 'https://github.com/txiocoder'
+        instagram: process.env.NUXT_PUBLIC_SOCIAL_LINK_INSTAGRAM || 'https://instagram.com/uhtred.dev',
+        linkedin: process.env.NUXT_PUBLIC_SOCIAL_LINK_LINKEDIN || 'https://www.linkedin.com/in/uhtredmiller/',
+        dribbble: process.env.NUXT_PUBLIC_SOCIAL_LINK_DRIBBBLE || 'https://dribbble.com/uhtredmiller',
+        twitter: process.env.NUXT_PUBLIC_SOCIAL_LINK_TWITTER || 'https://twitter.com/uhtredmiller',
+        youtube: process.env.NUXT_PUBLIC_SOCIAL_LINK_YOUTUBE || 'https://www.youtube.com/@ageumatheus',
+        github: process.env.NUXT_PUBLIC_SOCIAL_LINK_GITHUB || 'https://github.com/txiocoder'
       },
       formsUrl: {
-        ptStartProject: process.env.FORM_PT_SP || '',
-        enStartProject: process.env.FORM_EN_SP || '',
-        ptRequestService: process.env.FORM_PT_RS || '',
-        enRequestService: process.env.FORM_EN_RS || '',
-        shceduleConsult: process.env.FORM_SCHEDULE || ''
+        ptStartProject: process.env.NUXT_PUBLIC_FORMS_URL_PT_START_PROJECT || '',
+        enStartProject: process.env.NUXT_PUBLIC_FORMS_URL_EN_START_PROJECT || '',
+        ptRequestService: process.env.NUXT_PUBLIC_FORMS_URL_PT_REQUEST_SERVICE || '',
+        enRequestService: process.env.NUXT_PUBLIC_FORMS_URL_EN_REQUEST_SERVICE || '',
+        schedule: process.env.NUXT_PUBLIC_FORMS_URL_SCHEDULE || ''
       },
       i18n: {
-        baseUrl: process.env.APP_URL || 'https://uhtred.dev'
+        baseUrl: process.env.NUXT_PUBLIC_I18N_BASE_URL || 'https://uhtred.dev'
      }
     }
   }

@@ -59,7 +59,7 @@
           <p class="text-16/8 text-color-3 font-normal mt-5.5">
             {{ $t('t026') }}
             <a
-              :href="$config.public.formsUrl.shceduleConsult"
+              :href="$config.public.formsUrl.schedule"
               target="_blank"
               class="text-color-1 underline"
             >

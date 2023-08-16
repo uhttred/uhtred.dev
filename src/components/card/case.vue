@@ -74,9 +74,5 @@
 
 <script setup lang="ts">
 const { locale } = useI18n()
-const props = defineProps({
-  projectCase: {
-    type: Object
-  }
-})
+const { projectCase } = defineProps(['projectCase'])
 </script>

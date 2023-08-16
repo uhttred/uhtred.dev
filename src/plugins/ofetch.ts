@@ -9,7 +9,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         'Content-Type': 'application/json',
         'Accept-Language': locale
       },
-      baseURL: nuxtApp.$config.public.baseURL,
+      baseURL: nuxtApp.$config.public.apiBaseUrl,
     })
   }
   
