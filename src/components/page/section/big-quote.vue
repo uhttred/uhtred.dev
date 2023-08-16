@@ -20,12 +20,12 @@
           <!-- logo -->
           <img
             class="w-[80px] mt-10 lg:mt-12 lg:w-[100px] dark:hidden"
-            :src="data.brand_logo.url"
+            :src="data.brand_logo?.url"
             alt="logo"
           >
           <img
             class="w-[80px] mt-10 lg:mt-12 lg:w-[100px] hidden dark:block"
-            :src="data.brand_logo_dark.url"
+            :src="data.brand_logo_dark?.url"
             alt=""
           >
           <!-- person and job title -->

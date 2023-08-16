@@ -33,13 +33,13 @@
             <img
               v-if="quote.brand_logo"
               class="max-w-[120px] lg:max-w-[140px] dark:hidden"
-              :src="quote.brand_logo.url"
+              :src="quote.brand_logo?.url"
               alt=""
             >
             <img
               v-if="quote.brand_logo_dark"
               class="max-w-[120px] lg:max-w-[140px] hidden dark:block"
-              :src="quote.brand_logo_dark.url"
+              :src="quote.brand_logo_dark?.url"
               alt=""
             >
             <p class="text-14/[30px] lg:text-16/7 text-color-3 mt-10">
@@ -58,7 +58,7 @@
               >
                 <img
                   class="rounded-lg border border-gray-950/10 w-10 mr-4 xl:mr-7.5"
-                  :src="quote.author.avatar.url"
+                  :src="quote.author.avatar?.url"
                   alt="author avatar"
                 >
               </a>

@@ -46,7 +46,7 @@
             })"
           >
             <img
-              :src="entry.cover.url"
+              :src="entry.cover?.url"
               alt="case cover"
               class="w-full h-full object-cover"
             >
