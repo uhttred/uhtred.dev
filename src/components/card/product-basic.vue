@@ -7,7 +7,7 @@
         target="_blank"
       >
         <img
-          :src="product.cover.url"
+          :src="product?.cover?.url"
           alt="product cover"
           class="w-full h-full object-cover"
         >

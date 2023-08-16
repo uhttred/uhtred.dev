@@ -67,7 +67,7 @@
                   overflow-hidden mt-10 lg:mt-14 text-center"
               >
                 <img
-                  :src="data.cover.url"
+                  :src="data.cover?.url"
                   class="w-full h-full object-cover"
                   alt=""
                 >
@@ -205,7 +205,7 @@ const description = computed(() => {
 
 const image = computed(() => {
   if (data.value) {
-    return data.value.cover.url
+    return data.value.cover?.url
   }
   return '/icon.png'
 })

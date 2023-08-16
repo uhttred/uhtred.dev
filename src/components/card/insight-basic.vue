@@ -11,7 +11,7 @@
         })"
       >
         <img
-          :src="insight.cover.url"
+          :src="insight?.cover?.url"
           alt="insight cover"
           class="w-full h-full object-cover"
         >

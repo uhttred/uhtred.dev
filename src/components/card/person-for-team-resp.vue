@@ -15,7 +15,7 @@
   <div v-else>
     <div class="bdr-2 rounded bg-2 overflow-hidden w-12 h-12">
       <img
-        :src="data.avatar.url"
+        :src="data?.avatar?.url"
         alt="profile image"
         class="w-full h-full object-cover"
       >

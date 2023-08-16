@@ -17,12 +17,12 @@
         })"
       >
         <img
-          :src="project.banner.url"
+          :src="project?.banner?.url"
           class="dark:hidden rounded-md bdr-2"
           alt="case banner"
         >
         <img
-          :src="project.banner_dark.url"
+          :src="project?.banner_dark?.url"
           class="hidden dark:block bdr-1 rounded-md"
           alt="case banner"
         >
@@ -38,12 +38,12 @@
       ]"
     >
       <img
-        :src="project.brand_logo.url"
+        :src="project?.brand_logo?.url"
         class="dark:hidden"
         alt="case client logo"
       >
       <img
-        :src="project.brand_logo_dark.url"
+        :src="project?.brand_logo_dark?.url"
         class="hidden dark:block"
         alt="case client logo dark"
       >

@@ -6,7 +6,7 @@
       <div class="flex items-center gap-x-4">
         <div class="w-9 h-9 rounded-full bdr-2 bg-2 overflow-hidden">
           <img
-            :src="insight.author.avatar.url"
+            :src="insight?.author?.avatar?.url"
             alt="author avatar"
             class="w-full h-full object-cover"
           >
@@ -71,7 +71,7 @@
             })"
           >
             <img
-              :src="insight.cover.url"
+              :src="insight?.cover?.url"
               alt="insight cover"
               class="w-full h-full object-cover"
             >

@@ -76,7 +76,7 @@
                     target="_blank"
                   >
                     <img
-                      :src="data.author.avatar.url"
+                      :src="data.author.avatar?.url"
                       alt=""
                       class="w-full h-full object-cover"
                     >
@@ -108,7 +108,7 @@
                   overflow-hidden mt-10 lg:mt-12"
               >
                 <img
-                  :src="data.cover.url"
+                  :src="data.cover?.url"
                   class="w-full h-full object-cover"
                   alt="insight cover"
                 >
@@ -199,7 +199,7 @@ const description = computed(() => {
 
 const image = computed(() => {
   if (data.value) {
-    return data.value.cover.url
+    return data.value.cover?.url
   }
   return '/icon.png'
 })
