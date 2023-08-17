@@ -9,16 +9,18 @@
           }
         })"
       >
-        <img
-          :src="projectCase.banner?.url"
+        <UhImage
+          :image-src="projectCase?.banner?.url"
+          :thumbnail-src="projectCase?.banner?.thumbnail_url"
           class="dark:hidden rounded-md bdr-2"
           alt="case banner"
-        >
-        <img
-          :src="projectCase.banner_dark?.url"
+        />
+        <UhImage
+          :image-src="projectCase?.banner_dark?.url"
+          :thumbnail-src="projectCase?.banner_dark?.thumbnail_url"
           class="hidden dark:block bdr-1 rounded-md"
           alt="case banner"
-        >
+        />
       </NuxtLink>
     </div>
     <div

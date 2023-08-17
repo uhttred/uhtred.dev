@@ -8,7 +8,10 @@
       <div class="col-span-full h-full flex justify-between items-center">
         <!-- logo -->
         <div>
-          <NuxtLink :to="localePath('index')">
+          <NuxtLink
+            :to="localePath('index')"
+            @click.native="showMobileMenu=false"
+          >
             <img
               src="~/assets/image/uhtred-logo-menu.svg"
               class="w-[90px] lg:w-auto dark:hidden"
@@ -272,11 +275,15 @@
             </NuxtLink>
           </nav>
           <!-- change locale -->
-          <UhLocaleToggle class="mt-12" />
+          <UhLocaleToggle
+            class="mt-12"
+            @click.native="showMobileMenu=false"
+          />
           <!-- start project -->
           <NuxtLink
             :to="localePath('start')"
             class="btn active:bg-green-500 w-full mt-12 block text-center"
+            @click.native="showMobileMenu=false"
           >
             {{ $t('Start project') }}
           </NuxtLink>

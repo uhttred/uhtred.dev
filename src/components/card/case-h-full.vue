@@ -16,16 +16,20 @@
           }
         })"
       >
-        <img
-          :src="project?.banner?.url"
-          class="dark:hidden rounded-md bdr-2"
+        <UhImage
+          :image-src="project?.banner?.url"
+          :thumbnail-src="project?.banner?.thumbnail_url"
+          class="dark:hidden"
+          image-class="rounded-md bdr-2"
           alt="case banner"
-        >
-        <img
-          :src="project?.banner_dark?.url"
-          class="hidden dark:block bdr-1 rounded-md"
+        />
+        <UhImage
+          :image-src="project?.banner_dark?.url"
+          :thumbnail-src="project?.banner_dark?.thumbnail_url"
+          class="hidden dark:block"
+          image-class="rounded-md bdr-1"
           alt="case banner"
-        >
+        />
       </NuxtLink>
     </div>
     <div
@@ -38,12 +42,12 @@
       ]"
     >
       <img
-        :src="project?.brand_logo?.url"
+        :src="project.brand_logo?.url"
         class="dark:hidden"
         alt="case client logo"
       >
       <img
-        :src="project?.brand_logo_dark?.url"
+        :src="project.brand_logo_dark?.url"
         class="hidden dark:block"
         alt="case client logo dark"
       >

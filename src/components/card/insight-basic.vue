@@ -10,11 +10,11 @@
           }
         })"
       >
-        <img
-          :src="insight?.cover?.url"
+        <UhImage
+          :image-src="insight?.cover?.url"
+          :thumbnail-src="insight?.cover?.thumbnail_url"
           alt="insight cover"
-          class="w-full h-full object-cover"
-        >
+        />
       </NuxtLink>
     </div>
     <NuxtLink

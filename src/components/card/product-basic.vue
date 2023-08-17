@@ -6,11 +6,11 @@
         :href="product.buy_at"
         target="_blank"
       >
-        <img
-          :src="product?.cover?.url"
+        <UhImage
+          :image-src="product?.cover?.url"
+          :thumbnail-src="product?.cover?.thumbnail_url"
           alt="product cover"
-          class="w-full h-full object-cover"
-        >
+        />
       </a>
     </div>
     <a

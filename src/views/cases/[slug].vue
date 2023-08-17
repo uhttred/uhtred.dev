@@ -66,11 +66,11 @@
                 class="w-screen xl:w-[calc(100%+40px)] xl:h-[26.875rem] bg-2 xl:bdr-2 xl:rounded-md
                   overflow-hidden mt-10 lg:mt-14 text-center"
               >
-                <img
-                  :src="data.cover?.url"
-                  class="w-full h-full object-cover"
-                  alt=""
-                >
+                <UhImage
+                  :image-src="data?.cover?.url"
+                  :thumbnail-src="data?.cover?.thumbnail_url"
+                  alt="case cover"
+                />
               </div>
             </template>
           </section>

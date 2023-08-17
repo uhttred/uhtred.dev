@@ -42,10 +42,10 @@
             <template v-else>
               <div class="flex items-center mb-4 gap-x-3">
                 <p class="text-13 text-color-3">
-                  {{ data.created_at }}
+                  {{ useDatetimeFormatString(data.created_at).value }}
                 </p>
                 <span class="text-2 text-color-3">•</span>
-                <p class="text-13 text-color-2">
+                <p class="text-13 text-color-3">
                   {{ data.visualisations }} views
                 </p>
               </div>
@@ -107,11 +107,11 @@
                 class="w-full xl:w-full xl:h-[23rem] bg-2 xl:bdr-2 rounded-md
                   overflow-hidden mt-10 lg:mt-12"
               >
-                <img
-                  :src="data.cover?.url"
-                  class="w-full h-full object-cover"
+                <UhImage
+                  :image-src="data.cover?.url"
+                  :thumbnail-src="data.cover?.thumbnail_url"
                   alt="insight cover"
-                >
+                />
               </div>
             </template>
           </section>

@@ -5,11 +5,16 @@
       <!-- author space -->
       <div class="flex items-center gap-x-4">
         <div class="w-9 h-9 rounded-full bdr-2 bg-2 overflow-hidden">
-          <img
+          <!-- <img
             :src="insight?.author?.avatar?.url"
             alt="author avatar"
             class="w-full h-full object-cover"
-          >
+          > -->
+          <UhImage
+            :image-src="insight?.author?.avatar?.url"
+            :thumbnail-src="insight?.author?.avatar?.thumbnail_url"
+            alt="author avatar"
+          />
         </div>
         <div>
           <div class="flex items-center gap-x-2">
@@ -18,7 +23,7 @@
             </h4>
             <span class="text-2 text-color-3">•</span>
             <p class="text-12 text-color-3">
-              {{ insight.created_at }}
+              {{ useDatetimeFormatString(insight.created_at).value }}
             </p>
           </div>
           <p class="text-13 text-color-2 mt-0.5">
@@ -70,11 +75,10 @@
               }
             })"
           >
-            <img
-              :src="insight?.cover?.url"
-              alt="insight cover"
-              class="w-full h-full object-cover"
-            >
+            <UhImage
+              :image-src="insight?.cover?.url"
+              :thumbnail-src="insight?.cover?.thumbnail_url"
+            />
           </NuxtLink>
         </div>
       </div>

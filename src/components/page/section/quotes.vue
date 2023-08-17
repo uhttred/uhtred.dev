@@ -55,15 +55,16 @@
               <a
                 :href="quote.author.website"
                 target="_blank"
+                class="block flex-shrink-0"
               >
                 <img
-                  class="rounded-lg border border-gray-950/10 w-10 mr-4 xl:mr-7.5"
+                  class="rounded-lg border border-gray-950/10 w-10 shrink-0"
                   :src="quote.author.avatar?.url"
                   alt="author avatar"
                 >
               </a>
               <a
-                class="text-12 xl:text-16 font-medium text-color-1"
+                class="text-12 xl:text-16 font-medium text-color-1 ml-4 xl:ml-7.5"
                 :href="quote.author.website"
                 target="_blank"
               >

@@ -30,8 +30,12 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts',
-    'nuxt-gtag'
+    'nuxt-gtag',
+    'nuxt-simple-sitemap'
   ],
+  site: {
+    url: 'https://uhtred.dev'
+  },
   pwa: {
     manifest: {
       lang: 'en',
