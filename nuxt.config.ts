@@ -29,7 +29,8 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
-    '@nuxtjs/google-fonts'
+    '@nuxtjs/google-fonts',
+    'nuxt-gtag'
   ],
   pwa: {
     manifest: {
@@ -85,6 +86,9 @@ export default defineNuxtConfig({
       }
     }
   },
+  gtag: {
+    id: ''
+  },
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'https://api.uhtred.dev',
@@ -110,7 +114,10 @@ export default defineNuxtConfig({
       },
       i18n: {
         baseUrl: process.env.NUXT_PUBLIC_I18N_BASE_URL || 'https://uhtred.dev'
-     }
+      },
+      gtag: {
+        id: process.env.NUXT_PUBLIC_GTAG_ID
+      }
     }
   }
 })
