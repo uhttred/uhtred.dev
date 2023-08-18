@@ -223,4 +223,13 @@ useSeoMeta({
 }, {
   mode: 'all'
 })
+
+useSchemaOrg([
+  defineArticle({
+    '@type': 'BlogPosting',
+    image: image.value,
+    datePublished: data.value.created_at,
+    dateModified: data.value.updated_at
+  })
+])
 </script>
