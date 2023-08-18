@@ -47,7 +47,7 @@ useHead({
     { rel: 'manifest', href: '/manifest.json' }
   ]
 })
-useSeoMeta({
+await useSeoMeta({
   title,
   // titleTemplate,
   description,
@@ -77,4 +77,25 @@ useSeoMeta({
     follow: true,
   },
 })
+useSchemaOrg([
+  defineWebSite({
+    name: 'Uhtred M.',
+    potentialAction: [
+      defineSearchAction({
+        target: '/insights?q={search_term_string}'
+      })
+    ]
+  }),
+  definePerson({
+    name: 'Uhtred M.',
+    image: '/uhtred.png',
+    sameAs: [
+      'https://uhtred.dev',
+      'https://github.com/uhttred',
+      'https://instagram.com/uhtred.dev',
+      'https://linkedin.com/in/uhtredmiller'
+    ]
+  }),
+  defineWebPage()
+])
 </script>

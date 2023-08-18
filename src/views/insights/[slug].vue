@@ -217,4 +217,20 @@ useSeoMeta({
 }, {
   mode: 'all'
 })
+
+useSchemaOrg([
+  defineArticle({
+    '@type': 'BlogPosting',
+    image: image.value,
+    datePublished: data.value.created_at,
+    dateModified: data.value.updated_at,
+    author: [
+      {
+        name: data.value.author.name,
+        url: data.value.author.website,
+        image: data.value.author.avatar.url
+      }
+    ]
+  })
+])
 </script>

@@ -1595,7 +1595,7 @@
     which "^3.0.1"
     ws "^8.13.0"
 
-"@nuxt/kit@3.6.5", "@nuxt/kit@^3.4.1", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.6.1", "@nuxt/kit@^3.6.2", "@nuxt/kit@^3.6.5":
+"@nuxt/kit@3.6.5", "@nuxt/kit@^3.4.1", "@nuxt/kit@^3.5.1", "@nuxt/kit@^3.5.3", "@nuxt/kit@^3.6.1", "@nuxt/kit@^3.6.2", "@nuxt/kit@^3.6.5":
   version "3.6.5"
   resolved "https://registry.yarnpkg.com/@nuxt/kit/-/kit-3.6.5.tgz#208777acdc2a09109fbe4209aad736874eb9a3f5"
   integrity sha512-uBI5I2Zx6sk+vRHU+nBmifwxg/nyXCGZ1g5hUKrUfgv1ZfiKB8JkN5T9iRoduDOaqbwM6XSnEl1ja73iloDcrw==
@@ -2032,6 +2032,11 @@
   dependencies:
     "@unhead/schema" "1.1.32"
     "@unhead/shared" "1.1.32"
+
+"@unhead/schema-org-vue@^0.6.0":
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/@unhead/schema-org-vue/-/schema-org-vue-0.6.0.tgz#b847af9a2ebcdf17e01e98ea7ba6fae4bb4edede"
+  integrity sha512-2zTVczJ8iI8jDOzaz2md8fr8j+jWqkmMdo89OI/VVPYWpA6Cy2BFCMvDqrptBZ2h3ieOZ/lhA/y+cTobBZEvaQ==
 
 "@unhead/schema@1.1.32":
   version "1.1.32"
@@ -5714,6 +5719,15 @@ nuxt-gtag@^0.6.1:
     "@nuxt/kit" "^3.6.5"
     defu "^6.1.2"
     pathe "^1.1.1"
+
+nuxt-schema-org@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/nuxt-schema-org/-/nuxt-schema-org-2.2.0.tgz#73a4a5ea6e7765657cc953e746fe750210aa39d5"
+  integrity sha512-V0LHh4A3tZSRLGv9P+SG8zm9N4e1qZt2x6z7FgL9qYjpNDyCJ5G186vmTqT4kN0JErjRiYVxantBjDQa7DcVKQ==
+  dependencies:
+    "@nuxt/kit" "^3.5.1"
+    "@unhead/schema-org-vue" "^0.6.0"
+    pathe "^1.1.0"
 
 nuxt-simple-sitemap@^3.1.7:
   version "3.1.7"

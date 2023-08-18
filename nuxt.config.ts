@@ -31,7 +31,8 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@nuxtjs/google-fonts',
     'nuxt-gtag',
-    'nuxt-simple-sitemap'
+    'nuxt-simple-sitemap',
+    'nuxt-schema-org'
   ],
   site: {
     url: 'https://uhtred.dev'
@@ -77,6 +78,7 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
   googleFonts: {
+    download: false,
     families: {
       'Noto+Sans': {
         wght: [
@@ -97,6 +99,7 @@ export default defineNuxtConfig({
     public: {
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'https://api.uhtred.dev',
       appBaseUrl: process.env.NUXT_PUBLIC_APP_BASE_URL || 'https://uhtred.dev',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://uhtred.dev',
       featuredQuoteId: process.env.NUXT_PUBLIC_FEATURED_QUOTE_ID || '1',
       contact: {
         email: process.env.NUXT_PUBLIC_CONTATC_EMAIL || 'am@uhtred.dev',
@@ -104,10 +107,10 @@ export default defineNuxtConfig({
       socialLink: {
         instagram: process.env.NUXT_PUBLIC_SOCIAL_LINK_INSTAGRAM || 'https://instagram.com/uhtred.dev',
         linkedin: process.env.NUXT_PUBLIC_SOCIAL_LINK_LINKEDIN || 'https://www.linkedin.com/in/uhtredmiller/',
-        dribbble: process.env.NUXT_PUBLIC_SOCIAL_LINK_DRIBBBLE || 'https://dribbble.com/uhtredmiller',
+        dribbble: process.env.NUXT_PUBLIC_SOCIAL_LINK_DRIBBBLE || 'https://dribbble.com/uhttred',
         twitter: process.env.NUXT_PUBLIC_SOCIAL_LINK_TWITTER || 'https://twitter.com/uhtredmiller',
         youtube: process.env.NUXT_PUBLIC_SOCIAL_LINK_YOUTUBE || 'https://www.youtube.com/@ageumatheus',
-        github: process.env.NUXT_PUBLIC_SOCIAL_LINK_GITHUB || 'https://github.com/txiocoder'
+        github: process.env.NUXT_PUBLIC_SOCIAL_LINK_GITHUB || 'https://github.com/uhttred'
       },
       formsUrl: {
         ptStartProject: process.env.NUXT_PUBLIC_FORMS_URL_PT_START_PROJECT || '',

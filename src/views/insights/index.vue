@@ -76,7 +76,12 @@
 </template>
 
 <script setup lang="ts">
-const query = ref({ search: '' })
+const { t } = useI18n()
+const route = useRoute()
+const searchQuery = computed(() => route.query.q )
+const query = ref({
+  search: searchQuery.value
+})
 const {
   entries,
   loadMore,
@@ -92,4 +97,13 @@ definePageMeta({
   title: 'pages.insights.index.title',
   description: 'pages.insights.index.description'
 })
+useSchemaOrg([
+  defineWebPage({
+    '@type': ['CollectionPage', 'SearchResultsPage'],
+  }),
+  defineWebPage({
+    description: t('pages.insights.index.description'),
+    name: t('pages.insights.index.title')
+  })
+])
 </script>

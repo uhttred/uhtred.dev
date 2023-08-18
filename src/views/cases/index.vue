@@ -74,6 +74,7 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
 const query = ref({ search: '' })
 const {
   entries,
@@ -86,8 +87,17 @@ const {
   pageLimit: 8,
 })
 
-definePageMeta({
+await definePageMeta({
   title: 'pages.cases.index.title',
   description: 'pages.cases.index.description'
 })
+useSchemaOrg([
+  defineWebPage({
+    '@type': ['CollectionPage', 'SearchResultsPage'],
+  }),
+  defineWebPage({
+    description: t('pages.cases.index.description'),
+    name: t('pages.cases.index.title')
+  })
+])
 </script>

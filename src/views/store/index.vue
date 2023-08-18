@@ -36,10 +36,17 @@
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
 const { entries, loading, loadMore, canLoadMore } = await usePaginator('products')
 
 definePageMeta({
   title: 'pages.store.index.title',
   description: 'pages.store.index.description'
 })
+useSchemaOrg([
+  defineWebPage({
+    description: t('pages.store.index.description'),
+    name: t('pages.store.index.title')
+  })
+])
 </script>

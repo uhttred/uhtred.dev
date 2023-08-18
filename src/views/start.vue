@@ -81,10 +81,16 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 
 definePageMeta({
   title: 'pages.start.index.title',
   description: 'pages.start.index.description'
 })
+useSchemaOrg([
+  defineWebPage({
+    description: t('pages.start.index.description'),
+    name: t('pages.start.index.title')
+  })
+])
 </script>
