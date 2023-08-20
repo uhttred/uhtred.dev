@@ -2,7 +2,7 @@
   <div>
     <div
       class="row-c relative before:block before:absolute before:bg-gray-100 dark:before:bg-gray-800
-        before:h-[36.125rem] before:bdr-b-2 before:w-full before:-inset-1 before:-z-10"
+        before:h-[35.125rem] before:bdr-b-2 before:w-full before:-inset-1 before:-z-10"
     >
       <div class="row bdr-b-1">
         <!-- share icons -->
@@ -58,7 +58,7 @@
                 {{ 
                   locale === 'pt'
                     ? data.pt_description ?? data.description
-                    : data.title
+                    : data.description
                 }}
               </p>
               <!-- cover -->
