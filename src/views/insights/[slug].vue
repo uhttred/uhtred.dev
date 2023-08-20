@@ -75,11 +75,10 @@
                     :href="data.author.website"
                     target="_blank"
                   >
-                    <img
-                      :src="data.author.avatar?.url"
-                      alt=""
-                      class="w-full h-full object-cover"
-                    >
+                    <UhImage
+                      :image-src="data.author.avatar?.url"
+                      :thumbnail-src="data.author.thumbnail?.url"
+                    />
                   </a>
                 </div>
                 <div>

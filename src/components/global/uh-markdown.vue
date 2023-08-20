@@ -43,6 +43,9 @@ li code:not([class^="language-"]) {
 abbr {
   cursor: help;
 }
+blockquote p {
+  @apply text-gray-800 dark:text-gray-50 !important;
+}
 </style>
 
 <script setup lang="ts">
