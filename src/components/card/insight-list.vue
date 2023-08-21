@@ -23,7 +23,7 @@
             </h4>
             <span class="text-2 text-color-3">•</span>
             <p class="text-12 text-color-3">
-              {{ useDatetimeFormatString(insight.created_at).value }}
+              {{ useDatetimeFormatString(insight.published_at).value }}
             </p>
           </div>
           <p class="text-13 text-color-2 mt-0.5">

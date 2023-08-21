@@ -17,8 +17,7 @@
         </NuxtLink>
         <!--  -->
         <p class="text-14/6 text-color-3 mt-10">
-          Camama 1, Talatona,
-          Luanda, Angola
+          Talatona, Luanda, Angola
         </p>
         <a
           :href="`mailto:${$config.public.contact.email}`"

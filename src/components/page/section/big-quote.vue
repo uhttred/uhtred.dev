@@ -49,8 +49,9 @@
 </template>
 
 <script setup lang="ts">
+import { sample }  from 'lodash'
 const config = useRuntimeConfig()
 const { locale } = useI18n()
-const quoteId = config.public.featuredQuoteId
+const quoteId = sample(config.public.featuredQuoteIds.split(','))
 const { data, refresh, error, pending } = useFetch(`quotes/${quoteId}`)
 </script>

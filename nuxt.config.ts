@@ -100,7 +100,7 @@ export default defineNuxtConfig({
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL || 'https://api.uhtred.dev',
       appBaseUrl: process.env.NUXT_PUBLIC_APP_BASE_URL || 'https://uhtred.dev',
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://uhtred.dev',
-      featuredQuoteId: process.env.NUXT_PUBLIC_FEATURED_QUOTE_ID || '1',
+      featuredQuoteIds: process.env.NUXT_PUBLIC_FEATURED_QUOTE_IDS || '1,2',
       contact: {
         email: process.env.NUXT_PUBLIC_CONTATC_EMAIL || 'am@uhtred.dev',
       },

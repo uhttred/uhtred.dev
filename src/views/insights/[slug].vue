@@ -28,7 +28,7 @@
               <UhSpinner v-if="pending" />
               <p
                 v-if="error && !pending"
-                class="text-14 text-color-2"
+                class="text-14 text-color-2 mb-8"
               >
                 {{ $t('Error loading') }}.
                 <button
@@ -42,12 +42,13 @@
             <template v-else>
               <div class="flex items-center mb-4 gap-x-3">
                 <p class="text-13 text-color-3">
-                  {{ useDatetimeFormatString(data.created_at).value }}
+                  {{ useDatetimeFormatString(data.published_at).value }}
                 </p>
                 <span class="text-2 text-color-3">•</span>
-                <p class="text-13 text-color-3">
-                  {{ data.visualisations }} views
-                </p>
+                <SmallInsightViewsCount
+                  class="text-13 text-color-3"
+                  :insight="data"
+                />
               </div>
               <h1
                 class="font-bold text-32 lg:text-40/[3.56rem] max-w-[41.75rem] text-color-1"
@@ -70,7 +71,7 @@
                 v-if="data.author"
                 class="mt-5.5 flex items-center gap-x-4"
               >
-                <div class="w-12 h-12 rounded-full bdr-2 bg-2 overflow-hidden">
+                <div class="w-10 h-10 rounded-full bdr-2 bg-2 overflow-hidden">
                   <a
                     :href="data.author.website"
                     target="_blank"
@@ -94,7 +95,7 @@
                     :href="data.author.website"
                     target="_blank"
                   >
-                    <p class="text-14 text-color-2 mt-1 hover:underline">
+                    <p class="text-13 text-color-2 mt-1 hover:underline">
                       {{ data.author.job_title }}
                       <span class="text-color-3">/ {{ data.author.company_name }}</span>
                     </p>
@@ -116,7 +117,8 @@
           </section>
           <!-- markdown conten -->
           <article
-            class="flex flex-col items-center w-full my-14"
+            v-if="!pending && !error"
+            class="flex flex-col items-center w-full mb-14 mt-10"
           >
             <UhMarkdown
               v-if="locale === 'pt' && data && data.pt_content"
@@ -217,19 +219,21 @@ useSeoMeta({
   mode: 'all'
 })
 
-useSchemaOrg([
-  defineArticle({
-    '@type': 'BlogPosting',
-    image: image.value,
-    datePublished: data.value.created_at,
-    dateModified: data.value.updated_at,
-    author: [
-      {
-        name: data.value.author.name,
-        url: data.value.author.website,
-        image: data.value.author.avatar.url
-      }
-    ]
-  })
-])
+if (data.value) {
+  useSchemaOrg([
+    defineArticle({
+      '@type': 'BlogPosting',
+      image: image.value,
+      datePublished: data.value.created_at,
+      dateModified: data.value.updated_at,
+      author: [
+        {
+          name: data.value.author.name,
+          url: data.value.author.website,
+          image: data.value.author.avatar.url
+        }
+      ]
+    })
+  ])
+}
 </script>

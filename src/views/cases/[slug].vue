@@ -26,7 +26,10 @@
             <template
               v-if="error || pending"
             >
-              <UhSpinner v-if="pending" />
+              <UhSpinner
+                v-if="pending"
+                class="pb-8"
+              />
               <p
                 v-if="error && !pending"
                 class="text-14 text-color-2"
@@ -223,13 +226,4 @@ useSeoMeta({
 }, {
   mode: 'all'
 })
-
-useSchemaOrg([
-  defineArticle({
-    '@type': 'BlogPosting',
-    image: image.value,
-    datePublished: data.value?.created_at,
-    dateModified: data.value?.updated_at
-  })
-])
 </script>
