@@ -28,12 +28,12 @@
     >
       <img
         :src="projectCase.brand_logo?.url"
-        class="dark:hidden max-w-[80px]"
+        class="dark:hidden max-w-[80px] max-h-7"
         alt="case client logo"
       >
       <img
         :src="projectCase.brand_logo_dark?.url"
-        class="hidden dark:block max-w-[80px]"
+        class="hidden dark:block max-w-[80px] max-h-7"
         alt="case client logo dark"
       >
       <NuxtLink

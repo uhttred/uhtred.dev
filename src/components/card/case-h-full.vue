@@ -43,12 +43,12 @@
     >
       <img
         :src="project.brand_logo?.url"
-        class="dark:hidden"
+        class="dark:hidden max-h-7"
         alt="case client logo"
       >
       <img
         :src="project.brand_logo_dark?.url"
-        class="hidden dark:block"
+        class="hidden dark:block max-h-7"
         alt="case client logo dark"
       >
       <NuxtLink
