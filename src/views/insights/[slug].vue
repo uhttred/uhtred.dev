@@ -168,10 +168,10 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useI18n()
 const route = useRoute()
 const slug = computed(() => route.params.slug)
 const { data, error, refresh, pending } = await useFetch(`insights/${slug.value}`)
+const { locale } = useI18n()
 
 definePageMeta({
   validate: async (route) => {
