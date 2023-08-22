@@ -22,7 +22,7 @@ export default {
   t013: 'Receba insights toda semana',
   t014: 'Tópicos de insights',
   t015: 'Buscar pelo nome ou título',
-  t016: 'Produtos que talvez interessam-te',
+  t016: 'Produtos que talvez te interessam',
   t017: 'Ver todos produtos',
   t018: `Ou entre em contato comigo se quiser compartilhar algum
     insight sobre negócios, tecnologia, freelancer, design, entre outros.`,
