@@ -32,8 +32,12 @@ export default defineNuxtConfig({
     '@nuxtjs/google-fonts',
     'nuxt-gtag',
     'nuxt-simple-sitemap',
-    'nuxt-schema-org'
+    'nuxt-schema-org',
+    'nuxt-disqus',
   ],
+  disqus: {
+    shortname: 'uhtred',
+  },
   site: {
     url: 'https://uhtred.dev'
   },

@@ -91,6 +91,13 @@
               :content="data.content"
             />
           </article>
+          <!-- comments -->
+          <div class="w-full py-12 bdr-t-1">
+            <DisqusComments
+              v-if="data"
+              :identifier="`/cases/${data.slug}`"
+            />
+          </div>
         </div>
       </div>
     </div>

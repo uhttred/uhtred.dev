@@ -129,6 +129,13 @@
               :content="data.content"
             />
           </article>
+          <!-- comments -->
+          <div class="w-full py-12 bdr-t-1">
+            <DisqusComments
+              v-if="data"
+              :identifier="`/insights/${data.slug}`"
+            />
+          </div>
         </div>
         <!-- vertical line -->
         <div class="col-span-1 col-start-9 hidden xl:flex justify-center">
@@ -155,11 +162,11 @@
       </div>
     </div>
     <!-- ads -->
-    <div class="row-c mt-14">
+    <!-- <div class="row-c mt-14">
       <div class="row min-h-[14rem] bg-2 bdr-2 rounded-lg py-12 gap-y-8">
         
       </div>
-    </div>
+    </div> -->
     <!-- rknow more cases -->
     <PageSectionGetMoreInsights class="py-24" />
     <!-- products -->

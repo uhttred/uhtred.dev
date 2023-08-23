@@ -5711,6 +5711,15 @@ nuxi@3.6.5:
   optionalDependencies:
     fsevents "~2.3.2"
 
+nuxt-disqus@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/nuxt-disqus/-/nuxt-disqus-1.0.1.tgz#c24707091d71ae769368c5f02a678abfb4654c2e"
+  integrity sha512-audsnAo2fXuhZFCOAcoYogwpIAs/xTfi+pUK0aarnEbiV5cFIFnITtN6u0KAqntISZBvZUzOqxoqzPjodYoMjA==
+  dependencies:
+    "@nuxt/kit" "^3.6.2"
+    defu "^6.1.2"
+    vue3-disqus "^1.0.6"
+
 nuxt-gtag@^0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/nuxt-gtag/-/nuxt-gtag-0.6.1.tgz#6bcbf797d194489cf2a3dc287d37846b41c06be8"
@@ -7901,6 +7910,13 @@ vue-router@^4.2.4:
   integrity sha512-9PISkmaCO02OzPVOMq2w82ilty6+xJmQrarYZDkjZBfl4RvYAlt4PKnEX21oW4KTtWfa9OuO/b3qk1Od3AEdCQ==
   dependencies:
     "@vue/devtools-api" "^6.5.0"
+
+vue3-disqus@^1.0.6:
+  version "1.0.6"
+  resolved "https://registry.yarnpkg.com/vue3-disqus/-/vue3-disqus-1.0.6.tgz#584a8dc952c6ec06e45549608af6b36ca2eb12ea"
+  integrity sha512-IfYHMqVklVEZVOUuQo3pjD/+I40ajph4mMfiBZdxHnGvuFO+ZEB3QjSF8e6VVVYcMWf5Tvbl6AfdLdwwRzdW5w==
+  dependencies:
+    vue "^3.3.4"
 
 vue@^3.3.4:
   version "3.3.4"
