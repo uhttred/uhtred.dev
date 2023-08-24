@@ -81,25 +81,11 @@
         </div>
       </div>
       <!-- social newsletter -->
-      <div class="col-span-full xl:col-span-4 xl:col-start-9 opacity-40 pointer-events-none">
+      <div class="col-span-full xl:col-span-4 xl:col-start-9">
         <h4 class="text-20/[14px] text-color-1 font-bold xl:text-right">
           {{ $t('t013') }}
         </h4>
-        <div
-          class="flex justify-between items-center mt-10 bg-1 rounded-md bdr-1"
-        >
-          <input
-            type="email"
-            :placeholder="$t('pages.section.footer.p2')"
-            class="rounded-tl-md rounded-bl-md bg-transparent text-14 font-medium
-              py-3 px-5.5 outline-none text-color-1"
-          >
-          <button
-            class="text-13 text-color-2 hover:text-color-1 pr-8"
-          >
-            {{ $t('Subscribe') }}
-          </button>
-        </div>
+        <SmallNewsletterInput class="mt-10"/>
       </div>
     </div>
     <!-- copy row -->
@@ -110,7 +96,7 @@
             &copy; {{ new Date().getFullYear() }} Uhtred M., Ageu Mateus.
           </p>
         </div>
-        <div class="flex items-center gap-x-5">
+        <div class="flex items-center gap-x-5 opacity-40 pointer-events-none">
           <NuxtLink
             class="text-12 lg:text-13 text-color-3 hover:underline"
             :to="localePath('index')"

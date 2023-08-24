@@ -5,7 +5,7 @@
         <h1 class="text-color-1 font-bold text-32 text-center">
           {{ $t('Get more great' )}}
           <NuxtLink
-            :to="localePath('cases')"
+            :to="localePath('insights')"
             class="text-green-500 hover:underline"
           >
             {{ $t('insights') }}</NuxtLink>!

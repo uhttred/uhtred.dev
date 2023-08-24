@@ -138,4 +138,23 @@
       dark:text-gray-950 dark:bg-gray-50
       hover:bg-green-500 hover:text-gray-50;
   }
+
+  .Vue-Toastification__container.top-center {
+    @apply !top-20;
+  }
+  .Vue-Toastification__toast.nn-toast .Vue-Toastification__toast-body {
+    @apply text-14
+  }
+  .Vue-Toastification__toast.nn-toast {
+    @apply text-14 w-auto h-auto min-h-min py-2
+  }
+  .Vue-Toastification__toast--default.nn-toast {
+    @apply bg-2 bdr-2 text-color-1;
+  }
+  .Vue-Toastification__toast--error.nn-toast {
+    @apply bg-2 bdr-2 text-red-600;
+  }
+  .Vue-Toastification__toast--success.nn-toast {
+    @apply text-gray-50 bg-green-600;
+  }
 }

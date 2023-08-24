@@ -35,8 +35,10 @@ export default {
   t025: 'Solicite aqui',
   t026: 'Gostaria de me consultar sobre negócios, freelancer ou desenvolvimento?',
   t027: 'Agende aqui',
+  t028: 'Receba atualizações',
   // words
   Cases: 'Casos',
+  Notifications: 'Notificações',
   Submit: 'Submeter',
   Send: 'Enviar',
   Subscribe: 'Cadastrar',

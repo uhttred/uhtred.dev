@@ -33,7 +33,7 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     'nuxt-simple-sitemap',
     'nuxt-schema-org',
-    'nuxt-disqus',
+    'nuxt-disqus'
   ],
   disqus: {
     shortname: 'uhtred',

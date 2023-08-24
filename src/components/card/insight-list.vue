@@ -21,12 +21,13 @@
             <h4 class="text-13 text-color-1 font-bold">
               {{ insight.author.name }}
             </h4>
-            <span class="text-2 text-color-3">•</span>
-            <p class="text-12 text-color-3">
+            <!-- <span class="text-12 text-color-3">•</span>
+            <p class="text-13 text-color-2">
               {{ useDatetimeFormatString(insight.published_at).value }}
-            </p>
+              {{ insight.author.headline }}
+            </p> -->
           </div>
-          <p class="text-13 text-color-2 mt-0.5">
+          <p class="text-12 text-color-3 mt-0.5">
             {{ insight.author.headline }}
           </p>
         </div>
@@ -66,7 +67,10 @@
           </div>
         </div>
         <!-- cover -->
-        <div class="hidden xl:block w-[9.5rem] h-[4.625rem] rounded bdr-2 overflow-hidden bg-2 shrink-0">
+        <div
+          v-if="insight.cover"
+          class="hidden xl:block w-[9.5rem] h-[4.625rem] rounded bdr-2 overflow-hidden bg-2 shrink-0"
+        >
           <NuxtLink
             :to="localePath({
               name: 'insights-slug',
@@ -76,8 +80,8 @@
             })"
           >
             <UhImage
-              :image-src="insight?.cover?.url"
-              :thumbnail-src="insight?.cover?.thumbnail_url"
+              :image-src="insight.cover?.url"
+              :thumbnail-src="insight.cover?.thumbnail_url"
             />
           </NuxtLink>
         </div>

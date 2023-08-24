@@ -33,8 +33,10 @@ export default {
   t025: 'Request from here',
   t026: 'Would you like to consult with me about business, freelancing or development?',
   t027: 'Schedule here',
+  t028: 'Get insights updates',
   // words
   Cases: 'Cases',
+  Notifications: 'Notifications',
   Submit: 'Submit',
   Send: 'Send',
   Reload: 'Reload',

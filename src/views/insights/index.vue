@@ -64,6 +64,8 @@
   
               </div>
             </div>
+            <!--  -->
+            <PageAsideNewsletter class="mt-8" />
             <!-- content block -->
             <PageAsideInsightsTopics class="mt-8" />
           </div>

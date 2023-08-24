@@ -1,4 +1,4 @@
-export default function (datetime: MaybeRef<string>) {
+export default function (datetime: MaybeRef<string>, options = {}) {
   const { locale } = useI18n()
   const date = ref(datetime)
   return computed(() => {
@@ -10,7 +10,8 @@ export default function (datetime: MaybeRef<string>) {
         month: 'long',
         day: 'numeric',
         hour: '2-digit',
-        minute: '2-digit'
+        minute: '2-digit',
+        ...options
     }) 
   })
 }

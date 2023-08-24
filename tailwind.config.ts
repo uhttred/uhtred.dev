@@ -89,11 +89,12 @@ module.exports = {
     require('@tailwindcss/typography')
   ],
   content: [
-    "./src/components/**/*.{js,vue,ts}",
-    "./src/layouts/**/*.vue",
-    "./src/views/**/*.vue",
-    "./src/plugins/**/*.{js,ts}",
-    "./src/nuxt.config.{js,ts}",
-    "./src/app.vue",
+    './src/components/**/*.{js,vue,ts}',
+    './src/layouts/**/*.vue',
+    './src/views/**/*.vue',
+    './src/plugins/**/*.{js,ts}',
+    './src/nuxt.config.{js,ts}',
+    './src/app.vue',
+    // 'node_modules/tailvue/dist/tailvue.es.js'
   ]
 }

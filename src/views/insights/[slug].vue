@@ -44,7 +44,7 @@
                 <p class="text-13 text-color-3">
                   {{ useDatetimeFormatString(data.published_at).value }}
                 </p>
-                <span class="text-2 text-color-3">•</span>
+                <span class="text-13 text-color-3">•</span>
                 <SmallInsightViewsCount
                   class="text-13 text-color-3"
                   :insight="data"
@@ -104,8 +104,9 @@
               </div>
               <!-- cover -->
               <div
+                v-if="data.cover"
                 class="w-full xl:w-full xl:h-[23rem] bg-2 xl:bdr-2 rounded-md
-                  overflow-hidden mt-10 lg:mt-12"
+                  overflow-hidden mt-10 lg:mt-8"
               >
                 <UhImage
                   :image-src="data.cover?.url"
@@ -113,6 +114,11 @@
                   alt="insight cover"
                 />
               </div>
+              <!-- line no cover -->
+              <div
+                v-if="!data.cover"
+                class="linex-2 w-full mt-8"
+              />
             </template>
           </section>
           <!-- markdown conten -->
@@ -155,6 +161,8 @@
   
               </div>
             </div>
+            <!--  -->
+            <PageAsideNewsletter class="mt-8" />
             <!-- content block -->
             <PageAsideInsightsTopics class="mt-8" />
           </div>
