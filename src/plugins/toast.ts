@@ -1,5 +1,6 @@
 import Toast from 'vue-toastification'
-import { useToast } from 'vue-toastification'
+import * as T from 'vue-toastification/dist/index.mjs'
+// import { useToast } from 'vue-toastification'
 // Import the CSS or use your own!
 import 'vue-toastification/dist/index.css'
 
@@ -19,6 +20,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     icon: false,
     rtl: false
   })
+  const { useToast } = T
   return {
     provide: {
       toast: useToast()
