@@ -170,13 +170,6 @@
 </template>
 
 <script setup lang="ts">
-
-definePageMeta({
-  validate: async (route) => {
-    return /^[0-9]+$/.test(route.params.id)
-  }
-})
-
 const route = useRoute()
 const insightId = computed(() => route.params.id)
 const { data, error, refresh, pending } = await useFetch(`insights/draft/${insightId.value}`)
