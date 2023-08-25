@@ -135,13 +135,6 @@
               :content="data.content"
             />
           </article>
-          <!-- comments -->
-          <div class="w-full py-12 bdr-t-1">
-            <DisqusComments
-              v-if="data"
-              :identifier="`/insights/${data.slug}`"
-            />
-          </div>
         </div>
         <!-- vertical line -->
         <div class="col-span-1 col-start-9 hidden xl:flex justify-center">
@@ -161,10 +154,6 @@
   
               </div>
             </div>
-            <!--  -->
-            <PageAsideNewsletter class="mt-8" />
-            <!-- content block -->
-            <PageAsideInsightsTopics class="mt-8" />
           </div>
         </aside>
       </div>
@@ -175,23 +164,22 @@
         
       </div>
     </div> -->
-    <!-- rknow more cases -->
-    <PageSectionGetMoreInsights class="py-24" />
     <!-- products -->
-    <PageSectionProductListSimple class="mb-24" />
+    <PageSectionProductListSimple class="my-24" />
   </div>
 </template>
 
 <script setup lang="ts">
+
 definePageMeta({
   validate: async (route) => {
-    return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.params.slug)
+    return /^[0-9]+$/.test(route.params.id)
   }
 })
 
 const route = useRoute()
-const slug = computed(() => route.params.slug)
-const { data, error, refresh, pending } = await useFetch(`insights/${slug.value}`)
+const insightId = computed(() => route.params.id)
+const { data, error, refresh, pending } = await useFetch(`insights/draft/${insightId.value}`)
 const { locale } = useI18n()
 
 const title = computed(() => {
@@ -201,7 +189,7 @@ const title = computed(() => {
       : data.value.title
     return `${t} | Uhtred M.`
   }
-  return '404 Error - Insights | Uhtred M.'
+  return '404 Error'
 })
 
 const description = computed(() => {
@@ -229,26 +217,12 @@ useSeoMeta({
   twitterDescription: description,
   twitterImage: image,
   ogImage: image,
-  ogImageUrl: image
+  ogImageUrl: image,
+  robots: {
+    index: 'false',
+    follow: 'false'
+  }
 }, {
   mode: 'all'
 })
-
-if (data.value) {
-  useSchemaOrg([
-    defineArticle({
-      '@type': 'BlogPosting',
-      image: image.value,
-      datePublished: data.value.created_at,
-      dateModified: data.value.updated_at,
-      author: [
-        {
-          name: data.value.author.name,
-          url: data.value.author.website,
-          image: data.value.author.avatar.url
-        }
-      ]
-    })
-  ])
-}
 </script>

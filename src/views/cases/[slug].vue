@@ -183,16 +183,16 @@
 </template>
 
 <script setup lang="ts">
-const route = useRoute()
-const slug = computed(() => route.params.slug)
-const { data, error, refresh, pending } = await useFetch(`cases/${slug.value}`)
-const { locale } = useI18n()
-
 definePageMeta({
   validate: async (route) => {
     return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.params.slug)
   }
 })
+
+const route = useRoute()
+const slug = computed(() => route.params.slug)
+const { data, error, refresh, pending } = await useFetch(`cases/${slug.value}`)
+const { locale } = useI18n()
 
 const title = computed(() => {
   if (data.value) {
