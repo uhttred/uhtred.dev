@@ -11,9 +11,8 @@
         })"
       >
         <UhImage
-          v-if="insight.cover"
-          :image-src="insight.cover.url"
-          :thumbnail-src="insight.cover.thumbnail_url"
+          :image-src="insight.cover?.url || $config.public.defaultCoverUrl"
+          :thumbnail-src="insight.cover?.thumbnail_url || $config.public.defaultCoverUrl"
           alt="insight cover"
         />
       </NuxtLink>

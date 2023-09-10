@@ -1,7 +1,7 @@
 {
   "name": "Uhtred M.",
   "short_name": "Uhtred M.",
-  "start_url": "/?from=pwa-homescreen",
+  "start_url": "/insights?from=pwa-homescreen",
   "display": "fullscreen",
   "background_color": "#101010",
   "theme_color": "#101010",

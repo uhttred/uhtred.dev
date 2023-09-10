@@ -50,7 +50,7 @@ export default defineNuxtConfig({
       display: 'fullscreen',
       background_color: '#101010',
       orientation: 'portrait',
-      start_url: '/?from=homescreen'
+      start_url: '/insights?from=pwa-homescreen'
     }
   },
   i18n: {
@@ -105,6 +105,7 @@ export default defineNuxtConfig({
       appBaseUrl: process.env.NUXT_PUBLIC_APP_BASE_URL || 'https://uhtred.dev',
       siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://uhtred.dev',
       featuredQuoteIds: process.env.NUXT_PUBLIC_FEATURED_QUOTE_IDS || '1,2',
+      defaultCoverUrl: process.env.NUXT_PUBLIC_DEFAULT_COVER_URL || 'https://uhtred.dev/image/banner/default-insight-cover.png',
       contact: {
         email: process.env.NUXT_PUBLIC_CONTATC_EMAIL || 'am@uhtred.dev',
       },

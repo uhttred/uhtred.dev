@@ -193,6 +193,7 @@ const route = useRoute()
 const slug = computed(() => route.params.slug)
 const { data, error, refresh, pending } = await useFetch(`cases/${slug.value}`)
 const { locale } = useI18n()
+const { $config } = useNuxtApp()
 
 const title = computed(() => {
   if (data.value) {
@@ -215,9 +216,9 @@ const description = computed(() => {
 
 const image = computed(() => {
   if (data.value) {
-    return data.value.cover?.url
+    return data.value.cover?.url || $config.public.defaultCoverUrl
   }
-  return '/icon.png'
+  return $config.public.defaultCoverUrl
 })
 
 useSeoMeta({

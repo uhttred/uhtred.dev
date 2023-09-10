@@ -1,15 +1,36 @@
 <template>
   <div
     v-html="renderedContent"
-    class="w-full prose max-w-none prose-h1:text-34/[3rem] lg:prose-h1:text-40/[3.30rem] prose-headings:text-color-1
-      prose-h2:text-32/[3rem] prose-h3:text-28/[2.75rem] prose-h4:text-24/[2.4rem]
-      prose-h5:text-22/[2.4rem] prose-h6:text-20/[2.4rem]
-      prose-p:text-color-2 prose-p:text-16/7 lg:prose-p:text-18/9
+    class="w-full prose max-w-none
+      prose-headings:text-color-1
+      prose-headings:m-0
+      prose-headings:mb-4
+      prose-p:m-0
+      prose-p:mb-4
+      prose-h1:text-34/[3rem] lg:prose-h1:text-40/[3.30rem]
+      prose-h2:text-32/[3rem]
+      prose-h3:text-28/[2.75rem]
+      prose-h4:text-24/[2.4rem]
+      prose-h5:text-22/[2.4rem]
+      prose-h6:text-20/[2.4rem]
+      prose-p:text-color-2
+      prose-p:text-16/7
+      lg:prose-p:text-17/8
+      prose-hr:m-0
+      prose-hr:my-8
       prose-hr:border-gray-900/10 dark:prose-hr:border-gray-50/10
-      prose-ul:list-none prose-li:text-16 lg:prose-li:text-18 prose-li:text-color-2
+      prose-ul:m-0
+      prose-ul:mb-4
+      prose-ol:m-0
+      prose-ol:mb-4
+      prose-li:m-0
+      prose-li:mb-2
+      prose-ul:list-none prose-li:text-16 lg:prose-li:text-17 prose-li:text-color-2
       prose-a:text-color-1 prose-a:decoration-green-500 prose-a:underline
       prose-strong:text-color-1
       prose-blockquote:border-green-500 prose-blockquote:py-0.5 prose-blockquote:pl-8
+      prose-pre:m-0
+      prose-pre:mb-4
       prose-pre:bg-gray-800 prose-pre:bdr-2
       prose-th:text-color-1 prose-td:text-color-3
       dark:prose-tr:border-gray-50/[5%] prose-tr:border-gray-900/[5%]
@@ -54,6 +75,7 @@ import hljs from 'highlight.js/lib/core'
 import javascript from 'highlight.js/lib/languages/javascript'
 import python from 'highlight.js/lib/languages/python'
 import sh from 'highlight.js/lib/languages/shell'
+// import vue from 'highlight.js/lib/languages/vue'
 
 import MarkdownIt from 'markdown-it'
 import markdownEmoji from 'markdown-it-emoji'
@@ -65,6 +87,7 @@ import markdownMark from 'markdown-it-mark'
 hljs.registerLanguage('javascript', javascript)
 hljs.registerLanguage('python', python)
 hljs.registerLanguage('shell', sh)
+// hljs.registerLanguage('vue', vue)
 
 const props = defineProps({
   content: {

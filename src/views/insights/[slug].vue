@@ -42,7 +42,17 @@
             <template v-else>
               <div class="flex items-center mb-4 gap-x-3">
                 <p class="text-13 text-color-3">
-                  {{ useDatetimeFormatString(data.published_at).value }}
+                  <span
+                    v-if="data.show_updated_at"
+                    class="text-color-3"
+                  >
+                    Atualizado:
+                  </span>
+                  {{
+                    data.show_updated_at
+                      ? useDatetimeFormatString(data.updated_at).value
+                      : useDatetimeFormatString(data.published_at).value
+                  }}
                 </p>
                 <span class="text-13 text-color-3">•</span>
                 <SmallInsightViewsCount
@@ -102,9 +112,23 @@
                   </a>
                 </div>
               </div>
-              <!-- cover -->
+              <!-- cover and youtube-->
               <div
-                v-if="data.cover"
+                v-if="data.youtube_src"
+                class="w-full xl:w-full bg-2 xl:bdr-2 rounded-md
+                  overflow-hidden mt-10 lg:mt-8"
+              >
+                <iframe
+                  class="w-full xl:h-[23rem]"
+                  :src="data.youtube_src"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                />
+              </div>
+              <div
+                v-else-if="data.cover"
                 class="w-full xl:w-full xl:h-[23rem] bg-2 xl:bdr-2 rounded-md
                   overflow-hidden mt-10 lg:mt-8"
               >
@@ -116,15 +140,15 @@
               </div>
               <!-- line no cover -->
               <div
-                v-if="!data.cover"
+                v-if="!data.cover && !data.youtube_src"
                 class="linex-2 w-full mt-8"
               />
             </template>
           </section>
-          <!-- markdown conten -->
+          <!-- markdown content -->
           <article
             v-if="!pending && !error"
-            class="flex flex-col items-center w-full mb-14 mt-10"
+            class="flex flex-col items-center w-full mb-4 mt-10"
           >
             <UhMarkdown
               v-if="locale === 'pt' && data && data.pt_content"
@@ -193,6 +217,7 @@ const route = useRoute()
 const slug = computed(() => route.params.slug)
 const { data, error, refresh, pending } = await useFetch(`insights/${slug.value}`)
 const { locale } = useI18n()
+const { $config } = useNuxtApp()
 
 const title = computed(() => {
   if (data.value) {
@@ -215,9 +240,9 @@ const description = computed(() => {
 
 const image = computed(() => {
   if (data.value) {
-    return data.value.cover?.url
+    return data.value.cover?.url || $config.public.defaultCoverUrl
   }
-  return '/icon.png'
+  return $config.public.defaultCoverUrl
 })
 
 useSeoMeta({
