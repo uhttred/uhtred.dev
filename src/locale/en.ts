@@ -52,6 +52,7 @@ export default {
   Development: 'Development',
   Management: 'Management',
   // 2 - 4 words
+  'Updated': 'Updated',
   'Load more': 'Load more',
   'Error loading': 'Error loading',
   'Get more great': 'Get more great',

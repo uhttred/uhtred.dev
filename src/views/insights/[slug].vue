@@ -46,7 +46,7 @@
                     v-if="data.show_updated_at"
                     class="text-color-3"
                   >
-                    Atualizado:
+                    {{ $t('Updated') }}:
                   </span>
                   {{
                     data.show_updated_at

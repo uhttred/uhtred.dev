@@ -54,6 +54,7 @@ export default {
   Development: 'Desenvolvimento',
   Management: 'Gerenciamento',
   // 2 - 4 words
+  'Updated': 'Atualizado',
   'Get more great': 'Receba mais bons',
   'Error loading': 'Erro ao carregar',
   'Product Validation': 'Validação de Produto',
