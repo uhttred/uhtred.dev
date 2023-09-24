@@ -1,5 +1,5 @@
 <template>
-  <article class="pt-5.5 pl-4 pb-12">
+  <article class="pt-5.5 lg:pl-4 pb-12">
     <UhMarkdown
       v-if="locale === 'pt'"
       :content="pt_data"

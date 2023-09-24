@@ -19,6 +19,7 @@
         <UhMenu />
         <NuxtPage />
         <FooterBasic />
+        <SmallCookieConcent />
       </Body>
     </Html>
   </div>

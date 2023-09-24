@@ -33,8 +33,24 @@ export default defineNuxtConfig({
     'nuxt-gtag',
     'nuxt-simple-sitemap',
     'nuxt-schema-org',
+    '@dargmuesli/nuxt-cookie-control',
     'nuxt-disqus'
   ],
+  cookieControl: {
+    isControlButtonEnabled: false,
+    isAcceptNecessaryButtonEnabled: false,
+    barPosition: 'bottom-right',
+    locales: [
+      'en', 
+      'pt'
+    ],
+    colors: {
+      barBackground: '#fff',
+      barTextColor: '#101010',
+      barButtonBackground: '#101010',
+      barButtonColor: '#fafafa',
+    }
+  },
   disqus: {
     shortname: 'uhtred',
   },

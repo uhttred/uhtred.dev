@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-5.5 pl-4 pb-12 min-h-[600px]">
+  <div class="pt-5.5 lg:pl-4 pb-12 min-h-[600px]">
     <UhMarkdown
       v-if="locale === 'pt'"
       :content="pt_data"

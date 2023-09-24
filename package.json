@@ -9,6 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@dargmuesli/nuxt-cookie-control": "^6.4.3",
     "@nuxt/devtools": "latest",
     "@nuxtjs/color-mode": "^3.3.0",
     "@nuxtjs/google-fonts": "^3.0.2",
