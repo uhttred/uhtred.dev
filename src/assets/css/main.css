@@ -81,6 +81,10 @@
     @apply border-b border-gray-950/[5%] dark:border-gray-100/[5%];
   }
 
+  .bdr-r-2 {
+    @apply border-r border-gray-950/[5%] dark:border-gray-100/[5%];
+  }
+
   .bdr-b-p,
   .bdr-b-1 {
     @apply border-b border-gray-950/10 dark:border-gray-100/10;
@@ -94,6 +98,10 @@
   .bdr-l-p,
   .bdr-l-1 {
     @apply border-l border-gray-950/10 dark:border-gray-100/10;
+  }
+
+  .bdr-r-1 {
+    @apply border-r border-gray-950/10 dark:border-gray-100/10;
   }
 
 }
