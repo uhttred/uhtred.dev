@@ -88,6 +88,13 @@ export default {
   'Terms of Use': 'Terms of Use',
   'Maintain, Support & Management': 'Maintain, Support & Management',
   'Great success cases': 'Great success cases',
+  'Uhtred M.': 'Uhtred M.',
+  'Help Center': 'Help Center',
+  'About': 'About',
+  'Contact': 'Contact',
+  'Relations': 'Relations',
+  'Privacy & Data': 'Privacy & Data',
+  'Cookie Policy': 'Cookie Policy',
   // keys
   'pages.index.tagtitle.p1': 'Change color theme',
   'pages.index.tagtitle.p2': 'Change language',

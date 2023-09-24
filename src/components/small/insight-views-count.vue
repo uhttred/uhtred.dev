@@ -10,7 +10,7 @@ const views = useCompactNumberFormat(insight.visualisations)
 if (process.client) {
   const insightViewCookieKey = `insight-${insight.id}-views-count`
   const viewed = useCookie(insightViewCookieKey, {
-    maxAge: 86000
+    maxAge: 3600 * 6
   })
   //
   if (viewed.value !== 'viewed') {

@@ -45,6 +45,14 @@
             <i class="icon-instagram text-18 text-color-2 hover:text-color-1" />
           </a>
           <a
+            :href="$config.public.socialLink.youtube"
+            class="opacity-70 hover:opacity-100"
+              title="GitHub"
+            target="_blank"
+            >
+            <i class="icon-youtube text-18 text-color-2 hover:text-color-1" />
+          </a>
+          <a
             :href="$config.public.socialLink.linkedin"
             class="opacity-70 hover:opacity-100"
             target="_blank"
@@ -52,31 +60,20 @@
             <!-- <IconLinkedinFill /> -->
             <i class="icon-linkedin text-18 text-color-2 hover:text-color-1" />
           </a>
-          <a
+          <!-- <a
             :href="$config.public.socialLink.twitter"
             class="opacity-70 hover:opacity-100"
             target="_blank"
           >
-            <!-- <IconLinkedinFill /> -->
             <i class="icon-twitter text-18 text-color-2 hover:text-color-1" />
-          </a>
+          </a> -->
           <a
             :href="$config.public.socialLink.github"
             class="opacity-70 hover:opacity-100"
               title="GitHub"
             target="_blank"
             >
-            <!-- <IconGithubFill /> -->
             <i class="icon-github text-18 text-color-2 hover:text-color-1" />
-          </a>
-          <a
-            :href="$config.public.socialLink.youtube"
-            class="opacity-70 hover:opacity-100"
-              title="GitHub"
-            target="_blank"
-            >
-            <!-- <IconGithubFill /> -->
-            <i class="icon-youtube text-18 text-color-2 hover:text-color-1" />
           </a>
         </div>
       </div>
@@ -96,16 +93,16 @@
             &copy; {{ new Date().getFullYear() }} Uhtred M., Ageu Mateus.
           </p>
         </div>
-        <div class="flex items-center gap-x-5 opacity-40 pointer-events-none">
+        <div class="flex items-center gap-x-5">
           <NuxtLink
             class="text-12 lg:text-13 text-color-3 hover:underline"
-            :to="localePath('index')"
+            :to="localePath('help-privacy-policy')"
           >
             {{ $t('Privacy Policy') }}
           </NuxtLink>
           <NuxtLink
             class="text-12 lg:text-13 text-color-3 hover:underline"
-            :to="localePath('index')"
+            :to="localePath('help-terms')"
           >
             {{ $t('Terms of Use') }}
           </NuxtLink>

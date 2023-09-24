@@ -99,32 +99,6 @@
               class="absolute top-full left-1/2 -translate-x-1/2 pt-2
                 flex flex-col items-center gap-y-4"
             >
-              <!-- social link: twitter -->
-              <div
-                  class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
-                    justify-center items-center bg-white dark:bg-gray-950"
-                >
-                <a
-                  :href="$config.public.socialLink.twitter"
-                  target="_blank"
-                >
-                  <!-- <IcontwitterLine/> -->
-                  <i class="block icon-twitter text-18 text-color-2 hover:text-color-1" />
-                </a>
-              </div>
-              <!-- social link: linkedin -->
-              <div
-                class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
-                  justify-center items-center bg-white dark:bg-gray-950"
-              >
-                <a
-                  :href="$config.public.socialLink.linkedin"
-                  target="_blank"
-                >
-                  <!-- <IconLinkedinFill /> -->
-                  <i class="block icon-linkedin text-18 text-color-2 hover:text-color-1" />
-                </a>
-              </div>
               <!-- social link: instagram -->
               <div
                 class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
@@ -138,29 +112,29 @@
                   <i class="block icon-instagram text-18 text-color-2 hover:text-color-1" />
                 </a>
               </div>
-              <!-- social link: dribble -->
-              <!-- <div
-                class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
-                  justify-center items-center bg-white dark:bg-gray-950"
-              >
-                <a
-                  :href="$config.public.socialLink.dribbble"
-                  target="_blank"
-                >
-                  <IconDribbbleLine />
-                </a>
-              </div> -->
-              <!-- social link: github -->
+              <!-- social link: youtube -->
               <div
                 class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
                   justify-center items-center bg-white dark:bg-gray-950"
               >
                 <a
-                  :href="$config.public.socialLink.github"
+                  :href="$config.public.socialLink.youtube"
                   target="_blank"
                 >
-                  <!-- <IconGithubFill /> -->
-                  <i class="block icon-github text-18 text-color-2 hover:text-color-1" />
+                  <i class="block icon-youtube text-18 text-color-2 hover:text-color-1" />
+                </a>
+              </div>
+              <!-- social link: linkedin -->
+              <div
+                class="bdr-p rounded-full w-12 h-12 flex mn-social-icon
+                  justify-center items-center bg-white dark:bg-gray-950"
+              >
+                <a
+                  :href="$config.public.socialLink.linkedin"
+                  target="_blank"
+                >
+                  <!-- <IconLinkedinFill /> -->
+                  <i class="block icon-linkedin text-18 text-color-2 hover:text-color-1" />
                 </a>
               </div>
               <!-- social link: close -->

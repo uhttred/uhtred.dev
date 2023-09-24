@@ -13,7 +13,7 @@
                 class="inline-block"
               >
                 <h2 class="font-bold text-18 text-color-1">
-                  Help Center
+                  {{ $t('Help Center') }}
                 </h2>
               </NuxtLink>
             </div>
@@ -30,7 +30,7 @@
                   class="mb-6 last:mb-0"
                 >
                   <h4 class="text-16 font-medium text-color-1">
-                    {{ group.title }}
+                    {{ $t(group.title) }}
                   </h4>
                   <ul class="mt-3">
                     <nuxt-link
@@ -39,7 +39,7 @@
                       :to="localePath(item.to)"
                     >
                       <li class="text-14 text-color-2 hover:underline py-0.5">
-                        {{ item.title }}
+                        {{ $t(item.title) }}
                       </li>
                     </nuxt-link>
                   </ul>
@@ -53,7 +53,7 @@
           <div class="liney-1" />
         </div> -->
         <!-- page contents -->
-        <div class="col-span-full xl:col-span-9 min-h-screen">
+        <div class="col-span-full xl:col-span-9">
           <NuxtPage />
         </div>
       </div>
@@ -67,28 +67,28 @@ const navgroups = [
     title: 'Uhtred M.',
     items: [
       {
-        title: 'Sobre',
-        to: '/help/about'
+        title: 'About',
+        to: 'help-about-us'
       },
       {
-        title: 'Contato',
-        to: '/help/contact-us'
+        title: 'Contact',
+        to: 'help-contact-us'
       }
     ]
   },
   {
-    title: 'Relationships',
+    title: 'Relations',
     items: [
       {
         title: 'Terms of Use',
-        to: '/help/terms'
+        to: 'help-terms'
       },
       {
-        title: 'Privacidade & Dados',
-        to: '/help/privacy-policy'
+        title: 'Privacy & Data',
+        to: 'help-privacy-policy'
       },
       {
-        title: 'Cookies',
+        title: 'Cookie Policy',
         to: 'help-cookie-policy'
       }
     ]

@@ -90,6 +90,13 @@ export default {
   'Terms of Use': 'Termos de Uso',
   'Maintain, Support & Management': 'Manutenção, Suporte e Gerenciamento',
   'Great success cases': 'Grandes casos de sucesso',
+  'Help Center': 'Central de Ajuda',
+  'Uhtred M.': 'Uhtred M.',
+  'About': 'Sobre',
+  'Contact': 'Contacto',
+  'Relations': 'Relações',
+  'Privacy & Data': 'Privacidade & Dados',
+  'Cookie Policy': 'Política de Cookie',
   // keys
   'pages.index.tagtitle.p1': 'Mudar cor do tema',
   'pages.index.tagtitle.p2': 'Mudar idioma',
