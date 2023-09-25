@@ -12,7 +12,19 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale, t } = useI18n()
+
+definePageMeta({
+  title: 'pages.help.index.title',
+  description: 'pages.help.index.description'
+})
+useSchemaOrg([
+  defineWebPage({
+    description: t('pages.help.index.description'),
+    name: t('pages.help.index.title')
+  })
+])
+
 const pt_data = `
 ## Central de Ajuda
 
@@ -34,7 +46,6 @@ Não deixe de ler os nossos Termos de Uso, entre outros temas que regem a nossa 
 * [Política de Privacidade e Dados](https://uhtred.dev/pt/help/privacy-policy)
 * [Política de Cookies](https://uhtred.dev/pt/help/cookie-policy)
 `
-
 const en_data = `
 # Help Center
 

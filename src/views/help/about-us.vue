@@ -12,7 +12,19 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale, t } = useI18n()
+
+definePageMeta({
+  title: 'pages.help.about-us.title',
+  description: 'pages.help.about-us.description'
+})
+useSchemaOrg([
+  defineWebPage({
+    description: t('pages.help.about-us.description'),
+    name: t('pages.help.about-us.title')
+  })
+])
+
 const pt_data = `
 # Sobre Uhtred M.
 

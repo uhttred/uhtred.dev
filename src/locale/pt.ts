@@ -113,5 +113,17 @@ export default {
   'pages.store.index.title': 'Produtos que te completam',
   'pages.store.index.description': 'Conheça a gama de produtos digitais que o completam e o levam para o próximo nível de conhecimento e negócios.',
   'pages.start.index.title': 'Comece seu projecto hoje',
-  'pages.start.index.description': 'Comece o seu projeto hoje, solicite um serviço ou agende uma consulta comigo. O que precisas é de um parceiro, estou aqui para si.'
+  'pages.start.index.description': 'Comece o seu projeto hoje, solicite um serviço ou agende uma consulta comigo. O que precisas é de um parceiro, estou aqui para si.',
+  'pages.help.index.title': 'Central de Ajuda',
+  'pages.help.index.description': 'Aqui você encontrará respostas às perguntas mais frequentes, envie-nos as suas dúvidas para nos ajudar a melhorar os nossos serviços.',
+  'pages.help.cookie-policy.title': 'Política de Cookies - Central de Ajuda',
+  'pages.help.cookie-policy.description': 'Política de Cookies de Uhtred M.',
+  'pages.help.contact-us.title': 'Contatos - Central de Ajuda',
+  'pages.help.contact-us.description': 'Informações de contacto e suporte',
+  'pages.help.about-us.title': 'Sobre - Central de Ajuda',
+  'pages.help.about-us.description': 'Saiba mais sobre o projecto Uhtred M. e os seus serviços',
+  'pages.help.terms.title': 'Termos de Uso - Central de Ajuda',
+  'pages.help.terms.description': 'Termos que regem a utilização do Uhtred M.',
+  'pages.help.privacy-policy.title': 'Política de Privacidade e Dados - Central de Ajuda',
+  'pages.help.privacy-policy.description': 'Política de Privacidade e Dados de Uhtred M.'
 }

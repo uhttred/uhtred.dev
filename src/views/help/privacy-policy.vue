@@ -12,7 +12,19 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale, t } = useI18n()
+
+definePageMeta({
+  title: 'pages.help.privacy-policy.title',
+  description: 'pages.help.privacy-policy.description'
+})
+useSchemaOrg([
+  defineWebPage({
+    description: t('pages.help.privacy-policy.description'),
+    name: t('pages.help.privacy-policy.title')
+  })
+])
+
 const pt_data = `
 # Política de Privacidade e Dados
 

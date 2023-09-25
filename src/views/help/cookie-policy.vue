@@ -12,7 +12,19 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useI18n()
+const { locale, t } = useI18n()
+
+definePageMeta({
+  title: 'pages.help.cookie-policy.title',
+  description: 'pages.help.cookie-policy.description'
+})
+useSchemaOrg([
+  defineWebPage({
+    description: t('pages.help.cookie-policy.description'),
+    name: t('pages.help.cookie-policy.title')
+  })
+])
+
 const pt_data = `
 # Política de Cookies
 

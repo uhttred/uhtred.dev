@@ -111,5 +111,17 @@ export default {
   'pages.store.index.title': 'Products that complete you',
   'pages.store.index.description': 'Discover the range of digital products that complete you and take you to the next level of knowledge and business.',
   'pages.start.index.title': 'Start your project today',
-  'pages.start.index.description': "Start your project today, request a service or schedule a consultation with me. What you need is a partner, I'm here for you."
+  'pages.start.index.description': "Start your project today, request a service or schedule a consultation with me. What you need is a partner, I'm here for you.",
+  'pages.help.index.title': 'Help Center',
+  'pages.help.index.description': 'Here you will find answers to the most frequently asked questions, send us your questions to help us improve our services.',
+  'pages.help.cookie-policy.title': 'Cookies Policy - Help Center',
+  'pages.help.cookie-policy.description': 'Uhtred M. Cookies Policy',
+  'pages.help.contact-us.title': 'Contact - Help Center',
+  'pages.help.contact-us.description': 'Contact and support information.',
+  'pages.help.about-us.title': 'About - Help Center',
+  'pages.help.about-us.description': 'Find out more about the Uhtred M. project and its services',
+  'pages.help.terms.title': 'Terms of Use - Help Center',
+  'pages.help.terms.description': 'Terms governing use of Uhtred M.',
+  'pages.help.privacy-policy.title': 'Privacy and Data Policy - Help Center',
+  'pages.help.privacy-policy.description': 'Uhtred M. Privacy and Data Policy'
 }
