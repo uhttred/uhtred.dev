@@ -32,6 +32,7 @@
     "node": ">=16.19.x"
   },
   "dependencies": {
+    "@nuxtjs/google-adsense": "^2.1.0",
     "highlight.js": "^11.8.0",
     "lodash": "^4.17.21",
     "markdown-it": "^13.0.1",

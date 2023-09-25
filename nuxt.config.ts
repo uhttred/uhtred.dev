@@ -34,6 +34,7 @@ export default defineNuxtConfig({
     'nuxt-simple-sitemap',
     'nuxt-schema-org',
     '@dargmuesli/nuxt-cookie-control',
+    '@nuxtjs/google-adsense',
     'nuxt-disqus'
   ],
   cookieControl: {
@@ -97,6 +98,9 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: ''
   },
+  'google-adsense': {
+    id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID,
+  },
   googleFonts: {
     download: false,
     families: {
@@ -145,6 +149,10 @@ export default defineNuxtConfig({
       },
       gtag: {
         id: process.env.NUXT_PUBLIC_GTAG_ID
+      },
+      'google-adsense': {
+        id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID,
+        test: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_TEST === 'true',
       }
     }
   }
