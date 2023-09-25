@@ -99,7 +99,7 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
   'google-adsense': {
-    id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID,
+    id: 'ca-pub-2215680955780165',
   },
   googleFonts: {
     download: false,
@@ -151,7 +151,7 @@ export default defineNuxtConfig({
         id: process.env.NUXT_PUBLIC_GTAG_ID
       },
       'google-adsense': {
-        id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID,
+        id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID || 'ca-pub-2215680955780165',
         test: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_TEST === 'true',
       }
     }

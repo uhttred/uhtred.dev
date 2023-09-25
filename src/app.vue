@@ -50,6 +50,13 @@ useHead({
     { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
     { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }
   ]
+  // script: [
+    // {
+    //   src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2215680955780165',
+    //   crossorigin: 'anonymous',
+    //   async: ''
+    // }
+  // ] 
 })
 useSeoMeta({
   title,
