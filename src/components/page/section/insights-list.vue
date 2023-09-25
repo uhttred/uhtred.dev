@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-const { entries, loading, reset, error } = await usePaginator('insights', {
+const { entries, loading, reset, error } = await usePaginator('insights/random', {
   pageLimit: 3
 })
 </script>

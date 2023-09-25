@@ -23,5 +23,7 @@
 </template>
 
 <script setup lang="ts">
-const { entries, loading, error, reset } = await usePaginator('tags')
+const { entries, loading, error, reset } = await usePaginator('tags/random', {
+  pageLimit: 24
+})
 </script>

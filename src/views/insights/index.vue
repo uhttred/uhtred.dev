@@ -39,7 +39,7 @@
             <!--  -->
             <button
               v-if="canLoadMore && !loading"
-              class="text-14 mt-8 text-color-1 hover:underline"
+              class="text-14 mt-8 text-color-1 underline decoration-green-brand underline-offset-2"
               @click="loadMore"
             >
               {{ $t('Load more') }}

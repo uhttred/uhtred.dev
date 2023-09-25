@@ -1,5 +1,19 @@
 <template>
   <div>
+    <div class="row-c bdr-b-1 py-3 sticky top-16 bg-1 xl:hidden">
+      <div class="row">
+        <div class="col-span-full">
+          <NuxtLink
+            :to="localePath('help')"
+            class="inline-block"
+          >
+            <h2 class="font-bold text-16 text-color-1">
+              {{ $t('Help Center') }}
+            </h2>
+          </NuxtLink>
+        </div>
+      </div>
+    </div>
     <!--  -->
     <section class="row-c">
       <div class="row">
