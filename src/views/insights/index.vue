@@ -11,6 +11,11 @@
           <div class="py-4 lg:pt-8 sticky top-14 bg-1">
             <InputSearchBar
               v-model="query.search"
+              :placeholder="
+                locale === 'pt'
+                  ? 'Buscar por insights...'
+                  : 'Search for insights...'
+              "
               @search="reset"
             />
             <!-- <div class="flex flex-wrap mt-4 gap-2 justify-center items-center">

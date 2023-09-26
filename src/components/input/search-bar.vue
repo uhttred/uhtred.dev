@@ -8,7 +8,7 @@
         appearance-none"
       type="text"
       name="search:cases"
-      :placeholder="$t('t015')"
+      :placeholder="$attrs.placeholder || $t('t015')"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
       @keydown.enter="$emit('search')"
@@ -24,6 +24,6 @@
 </template>
 
 <script setup>
-defineProps(['modelValue'])
+defineProps(['modelValue', ''])
 defineEmits(['update:modelValue', 'search'])
 </script>

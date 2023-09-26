@@ -59,11 +59,20 @@
               }}
           </p>
           <div class="flex flex-wrap mt-4 gap-2">
-            <UhTag
+            <NuxtLink
               v-for="tag in insight.tags"
-              :key="tag"
-              :tag="tag"
-            />
+              :key="tag.slug"
+              :to="localePath({
+                name: 'insights-topics-slug',
+                params: {
+                  slug: tag.slug
+                }
+              })"
+            >
+              <UhTag
+                :tag="tag"
+              />
+            </NuxtLink>
           </div>
         </div>
         <!-- cover -->

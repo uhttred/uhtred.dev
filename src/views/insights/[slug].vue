@@ -24,7 +24,10 @@
             pt-16 lg:pt-14"
         >
           <section class="flex flex-col w-full">
-            <template v-if="error || pending">
+            <div
+              v-if="error || pending"
+              class="flex flex-col items-center py-6"
+            >
               <UhSpinner v-if="pending" />
               <p
                 v-if="error && !pending"
@@ -38,7 +41,7 @@
                 {{ $t('Reload') }}
                 </button>
               </p>
-            </template>
+            </div>
             <template v-else>
               <div class="flex items-center mb-4 gap-x-3">
                 <p class="text-13 text-color-3">
@@ -70,11 +73,20 @@
                 }}
               </h1>
               <div class="flex flex-wrap mt-4 gap-2 items-center">
-                <UhTag
+                <NuxtLink
                   v-for="tag in data.tags"
-                  :key="tag"
-                  :tag="tag"
-                />
+                  :key="tag.slug"
+                  :to="localePath({
+                    name: 'insights-topics-slug',
+                    params: {
+                      slug: tag.slug
+                    }
+                  })"
+                >
+                  <UhTag
+                    :tag="tag"
+                  />
+                </NuxtLink>
               </div>
               <!-- author -->
               <div

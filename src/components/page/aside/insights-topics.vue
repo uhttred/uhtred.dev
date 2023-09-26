@@ -5,11 +5,20 @@
     </h3>
     <!--  -->
     <div class="flex flex-wrap mt-4 gap-2 items-center">
-      <UhTag
+      <NuxtLink
         v-for="tag in entries"
         :key="tag.slug"
-        :tag="tag"
-      />
+        :to="localePath({
+          name: 'insights-topics-slug',
+          params: {
+            slug: tag.slug
+          }
+        })"
+      >
+        <UhTag
+          :tag="tag"
+        />
+      </NuxtLink>
       <UhSpinner v-show="loading" />
       <button
         v-if="error && !loading"
