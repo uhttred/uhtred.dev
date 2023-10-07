@@ -49,7 +49,13 @@ useHead({
     { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
     { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
     { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }
-  ]
+  ],
+  script: [
+    {
+      src: '/js/mautic-tracking.js',
+      async: ''
+    }
+  ] 
   // script: [
     // {
     //   src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2215680955780165',
