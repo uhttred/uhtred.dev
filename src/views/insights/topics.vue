@@ -21,8 +21,13 @@
                 Announcement
               </h3> -->
               <!--  -->
-              <div class="w-full h-[14.875rem] rounded-md bg-2 bdr-2">
-  
+              <div class="w-full rounded-md bg-2 bdr-2">
+                <!-- Ad Slot Name: Insights Side Bar Right -->
+                <Adsbygoogle
+                  v-if="$config.public.showAdsenseAds"
+                  ad-slot="1137047805"
+                  ad-format="auto"
+                />
               </div>
             </div>
             <!--  -->
