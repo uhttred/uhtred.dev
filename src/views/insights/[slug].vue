@@ -194,14 +194,13 @@
               </h3> -->
               <!--  -->
               <div
-                class="w-full max-w-full max-h-[14.875rem] rounded-md bg-2 bdr-2"
+                class="w-full max-h-[14.875rem] rounded-md bg-2 bdr-2"
               >
                 <!-- Ad Slot Name: Insights Side Bar Right -->
                 <Adsbygoogle
                   v-if="$config.public.showAdsenseAds"
                   ad-slot="1137047805"
-                  ad-format="auto"
-                  :ad-style="{display: 'block', height: '238px'}"
+                  :ad-style="{display: 'inline-block', height: '238px', width: '238px'}"
                 />
               </div>
             </div>
