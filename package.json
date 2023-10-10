@@ -29,7 +29,7 @@
   },
   "engines": {
     "yarn": ">=1.22.x",
-    "node": ">=16.19.x"
+    "node": ">=18.x.x"
   },
   "dependencies": {
     "@nuxtjs/google-adsense": "^2.1.0",
