@@ -157,7 +157,8 @@ export default defineNuxtConfig({
       adsense: {
         showAds: process.env.NUXT_PUBLIC_ADSENSE_SHOW_ADS === 'true',
         slot: {
-          topRightSidebar: process.env.NUXT_PUBLIC_ADSENSE_SLOT_TOP_RIGHT_SIDEBAR || '1137047805'
+          topRightSidebar: process.env.NUXT_PUBLIC_ADSENSE_SLOT_TOP_RIGHT_SIDEBAR || '1137047805',
+          horizontalMainContent: process.env.NUXT_PUBLIC_ADSENSE_SLOT_HORIZONTAL_MAIN_CONTENT || '8857725344'
         }
       }
     }

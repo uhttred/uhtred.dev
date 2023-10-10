@@ -49,6 +49,17 @@
             >
               {{ $t('Load more') }}
             </button>
+            <div
+              v-if="$config.public.adsense.showAds"
+              class="max-h-[90px] mt-8 w-full max-w-full rounded-md bg-2 bdr-2"
+            >
+              <!-- Ad Slot Name: Insights Side Bar Right -->
+              <Adsbygoogle
+                :ad-slot="$config.public.adsense.slot.horizontalMainContent"
+                ad-format="display"
+                :ad-style="{display: 'inline-block', height: '90px', width: 'auto'}"
+              />
+            </div>
           </div>
         </div>
         <!-- vertical line -->

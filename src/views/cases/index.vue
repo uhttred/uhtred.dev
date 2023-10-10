@@ -33,7 +33,7 @@
           />
           <UhSpinner
             v-show="loading"
-            class="mt-8"
+            class="mt-4"
           />
           <!--  -->
           <button
