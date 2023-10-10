@@ -154,7 +154,12 @@ export default defineNuxtConfig({
         id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID || 'ca-pub-2215680955780165',
         test: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_TEST === 'true',
       },
-      showAdsenseAds: process.env.NUXT_PUBLIC_SHOW_ADSENSE_ADS === 'true'
+      adsense: {
+        showAds: process.env.NUXT_PUBLIC_ADSENSE_SHOW_ADS === 'true',
+        slot: {
+          topRightSidebar: process.env.NUXT_PUBLIC_ADSENSE_SLOT_TOP_RIGHT_SIDEBAR === '1137047805'
+        }
+      }
     }
   }
 })

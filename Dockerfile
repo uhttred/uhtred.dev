@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:18-alpine
 
 RUN mkdir -p /usr/src/app
 
@@ -9,9 +9,9 @@ COPY . .
 RUN yarn --ignore-optional && yarn cache clean --force
 RUN yarn build
 
-ENV NUXT_HOST=0.0.0.0
-ENV NUXT_PORT=3000
+ARG PORT=3000
+ENV PORT $PORT
 
-EXPOSE 3000
+EXPOSE $PORT
 
 ENTRYPOINT ["node", ".output/server/index.mjs"]
