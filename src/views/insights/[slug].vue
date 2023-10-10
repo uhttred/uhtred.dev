@@ -30,8 +30,7 @@
             <!-- Ad Slot Name: Insights Side Bar Right -->
             <Adsbygoogle
               :ad-slot="$config.public.adsense.slot.horizontalMainContent"
-              ad-format="display"
-              :ad-style="{display: 'inline-block', height: '90px', width: 'auto'}"
+              ad-format="fluid"
             />
           </div>
           <!--  -->
