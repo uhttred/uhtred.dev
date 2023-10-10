@@ -31,6 +31,7 @@
             <Adsbygoogle
               :ad-slot="$config.public.adsense.slot.horizontalMainContent"
               ad-format="fluid"
+              :ad-style="{display: 'inline-block', 'max-height': '90', width: 'auto'}"
             />
           </div>
           <!--  -->
