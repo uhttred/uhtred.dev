@@ -23,17 +23,6 @@
           class="col-span-full flex flex-col items-center xl:col-span-8
             pt-16 lg:pt-8"
         >
-          <div
-            v-if="$config.public.adsense.showAds"
-            class="max-h-[90px] mb-6 w-full max-w-full rounded-md bg-2 bdr-2"
-          >
-            <!-- Ad Slot Name: Insights Side Bar Right -->
-            <Adsbygoogle
-              :ad-slot="$config.public.adsense.slot.horizontalMainContent"
-              ad-format="fluid"
-              :ad-style="{display: 'inline-block', 'max-height': '90', width: 'auto'}"
-            />
-          </div>
           <!--  -->
           <section class="flex flex-col w-full">
             <div
