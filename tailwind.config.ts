@@ -67,7 +67,11 @@ module.exports = {
         46: '2.875rem', 
         48: '3rem'
       },
+      screens: {
+        'pre-sm': '420px'
+      },
       gridTemplateColumns: {
+        '4x': 'repeat(4, 80px)',
         4: 'repeat(4, 66px)',
         6: 'repeat(6, 66px)',
         8: 'repeat(8, 66px)',

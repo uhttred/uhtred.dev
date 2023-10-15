@@ -26,6 +26,7 @@ export default defineNuxtConfig({
     ]
   },
   modules: [
+    '@pinia/nuxt',
     '@vite-pwa/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',

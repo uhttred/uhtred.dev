@@ -1,11 +1,8 @@
 <template>
   <main>
-    <HeroSolar />
-    <PageSectionAbout />
-    <PageSectionSimpleCaseList />
-    <PageSectionProjectLifecycle />
-    <PageSectionBigQuote />
-    <PageSectionQuotes />
-    <PageSectionInsightsList class="py-120px" />
+    <UhMenuSub class="bg-2"/>
+    <HeroSolarNewsletter />
   </main>
 </template>
+
+ 

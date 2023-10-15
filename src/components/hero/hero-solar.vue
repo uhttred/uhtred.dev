@@ -1,5 +1,5 @@
 <template>
-  <header
+  <section
     class="bdr-b-p pb-10 lg:pb-[120px] bg-primary"
   >
     <!--  -->
@@ -70,5 +70,5 @@
         </div>
       </div>
     </div>
-  </header>
+  </section>
 </template>
