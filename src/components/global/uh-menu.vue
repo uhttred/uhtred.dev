@@ -90,7 +90,7 @@
                 appearance-none"
               type="text"
               name="search:insights"
-              placeholder="Search for insights"
+              :placeholder="$t('Search for insights')"
               v-model="searchQuery"
               @keydown.enter="goSearch"
             >
@@ -146,7 +146,7 @@
                 appearance-none"
               type="text"
               name="search:insights"
-              placeholder="Search for insights"
+              :placeholder="$t('Search for insights')"
               v-model="searchQuery"
               @keydown.enter="goSearch"
             >

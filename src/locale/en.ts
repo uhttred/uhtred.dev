@@ -34,6 +34,10 @@ export default {
   t026: 'Would you like to consult with me about business, freelancing or development?',
   t027: 'Schedule here',
   t028: 'Get insights updates',
+  t029: "Hi, I'm Uhtred Miller. Entrepreneur & Full-stack Web Developer",
+  t030: 'I help programmers start and maintain their own digital businesses as a second or first source of income',
+  t031: "Subscribe to my newsletter and don't lose anything!",
+  t032: 'By subscribing to our newsletter, you agree with our',
   // words
   Cases: 'Cases',
   Notifications: 'Notifications',
@@ -58,6 +62,9 @@ export default {
   // 2 - 4 words
   'Updated': 'Updated',
   'Load more': 'Load more',
+  'Search for insights': 'Search for insights',
+  'Your name (Optional)': 'Your name (Optional)',
+  'Your e-mail': 'Your e-mail',
   'Error loading': 'Error loading',
   'Get more great': 'Get more great',
   'Know more great': 'Know more great',

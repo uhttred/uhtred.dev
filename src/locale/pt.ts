@@ -36,6 +36,10 @@ export default {
   t026: 'Gostaria de me consultar sobre negócios, freelancer ou desenvolvimento?',
   t027: 'Agende aqui',
   t028: 'Receba atualizações',
+  t029: "Olá, sou Uhtred Miller. Empreendedor e Desenvolvedor Web Full-stack",
+  t030: 'Ajudo programadores a iniciar e manter seus próprios negócios digitais como segunda ou primeira fonte de renda',
+  t031: "Assine minha newsletter e não perca nada!",
+  t032: 'Ao subscrever a nossa newsletter, você concorda com os nossos',
   // words
   Cases: 'Casos',
   Notifications: 'Notificações',
@@ -59,6 +63,9 @@ export default {
   Management: 'Gerenciamento',
   // 2 - 4 words
   'Updated': 'Atualizado',
+  'Your name (Optional)': 'Seu nome (Opcional)',
+  'Your e-mail': 'Seu e-mail',
+  'Search for insights': 'Buscar por insights',
   'Get more great': 'Receba mais bons',
   'Error loading': 'Erro ao carregar',
   'Product Validation': 'Validação de Produto',

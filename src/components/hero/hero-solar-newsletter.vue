@@ -9,7 +9,7 @@
         <h1
           class="text-13 lg:text-14 font-bold text-gradient-2 text-center"
         >
-          Hi, I’m Uhtred Miller. Entrepreneur & Full-stack Web Developer
+          {{ $t('t029')}}
       </h1>
       </div>
     </div>
@@ -20,8 +20,7 @@
           class="text-color-1 font-bold text-center
           text-[30px]/[48px] sm:text-[32px]/[48px] md:text-[40px]/[58px] max-w-[700px] z-10"
         >
-          I help programmers start and maintain their own digital
-          businesses as a second or first source of income<span class="text-green-500">.</span>
+          {{ $t('t030')}}<span class="text-green-500">.</span>
         </p>
         <!-- illustration -->
         <img
@@ -36,7 +35,7 @@
     <div class="row mt-8 z-10">
       <div class="col-span-full flex flex-col items-center justify-center">
         <h2 class="font-bold text-16/7 text-color-1 text-center">
-          Subscribe to my newsletter and don’t lose anything!   
+          {{ $t('t031')}}  
         </h2>
         <form
           class="mt-5.5 flex flex-wrap justify-center gap-5"
@@ -47,43 +46,43 @@
             v-model="name"
             class="inp-basic w-full sm:w-[152px]"
             type="text"
-            placeholder="Your name (Optional)"
+            :placeholder="$t('Your name (Optional)')"
             name="name"
+            maxlength="45"
           >
           <input
             v-model="email"
             class="inp-basic w-full sm:w-[238px]"
             type="email"
-            placeholder="Your e-mail"
+            :placeholder="$t('Your e-mail')"
             name="email"
           >
-          <button
-            class="btn"
+          <UhButton
+            :text="$t('Subscribe')"
             type="submit"
-          >
-            Subscribe
-          </button>
+            :pendind="loading"
+          />
         </form>
         <p
-          v-if="errorMessage"
+          v-if="message"
           class="text-11 text-red-500 mt-3 text-center"
         >
-          {{ errorMessage }}
+          {{ message }}
         </p>
         <p class="text-11 text-color-3 mt-3 text-center">
-          By subscribing to our newsletter you agree with our
+          {{ $t('t032') }}
           <NuxtLink
             :to="localePath('help-terms')"
             class="text-color-2 hover:underline"
           >
-            Terms
+          {{ $t('Terms of Use') }}
           </NuxtLink>
-          and
+          &
           <NuxtLink
             :to="localePath('help-privacy-policy')"
             class="text-color-2 hover:underline"
           >
-            Privacy Policy</NuxtLink>.
+          {{ $t('Privacy Policy') }}</NuxtLink>.
         </p>
       </div>
     </div>
@@ -91,10 +90,49 @@
 </template>
 
 <script setup lang="ts">
+const { locale } = useI18n()
+const { $toast } = useNuxtApp()
 const name = ref('')
 const email = ref('')
-const errorMessage = ref('')
+const loading = ref(false)
+const message = ref('')
+
+const successMessage = {
+  en: 'Success! Check your e-mail inbox to verify the subscribed e-mail',
+  pt: 'Sucesso! Verifique sua caixa de e-mail para verificar o e-mail.'
+}
+const errorMessage = {
+  en: 'Some error occurred, try later',
+  pt: 'Algum erro ocorreu, tente novamente.'
+}
+
 const subscribe = () => {
-  alert(email.value)
+  if (email.value && !loading.value) {
+    loading.value = true
+    message.value = ''
+    $fetch('notify/emails', {
+      method: 'POST',
+      body: {
+        email: email.value,
+        name: name.value,
+      }
+    })
+      .then((data) => {
+        loading.value = false
+        console.log(data)
+        $toast.success(data?.detail || successMessage[locale.value], {
+          timeout: 6000
+        })
+        email.value = ''
+        name.value = ''
+      })
+      .catch((err) => {
+        loading.value = false
+        message.value = err.data?.detail ||
+          err.data?.email[0] ||
+          err.data?.name[0] ||
+          errorMessage[locale.value]
+      })
+  }
 }
 </script>
