@@ -5,8 +5,7 @@
   >
     <div class="row">
       <div
-        class="col-span-full border-b border-gray-950/[5%] 
-        dark:border-gray-100/10 py-1"
+        class="col-span-full bdr-b-1 py-1"
         >
         <nav class="flex gap-x-8 md:gap-x-10 justify-center items-center">
           <NuxtLink

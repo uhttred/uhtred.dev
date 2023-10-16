@@ -29,7 +29,7 @@
   },
   "engines": {
     "yarn": ">=1.22.x",
-    "node": ">=18.x.x"
+    "node": ">=16.x.x"
   },
   "dependencies": {
     "@nuxtjs/google-adsense": "^2.1.0",
@@ -43,7 +43,8 @@
     "markdown-it-footnote": "^3.0.3",
     "markdown-it-mark": "^3.0.1",
     "pinia": "^2.1.7",
-    "swiper": "^10.0.4",
-    "vue-toastification": "^2.0.0-rc.5"
+    "swiper": "^10.3.1",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vue3-marquee": "^4.1.0"
   }
 }

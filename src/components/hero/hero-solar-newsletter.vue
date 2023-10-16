@@ -10,7 +10,7 @@
           class="text-13 lg:text-14 font-bold text-gradient-2 text-center"
         >
           {{ $t('t029')}}
-      </h1>
+        </h1>
       </div>
     </div>
     <!--  -->

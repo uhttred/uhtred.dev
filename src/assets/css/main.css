@@ -67,41 +67,41 @@
 
   .bdr-p,
   .bdr-1 {
-    @apply border border-gray-950/10 dark:border-gray-100/10;
+    @apply border border-gray-950/10 dark:border-gray-100/[5%];
   }
 
   .bdr-2 {
-    @apply border border-gray-950/[5%] dark:border-gray-100/[5%];
+    @apply border border-gray-950/[5%] dark:border-gray-100/[3%];
   }
 
   .bdr-t-2 {
-    @apply border-t border-gray-950/[5%] dark:border-gray-100/[5%];
+    @apply border-t border-gray-950/[5%] dark:border-gray-100/[3%];
   }
   .bdr-b-2 {
-    @apply border-b border-gray-950/[5%] dark:border-gray-100/[5%];
+    @apply border-b border-gray-950/[5%] dark:border-gray-100/[3%];
   }
 
   .bdr-r-2 {
-    @apply border-r border-gray-950/[5%] dark:border-gray-100/[5%];
+    @apply border-r border-gray-950/[5%] dark:border-gray-100/[3%];
   }
 
   .bdr-b-p,
   .bdr-b-1 {
-    @apply border-b border-gray-950/10 dark:border-gray-100/10;
+    @apply border-b border-gray-950/10 dark:border-gray-100/[5%];
   }
 
   .bdr-t-p,
   .bdr-t-1 {
-    @apply border-t border-gray-950/10 dark:border-gray-100/10;
+    @apply border-t border-gray-950/10 dark:border-gray-100/[5%];
   }
 
   .bdr-l-p,
   .bdr-l-1 {
-    @apply border-l border-gray-950/10 dark:border-gray-100/10;
+    @apply border-l border-gray-950/10 dark:border-gray-100/[5%];
   }
 
   .bdr-r-1 {
-    @apply border-r border-gray-950/10 dark:border-gray-100/10;
+    @apply border-r border-gray-950/10 dark:border-gray-100/[5%];
   }
 
 }
@@ -124,19 +124,19 @@
   }
   .linex-1 {
     height: 0px;
-    @apply border-t border-gray-950/10 dark:border-gray-100/10;
+    @apply border-t border-gray-950/10 dark:border-gray-100/[5%];
   }
   .linex-2 {
     height: 0px;
-    @apply border-t border-gray-950/[5%] dark:border-gray-100/[5%];
+    @apply border-t border-gray-950/[5%] dark:border-gray-100/[3%];
   }
   .liney-1 {
     width: 0px;
-    @apply border-l border-gray-950/10 dark:border-gray-100/10;
+    @apply border-l border-gray-950/10 dark:border-gray-100/[5%];
   }
   .liney-2 {
     width: 0px;
-    @apply border-l border-gray-950/[5%] dark:border-gray-100/[5%];
+    @apply border-l border-gray-950/[5%] dark:border-gray-100/[3%];
   }
 }
 
