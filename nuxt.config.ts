@@ -136,7 +136,9 @@ export default defineNuxtConfig({
         dribbble: process.env.NUXT_PUBLIC_SOCIAL_LINK_DRIBBBLE || 'https://dribbble.com/uhttred',
         twitter: process.env.NUXT_PUBLIC_SOCIAL_LINK_TWITTER || 'https://twitter.com/uhtredmiller',
         youtube: process.env.NUXT_PUBLIC_SOCIAL_LINK_YOUTUBE || 'https://www.youtube.com/@ageumatheus',
-        github: process.env.NUXT_PUBLIC_SOCIAL_LINK_GITHUB || 'https://github.com/uhttred'
+        github: process.env.NUXT_PUBLIC_SOCIAL_LINK_GITHUB || 'https://github.com/uhttred',
+        telegramCommunity: process.env.NUXT_PUBLIC_SOCIAL_LINK_TELEGRAM_COMMUNITY || '#',
+        whatsappCommunity: process.env.NUXT_PUBLIC_SOCIAL_LINK_WHATSAPP_COMMUNITY || '#',
       },
       formsUrl: {
         ptStartProject: process.env.NUXT_PUBLIC_FORMS_URL_PT_START_PROJECT || '',
