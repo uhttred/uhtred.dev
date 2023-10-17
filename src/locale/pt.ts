@@ -62,6 +62,8 @@ export default {
   Development: 'Desenvolvimento',
   Management: 'Gerenciamento',
   // 2 - 4 words
+  'in_launch': 'Em Lançamento',
+  'completed': 'Concluído',
   'Updated': 'Atualizado',
   'Your name (Optional)': 'Seu nome (Opcional)',
   'Your e-mail': 'Seu e-mail',

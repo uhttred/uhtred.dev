@@ -2,7 +2,13 @@
   <main>
     <UhMenuSub class="bg-2"/>
     <HeroSolarNewsletter />
-    <PageSectionInsightTitleSlide class="bdr-b-1" />
+    <SectionMarqueeInsightsTitle class="bdr-b-1" />
+    <SectionLatestInsightsWithSearch />
+    <SectionSeriesWithAsideAds />
+    <SectionJoinCommunityGroup />
+    <SectionAllAndCategoryTopics />
+    <SectionAuthorInFocus />
+    <AdsenseHFull class="mb-10" />
   </main>
 </template>
 

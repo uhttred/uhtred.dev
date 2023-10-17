@@ -70,7 +70,6 @@
           <!-- uhtred avatar -->
           <!-- TODO: active author click -->
           <div
-            @click="store.useSubNavBg2()"
             class="flex-shrink-0"
           >
             <img

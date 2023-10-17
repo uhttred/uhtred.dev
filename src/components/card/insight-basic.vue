@@ -35,7 +35,7 @@
     </NuxtLink>
     <div class="flex flex-wrap mt-4 gap-2">
       <NuxtLink
-        v-for="tag in insight.tags"
+        v-for="tag in insight.topics"
         :key="tag.slug"
         :to="localePath({
           name: 'insights-topics-slug',

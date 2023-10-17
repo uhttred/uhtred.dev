@@ -43,6 +43,8 @@ module.exports = {
         josefin: ['Josefin Sans', 'sans serif'],
       },
       fontSize: {
+        // 9: '0.625rem', // 9px
+        // 8: '0.625rem', // 8px
         10: '0.625rem', // 10px
         11: '0.6875rem', // 11px
         12: '0.75rem', // 12px

@@ -61,6 +61,8 @@ export default {
   Management: 'Management',
   // 2 - 4 words
   'Updated': 'Updated',
+  'in_launch': 'In Launch',
+  'completed': 'Completed',
   'Load more': 'Load more',
   'Search for insights': 'Search for insights',
   'Your name (Optional)': 'Your name (Optional)',

@@ -1,7 +1,13 @@
 <template>
   <span
-    class="text-11 text-color-3 hover:text-color-1 
-      font-bold bdr-2 rounded-lg px-2 py-0.5"
+    :class="[
+        'text-11 hover:text-color-1',
+        'font-semibold rounded-lg px-2 py-0.5',
+        {
+          'bdr-1 border-green-brand/20 dark:border-green-brand/[10%] text-color-1': tag.is_category,
+          'bdr-1 text-color-3': !tag.is_category,
+        }
+      ]"
   >
     {{
       locale === 'pt'

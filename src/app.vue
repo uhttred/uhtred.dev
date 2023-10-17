@@ -19,7 +19,7 @@
         <UhMenu />
         <NuxtPage />
         <SmallCookieConcent />
-        <!-- <FooterBasic /> -->
+        <FooterWithNewsletterMarquee />
       </Body>
     </Html>
   </div>
