@@ -148,6 +148,13 @@
       hover:bg-green-500 hover:text-gray-50
       dark:hover:bg-green-500 dark:hover:text-gray-50;
   }
+  .btn-link {
+    @apply px-8 py-2.5 inline-block rounded-md font-medium text-13/4
+      bg-gray-950 text-gray-50 xl:text-14
+      dark:bg-gray-50 dark:text-gray-950 
+      hover:bg-green-500 hover:text-gray-50
+      dark:hover:bg-green-500 dark:hover:text-gray-50;
+  }
   .btn.-pending {
     @apply bg-green-500 text-gray-50;
   }
@@ -160,10 +167,10 @@
     @apply !top-20;
   }
   .Vue-Toastification__toast.nn-toast .Vue-Toastification__toast-body {
-    @apply text-14
+    @apply text-14 text-center;
   }
   .Vue-Toastification__toast.nn-toast {
-    @apply text-14 w-auto h-auto min-h-min py-2
+    @apply text-14 w-auto h-auto min-h-min py-2 text-center
   }
   .Vue-Toastification__toast--default.nn-toast {
     @apply bg-2 bdr-2 text-color-1;

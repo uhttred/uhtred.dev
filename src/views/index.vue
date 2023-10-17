@@ -8,7 +8,7 @@
     <SectionJoinCommunityGroup />
     <SectionAllAndCategoryTopics />
     <SectionAuthorInFocus />
-    <AdsenseHFull class="mb-10" />
+    <AdsenseDisplayHorizontalFull class="mb-10" />
   </main>
 </template>
 

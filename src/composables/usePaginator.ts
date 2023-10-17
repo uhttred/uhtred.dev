@@ -56,7 +56,8 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
         query: {
           ...query.value,
           ...paginator.value.next
-        }
+        },
+        lazy: true
       })
       loading.value = false
       if (status.value === 'success') {
@@ -74,7 +75,8 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
         init: 0,
         limit: pageLimit.value
       },
-      immediate: true
+      immediate: true,
+      lazy: true
     })
     loading.value = false
     if (status.value === 'success') {

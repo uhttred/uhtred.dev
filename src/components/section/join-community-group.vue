@@ -16,11 +16,14 @@
               In a well-defined topic groups.
             </p>
             <!-- -->
-            <button
-              class="text-14 text-color-1 underline decoration-green-brand mt-4"
+            <a
+              v-if="$config.public.socialLink.whatsappCommunity"
+              class="inline-block text-14 text-color-1 underline decoration-green-brand mt-4"
+              :href="$config.public.socialLink.whatsappCommunity"
+              target="_blank"
             >
               Do you prefer WhatsApp?
-            </button>
+            </a>
           </div>
         </div>
         <aside class="col-span-4 lg:col-start-7 mt-8 lg:mt-0 xl:col-start-8">
@@ -36,10 +39,14 @@
               <span class="text-green-brand mr-2">•</span>{{ feature[locale] }}
             </li>
           </ul>
-          <UhButton
-            class="mt-8"
-            text="Join now!"
-          />
+          <a
+              v-if="$config.public.socialLink.telegramCommunity"
+              class="btn-link mt-8"
+              :href="$config.public.socialLink.telegramCommunity"
+              target="_blank"
+            >
+            Join now!
+          </a>
         </aside>
       </div>
     </div>

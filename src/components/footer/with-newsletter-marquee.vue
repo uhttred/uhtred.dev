@@ -19,7 +19,7 @@
             alt="uhtred logo"
           >
         </NuxtLink>
-        <p class="text-color-2 text-14/6 mt-8 max-w-[284px]">
+        <p class="text-color-2 text-14/7 mt-8 max-w-[284px]">
           A space where you can gain a lot of insights and connect
           with others in order to be a better programmer and/or manage
           your own digital business.
@@ -91,7 +91,7 @@
     <div class="row">
       <div class="col-span-full bdr-t-1 justify-center py-3">
         <p class="text-13 text-color-3 text-center">
-          Copyright © 2023 Uhtred M. All rights reserved. Published by Ageu Mateus.
+          Copyright &copy; {{ new Date().getFullYear() }} Uhtred M. All rights reserved. Published by Ageu Mateus.
         </p>
       </div>
     </div>

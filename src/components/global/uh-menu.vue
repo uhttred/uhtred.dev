@@ -105,6 +105,8 @@
             class="hidden md:block"
             :title="$t('pages.index.tagtitle.p1')"
           />
+          <!-- theme change mobile -->
+          <UhThemeToggle v-if="showMobileMenu" />
           <!-- internacionalization change -->
           <UhLocaleToggle
             class="hidden md:block"

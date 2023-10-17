@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     ]
   },
   modules: [
-    '@pinia/nuxt',
+    // '@pinia/nuxt',
     '@vite-pwa/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
@@ -68,7 +68,7 @@ export default defineNuxtConfig({
       display: 'fullscreen',
       background_color: '#101010',
       orientation: 'portrait',
-      start_url: '/insights?from=pwa-homescreen'
+      start_url: '/?from=pwa-homescreen'
     }
   },
   i18n: {
@@ -100,7 +100,7 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
   'google-adsense': {
-    id: 'ca-pub-2215680955780165',
+    id: '',
   },
   googleFonts: {
     download: false,
@@ -137,8 +137,8 @@ export default defineNuxtConfig({
         twitter: process.env.NUXT_PUBLIC_SOCIAL_LINK_TWITTER || 'https://twitter.com/uhtredmiller',
         youtube: process.env.NUXT_PUBLIC_SOCIAL_LINK_YOUTUBE || 'https://www.youtube.com/@ageumatheus',
         github: process.env.NUXT_PUBLIC_SOCIAL_LINK_GITHUB || 'https://github.com/uhttred',
-        telegramCommunity: process.env.NUXT_PUBLIC_SOCIAL_LINK_TELEGRAM_COMMUNITY || '#',
-        whatsappCommunity: process.env.NUXT_PUBLIC_SOCIAL_LINK_WHATSAPP_COMMUNITY || '#',
+        telegramCommunity: process.env.NUXT_PUBLIC_SOCIAL_LINK_TELEGRAM_COMMUNITY,
+        whatsappCommunity: process.env.NUXT_PUBLIC_SOCIAL_LINK_WHATSAPP_COMMUNITY,
       },
       formsUrl: {
         ptStartProject: process.env.NUXT_PUBLIC_FORMS_URL_PT_START_PROJECT || '',
@@ -154,7 +154,7 @@ export default defineNuxtConfig({
         id: process.env.NUXT_PUBLIC_GTAG_ID
       },
       'google-adsense': {
-        id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID || 'ca-pub-2215680955780165',
+        id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID || '',
         test: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_TEST === 'true',
       },
       adsense: {

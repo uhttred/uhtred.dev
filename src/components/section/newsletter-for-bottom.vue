@@ -27,7 +27,7 @@
         <form
           class="flex flex-wrap justify-start gap-5"
           action="#"
-          @submit.prevent="subscribe"
+          @submit.prevent="onSubscribe"
         >
           <input
             v-model="name"
@@ -45,10 +45,10 @@
             name="email"
           >
           <p
-            v-if="message"
+            v-if="errorMessage"
             class="text-11 text-red-500 -mt-3 text-center w-full"
           >
-            {{ message }}
+            {{ errorMessage }}
           </p>
           <p class="text-11 text-color-3 -mt-3 text-center w-full">
             {{ $t('t032') }}
@@ -68,7 +68,7 @@
           <UhButton
             :text="$t('Subscribe')"
             type="submit"
-            :pendind="loading"
+            :pendind="pending"
           />
         </form>
       </div>
@@ -77,49 +77,25 @@
 </template>
 
 <script setup lang="ts">
-const { locale } = useI18n()
-const { $toast } = useNuxtApp()
 const name = ref('')
 const email = ref('')
-const loading = ref(false)
-const message = ref('')
 
-const successMessage = {
-  en: 'Success! Check your e-mail inbox to verify the subscribed e-mail. Then you can choose wich topic most metter you.',
-  pt: 'Sucesso! Verifique sua caixa de e-mail para verificar o e-mail.'
-}
-const errorMessage = {
-  en: 'Some error occurred, try later',
-  pt: 'Algum erro ocorreu, tente novamente.'
-}
+const {
+  subscribe,
+  pending,
+  errorMessage
+} = useNewsletterSubscription()
 
-const subscribe = () => {
-  if (email.value && !loading.value) {
-    loading.value = true
-    message.value = ''
-    $fetch('notify/emails', {
-      method: 'POST',
-      body: {
-        email: email.value,
-        name: name.value,
-      }
-    })
-      .then((data) => {
-        loading.value = false
-        console.log(data)
-        $toast.success(data?.detail || successMessage[locale.value], {
-          timeout: 6000
-        })
-        email.value = ''
-        name.value = ''
-      })
-      .catch((err) => {
-        loading.value = false
-        message.value = err.data?.detail ||
-          err.data?.email[0] ||
-          err.data?.name[0] ||
-          errorMessage[locale.value]
-      })
+const onSubscribe = () => {
+  const data = {
+    email: email.value,
+    name: name.value
   }
+  subscribe(data, {
+    onSuccess () {
+      name.value = ''
+      email.value = ''
+    }
+  })
 }
 </script>

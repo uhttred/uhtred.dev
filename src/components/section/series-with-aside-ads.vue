@@ -39,16 +39,9 @@
           <!-- content block -->
           <div>
             <!--  -->
-            <div
-              class="mt-14 h-[476px] w-full max-w-full rounded-md bg-2 bdr-2 mb-8"
-            >
-              <!--  -->
-              <!-- <Adsbygoogle
-                v-if="$config.public.adsense.showAds"
-                :ad-slot="$config.public.adsense.slot.topRightSidebar"
-                ad-format="display"
-              /> -->
-            </div>
+            <AdsenseDisplayVertical
+              class="mt-14 mb-8"
+            />
           </div>
         </div>
       </aside>
