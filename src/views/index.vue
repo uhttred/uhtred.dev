@@ -12,4 +12,16 @@
   </main>
 </template>
 
+<script setup lang="ts">
+useSchemaOrg([
+  defineWebSite({
+    name: 'Uhtred M.',
+    potentialAction: [
+      defineSearchAction({
+        target: '/insights?q={search_term_string}'
+      })
+    ]
+  })
+])
+</script>
  

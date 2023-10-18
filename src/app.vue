@@ -95,14 +95,6 @@ useSeoMeta({
   },
 })
 useSchemaOrg([
-  defineWebSite({
-    name: 'Uhtred M.',
-    potentialAction: [
-      defineSearchAction({
-        target: '/insights?q={search_term_string}'
-      })
-    ]
-  }),
   definePerson({
     name: 'Uhtred M.',
     image: '/uhtred.png',

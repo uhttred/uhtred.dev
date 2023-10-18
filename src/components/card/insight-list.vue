@@ -1,26 +1,29 @@
 <template>
   <article
-      class="w-full pb-8 mb-12"
+      class="w-full pb-6"
     >
       <!-- author space -->
       <div class="flex items-center gap-x-4">
         <div class="w-9 h-9 rounded-full bdr-2 bg-2 overflow-hidden">
-          <!-- <img
-            :src="insight?.author?.avatar?.url"
-            alt="author avatar"
-            class="w-full h-full object-cover"
-          > -->
-          <UhImage
-            :image-src="insight?.author?.avatar?.url"
-            :thumbnail-src="insight?.author?.avatar?.thumbnail_url"
-            alt="author avatar"
-          />
+          <NuxtLink>
+            <UhImage
+              :image-src="insight?.author?.avatar?.url"
+              :thumbnail-src="insight?.author?.avatar?.thumbnail_url"
+              alt="author avatar"
+            />
+          </NuxtLink>
         </div>
         <div>
           <div class="flex items-center gap-x-2">
-            <h4 class="text-13 text-color-1 font-bold">
-              {{ insight.author.name }}
-            </h4>
+            <p class="text-13 text-color-1 font-bold hover:underline">
+              <NuxtLink>
+                {{
+                  locale === 'pt'
+                    ? insight.author.pt_name || insight.author.name
+                    : insight.author.name
+                }}
+              </NuxtLink>
+            </p>
             <!-- <span class="text-12 text-color-3">•</span>
             <p class="text-13 text-color-2">
               {{ useDatetimeFormatString(insight.published_at).value }}
@@ -35,45 +38,48 @@
       <!-- content and cover -->
       <div class="mt-5.5 gap-x-16 xl:gap-x-20 flex items-start">
         <div class="w-full xl:w-[31rem]">
-          <NuxtLink
-            :to="localePath({
-              name: 'insights-slug',
-              params: {
-                slug: insight.slug
-              }
-            })"
-          >
-            <h2 class="text-22/9 font-bold text-color-1 hover:underline">
+          <h1 class="text-22/9 font-bold text-color-1 hover:underline">
+            <NuxtLink
+              :to="localePath({
+                name: 'insights-slug',
+                params: {
+                  slug: insight.slug
+                }
+              })"
+            >
               {{
                 locale === 'pt'
                   ? insight.pt_title || insight.title
                   : insight.title
               }}
-            </h2>
-          </NuxtLink>
+            </NuxtLink>
+          </h1>
           <p class="text-14/7 text-color-2 mt-3 font-normal">
             {{
-                locale === 'pt'
-                  ? insight.pt_description || insight.description
-                  : insight.description
-              }}
+              locale === 'pt'
+                ? insight.pt_description || insight.description
+                : insight.description
+            }}
           </p>
-          <div class="flex flex-wrap mt-4 gap-2">
-            <NuxtLink
-              v-for="tag in insight.tags"
+          <ul class="list-none flex flex-wrap mt-4 gap-2">
+            <li
+              v-for="tag in insight.topics"
               :key="tag.slug"
-              :to="localePath({
-                name: 'insights-topics-slug',
-                params: {
-                  slug: tag.slug
-                }
-              })"
             >
-              <UhTag
-                :tag="tag"
-              />
-            </NuxtLink>
-          </div>
+              <NuxtLink
+                :to="localePath({
+                  name: 'insights-topics-slug',
+                  params: {
+                    slug: tag.slug
+                  }
+                })"
+              >
+                <UhTag
+                  :tag="tag"
+                />
+              </NuxtLink>
+            </li>
+          </ul>
         </div>
         <!-- cover -->
         <div
@@ -100,5 +106,5 @@
 
 <script setup lang="ts">
 const { locale } = useI18n()
-const { insight } = defineProps(['insight'])
+defineProps(['insight'])
 </script>
