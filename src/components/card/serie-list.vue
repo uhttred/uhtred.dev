@@ -20,17 +20,9 @@
         </NuxtLink>
       </h2>
       <div class="flex items-center gap-x-2.5">
-        <p
-          :class="[
-            'text-10 leading-none text-gray-50 rounded-lg py-1 px-1.5',
-            {
-              'bg-blue-700': serie.status === 'in_launch',
-              'bg-green-brand': serie.status === 'completed',
-            }
-          ]"
-        >
-          {{ $t(serie.status) }}
-        </p>
+        <SmallSerieStatusTag
+          :status="serie.status"
+        />
         <p class="text-13 text-color-3">
           {{ serie.count_insights }} Insights
         </p>

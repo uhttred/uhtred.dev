@@ -177,8 +177,15 @@
               :content="insight.content"
             />
           </article>
+          <!-- serie navigation -->
+          <SmallSerieNavigationForInsightDetail
+            v-if="insight && insight.serie"
+            :insight-id="insight.id"
+            :serie-id="insight.serie.id"
+            class="bdr-t-1"
+          />
           <!-- comments -->
-          <div class="w-full py-12 bdr-t-1">
+          <div class="w-full py-10 bdr-t-1">
             <DisqusComments
               v-if="insight"
               :identifier="`/insights/${insight.slug}`"
@@ -193,36 +200,48 @@
         <aside class="col-span-3 col-start-10 hidden xl:block pb-12">
           <!-- sticky content -->
           <div class="sticky top-[72px]">
+            <!-- ADS -->
             <AdsenseDisplaySquare238x238
-              v-if="insight.serie"
+              v-if="insight && insight.serie"
               class="mt-8"
             />
             <AdsenseDisplayVertical
               v-else
               class="mt-8"
             />
-            <!-- content block -->
-            <AsideInsightTopics
-              v-if="!insight.serie"
-              class="mt-8"
-              :page-limit="8"
-            />
+            <!-- serie insights -->
             <AsideSerieInsights
-              v-else
+              v-if="insight && insight.serie"
               class="mt-8"
               :serie="insight.serie"
               :active-insight="insight"
+            />
+            <!-- insight topics -->
+            <AsideInsightTopics
+              v-else
+              class="mt-8"
+              :page-limit="8"
             />
           </div>
         </aside>
       </div>
     </div>
     <!-- ads -->
-    <!-- <div class="row-c mt-14">
-      <div class="row min-h-[14rem] bg-2 bdr-2 rounded-lg py-12 gap-y-8">
-        
+    <AdsenseDisplayHorizontalFull class="my-14" />
+    <!--  -->
+    <div class="row-c">
+      <div class="row">
+        <div class="col-span-full linex-1" />
       </div>
-    </div> -->
+    </div>
+    <SectionJoinCommunityGroup />
+    <div class="row-c">
+      <div class="row">
+        <div class="col-span-full linex-1" />
+      </div>
+    </div>
+    <!--  -->
+    <!-- <SectionAllAndCategoryTopics /> -->
     <!-- rknow more cases -->
     <!-- <PageSectionGetMoreInsights class="py-24" /> -->
     <!-- products -->

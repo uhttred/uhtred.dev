@@ -5,25 +5,7 @@
     </h3>
     <!--  -->
     <div class="flex flex-wrap mt-4 items-center">
-      <ul class="list-none flex flex-wrap gap-2">
-        <li
-          v-for="topic in entries"
-          :key="topic.slug"
-        >
-          <NuxtLink
-            :to="localePath({
-              name: 'insights-topics-slug',
-              params: {
-                slug: topic.slug
-              }
-            })"
-          >
-            <UhTag
-              :tag="topic"
-            />
-          </NuxtLink>
-        </li>
-      </ul>
+      <SmallInsightTopicsList :topics="entries" />
       <UhSpinner v-show="loading" />
       <button
         v-if="error && !loading"
