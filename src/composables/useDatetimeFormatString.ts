@@ -5,9 +5,8 @@ export default function (datetime: MaybeRef<string>, options = {}) {
     return new Date(date.value).toLocaleDateString(
       locale.value, 
       {
-        weekday:'short',
         year: 'numeric',
-        month: 'long',
+        month: 'numeric',
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',

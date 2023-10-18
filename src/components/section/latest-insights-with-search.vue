@@ -18,6 +18,7 @@
       >
         <InputSearchBar
           placeholder="Search for greatest insights"
+          @search="goSearch"
         />
       </div>
     </header>
@@ -44,7 +45,17 @@
 </template>
 
 <script setup lang="ts">
+const localePath = useLocalePath()
+const { push } = useRouter()
 const { entries, loading, reset, error } = await usePaginator('insights', {
   pageLimit: 4
 })
+const goSearch = (query: string) => {
+  push(localePath({
+    name: 'insights',
+    query: {
+      q: query
+    }
+  }))
+}
 </script>

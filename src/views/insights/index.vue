@@ -1,9 +1,16 @@
 <template>
   <div>
+    <UhMenuSub />
+    <!--  -->
     <section class="row-c">
-      <div class="row">
+      <div class="row bdr-b-1">
         <!-- left container -->
         <section class="col-span-full xl:col-span-8">
+          <!-- newsletter or ads -->
+          <CardHorizontalAutoNewsletterOrAds
+            class="mt-8"
+          />
+          <!-- title -->
           <h1 class="text-40 text-color-1 font-bold mt-6 lg:mt-8">
             Insights<span class="text-green-brand">.</span>
           </h1>
@@ -39,7 +46,7 @@
               <CardInsightList
                 v-if="displayStyle === 'list'"
                 :insight="insight"
-                class="bdr-b-2 mb-5 last:border-b-0"
+                class="bdr-b-2 last:border-b-0"
               />
               <CardInsightFlex
                 v-if="displayStyle === 'grid'"
@@ -61,6 +68,13 @@
             >
               {{ $t('Load more') }}
             </button>
+            <button
+              v-if="error && !loading"
+              title="Error! Retry"
+              @click="reset"
+            >
+              <i class="icon-refresh-cw text-red-500" />
+            </button>
           </div>
         </section>
         <!-- vertical line -->
@@ -68,37 +82,32 @@
           <div class="liney-1" />
         </div>
         <!-- sidebar container -->
-        <aside class="col-span-3 col-start-10 hidden xl:block">
+        <aside class="col-span-3 col-start-10 hidden xl:block pb-12">
           <!-- sticky content -->
-          <div class="sticky top-[90px]">
+          <div class="sticky top-[72px]">
+            <!-- ADS -->
+            <AdsenseDisplayVertical class="mt-8" />
             <!-- content block -->
-            <div class="mt-8">
-              <!-- <h3 class="text-20 text-color-1 font-bold mb-5.5">
-                Announcement
-              </h3> -->
-              <!--  -->
-              <div
-                class="max-h-[14.875rem] w-full max-w-full rounded-md bg-2 bdr-2"
-              >
-                <!-- Ad Slot Name: Insights Side Bar Right -->
-                <!-- <Adsbygoogle
-                  v-if="$config.public.adsense.showAds"
-                  :ad-slot="$config.public.adsense.slot.topRightSidebar"
-                  ad-format="display"
-                  :ad-style="{display: 'inline-block', height: '238px', width: '238px'}"
-                /> -->
-              </div>
-            </div>
-            <!--  -->
-            <!-- <PageAsideNewsletter class="mt-8" /> -->
-            <!-- content block -->
-            <!-- <PageAsideInsightsTopics class="mt-8" /> -->
+            <AsideInsightTopics
+              class="mt-8"
+              :page-limit="10"
+            />
           </div>
         </aside>
       </div>
     </section>
+    <!--  -->
+    <SectionJoinCommunityGroup />
+    <!-- line -->
+    <div class="row-c">
+      <div class="row">
+        <div class="linex-1 col-span-full" />
+      </div>
+    </div>
     <!-- products -->
-    <!-- <PageSectionProductListSimple class="mb-24 xl:mt-24 mt-14" /> -->
+    <PageSectionProductListSimple class="mt-14" />
+    <!-- ads -->
+    <AdsenseDisplayHorizontalFull class="mb-10" />
   </div>
 </template>
 
@@ -106,7 +115,7 @@
 const { t, locale } = useI18n()
 const route = useRoute()
 const displayStyle = ref('')
-const searchQuery = computed(() => route.query.q )
+const searchQuery = computed(() => route.query.q)
 const query = ref({
   search: searchQuery.value
 })
@@ -115,15 +124,34 @@ const {
   loadMore,
   loading,
   canLoadMore,
-  reset
+  reset,
+  error
 } = await usePaginator('insights', {
   query,
-  pageLimit: 3,
+  pageLimit: 8,
 })
 
 const changeDisplayStyle = (style: string) =>{
   displayStyle.value = style
 }
+
+onBeforeRouteUpdate(route => {
+  if (route.query.q && route.query.q !== query.value.search) {
+    query.value.search = route.query.q
+    reset()
+  }
+})
+
+const pageTitle =  ref(t('pages.insights.index.title'))
+if (query.value.search) {
+  pageTitle.value = locale.value === 'pt'
+    ? `${query.value.search} - Buscar por Insights | Uhtred M`
+    : `${query.value.search} - Insight Search | Uhtred M`
+}
+
+useSeoMeta({
+  title: pageTitle
+})
 
 definePageMeta({
   title: 'pages.insights.index.title',
@@ -135,7 +163,7 @@ useSchemaOrg([
   }),
   defineWebPage({
     description: t('pages.insights.index.description'),
-    name: t('pages.insights.index.title')
+    name: pageTitle.value //|| t('pages.insights.index.title')
   })
 ])
 </script>

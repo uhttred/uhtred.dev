@@ -34,5 +34,5 @@
 </template>
 
 <script setup lang="ts">
-const { product } = defineProps(['product'])
+defineProps(['product'])
 </script>

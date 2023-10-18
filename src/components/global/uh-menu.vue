@@ -195,13 +195,20 @@
 
 <script setup lang="ts">
 const route = useRoute()
+const localePath = useLocalePath()
+const { push } = useRouter()
 const searchQuery = ref('')
 const showMobileMenu = ref(false)
 
 // TODO: GA4 on search terms
 const goSearch = () => {
-  alert(searchQuery.value)
-  searchQuery.value = ''
+  push(localePath({
+    name: 'insights',
+    query: {
+      q: searchQuery.value
+    }
+  }))
+  showMobileMenu.value = false
 }
 </script>
 

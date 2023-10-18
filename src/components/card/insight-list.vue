@@ -1,6 +1,6 @@
 <template>
   <article
-      class="w-full pb-6"
+      class="w-full py-6"
     >
       <!-- author space -->
       <div class="flex items-center gap-x-4">

@@ -7,14 +7,15 @@
       class="bg-transparent outline-none text-14 text-color-1 font-medium w-10/12
         appearance-none"
       type="text"
-      name="search:cases"
+      ref="input"
+      :name="$attrs.name || 'search:insights'"
       :placeholder="$attrs.placeholder || $t('t015')"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
-      @keydown.enter="$emit('search')"
+      @keydown.enter="$emit('search', $event.target.value)"
     >
     <button
-      @click="$emit('search')"
+      @click="$emit('search', $refs.input.value)"
     >
       <i
         class="icon-search text-18 text-color-1"
@@ -24,6 +25,8 @@
 </template>
 
 <script setup>
-defineProps(['modelValue', ''])
+defineProps([
+  'modelValue'
+])
 defineEmits(['update:modelValue', 'search'])
 </script>
