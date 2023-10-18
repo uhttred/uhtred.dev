@@ -1,7 +1,8 @@
 <template>
   <div>
+    <UhMenuSub />
     <section class="row-c">
-      <div class="row">
+      <div class="row bdr-b-1">
         <!-- left container -->
         <div class="col-span-full xl:col-span-8">
           <!--  -->
@@ -12,36 +13,33 @@
           <div class="liney-1" />
         </div>
         <!-- sidebar container -->
-        <aside class="col-span-3 col-start-10 hidden xl:block">
+        <aside class="col-span-3 col-start-10 hidden xl:block pb-12">
           <!-- sticky content -->
-          <div class="sticky top-[90px]">
+          <div class="sticky top-[72px]">
+            <!-- ADS -->
+            <AdsenseDisplayVertical class="mt-8" />
             <!-- content block -->
-            <div class="mt-8">
-              <!-- <h3 class="text-20 text-color-1 font-bold mb-5.5">
-                Announcement
-              </h3> -->
-              <!--  -->
-              <div
-                class="max-h-[14.875rem] w-full max-w-full rounded-md bg-2 bdr-2"
-              >
-                <!-- Ad Slot Name: Insights Side Bar Right -->
-                <Adsbygoogle
-                  v-if="$config.public.adsense.showAds"
-                  :ad-slot="$config.public.adsense.slot.topRightSidebar"
-                  ad-format="display"
-                  :ad-style="{display: 'inline-block', height: '238px', width: '238px'}"
-                />
-              </div>
-            </div>
-            <!--  -->
-            <PageAsideNewsletter class="mt-8" />
-            <!-- content block -->
-            <PageAsideInsightsTopics class="mt-8" />
+            <AsideInsightTopics
+              class="mt-8"
+              :page-limit="10"
+            />
           </div>
         </aside>
       </div>
     </section>
-    <!-- products -->
-    <PageSectionProductListSimple class="mb-24 xl:mt-24 mt-14" />
+    <!-- ads -->
+    <AdsenseDisplayHorizontalFull class="my-14" />
+    <!--  -->
+    <div class="row-c">
+      <div class="row">
+        <div class="col-span-full linex-1" />
+      </div>
+    </div>
+    <SectionJoinCommunityGroup />
+    <div class="row-c">
+      <div class="row">
+        <div class="col-span-full linex-1" />
+      </div>
+    </div>
   </div>
 </template>

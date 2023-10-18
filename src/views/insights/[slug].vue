@@ -245,7 +245,7 @@
     <!-- rknow more cases -->
     <!-- <PageSectionGetMoreInsights class="py-24" /> -->
     <!-- products -->
-    <!-- <PageSectionProductListSimple class="mb-24" /> -->
+    <PageSectionProductListSimple class="my-14" />
   </div>
 </template>
 

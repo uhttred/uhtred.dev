@@ -32,38 +32,18 @@
             />
           </div>
           <!-- insights listing -->
-          <div
-            :class="{
-              'w-full mt-6 flex flex-col items-center': displayStyle === 'list',
-              'w-full mt-6 flex flex-wrap gap-x-5 lg:ml-20 xl:ml-0 mb-8': displayStyle === 'grid',
-            }"
-          >
-            <template
-              v-for="insight in entries"
-              :key="insight.id"
-            >
-
-              <CardInsightList
-                v-if="displayStyle === 'list'"
-                :insight="insight"
-                class="bdr-b-2 last:border-b-0"
-              />
-              <CardInsightFlex
-                v-if="displayStyle === 'grid'"
-                :insight="insight"
-                class="mb-8 last:mb-0 sm:w-[238px] md:w-[324px]"
-              />
-            </template>
-          </div>
-          <div class="row-c">
+          <SmallInsightListingWrapperFor8cols
+            :insights="entries"
+            :display-style="displayStyle"
+          />
+          <div class="row-c mb-8">
             <UhSpinner
               v-show="loading"
-              class="mb-8"
             />
             <!--  -->
             <button
               v-if="canLoadMore && !loading"
-              class="text-14 mb-8 text-color-1 underline decoration-green-brand underline-offset-2"
+              class="text-14 text-color-1 underline decoration-green-brand underline-offset-2"
               @click="loadMore"
             >
               {{ $t('Load more') }}

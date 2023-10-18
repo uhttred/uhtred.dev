@@ -1,5 +1,9 @@
 <template>
   <div>
+    <!-- newsletter or ads -->
+    <CardHorizontalAutoNewsletterOrAds
+      class="mt-8"
+    />
     <!-- tag loading error -->
     <div
       v-if="error || pending"
@@ -24,46 +28,50 @@
       v-else
       class="w-full"
     >
-      <h1 class="text-34 text-color-1 font-bold mt-6 lg:mt-12">
+      <h1 class="text-30 text-color-1 font-bold mt-6 lg:mt-8">
         <!-- {{
           locale === 'pt'
-            ? `Insights sobre ${tag.pt_name || tag.name}`
-            : `Insights about ${tag.name}`
+            ? `Insights sobre ${topic.pt_name || topic.name}`
+            : `Insights about ${topic.name}`
         }} -->
         {{
           locale === 'pt'
-            ? `${tag.pt_name || tag.name}, ${$t('Insights')}`
-            : `${tag.name}, ${$t('Insights')}`
-        }}
+            ? `${topic.pt_name || topic.name}, Insights`
+            : `${topic.name}, Insights`
+        }}<span class="text-green-brand">.</span>
       </h1>
       <!-- serach bar and applied topics -->
-      <div class="py-4 lg:pt-8 sticky top-14 bg-1">
+      <div class="py-4 lg:pt-5.5 sticky top-12 bg-1 z-10">
         <InputSearchBar
           v-model="query.search"
           :placeholder="
             locale === 'pt'
-              ? `Buscar por insights sobre ${tag.pt_name || tag.name}`
-              : `Search for insights about ${tag.name}`
+              ? `Buscar por insights sobre ${topic.pt_name || topic.name}`
+              : `Search for insights about ${topic.name}`
           "
           @search="reset"
         />
+        <!--  -->
+        <SmallInsightDisplayStyleToggle
+          class="mt-3"
+          @display-style="changeDisplayStyle"
+        />
       </div>
       <!-- insights listing -->
-      <div class="w-full mt-14 flex flex-col items-center">
-        <CardInsightList
-          v-for="insight in entries"
-          :key="insight.id"
-          :insight="insight"
-          class="bdr-b-2 last:mb-0 last:border-b-0"
-        />
+      <SmallInsightListingWrapperFor8cols
+        v-if="entries"
+        :key="topic.slug"
+        :insights="entries"
+        :display-style="displayStyle"
+      />
+      <div class="row-c mb-8">
         <UhSpinner
           v-show="loading"
-          class="mt-8"
         />
         <!--  -->
         <button
           v-if="canLoadMore && !loading"
-          class="text-14 mt-8 text-color-1 underline decoration-green-brand underline-offset-2"
+          class="text-14 text-color-1 underline decoration-green-brand underline-offset-2"
           @click="loadMore"
         >
           {{ $t('Load more') }}
@@ -83,18 +91,25 @@ definePageMeta({
 const { locale } = useI18n()
 const route = useRoute()
 const slug = computed(() => route.params.slug)
-const searchQuery = computed(() => route.query.q )
+const searchQuery = computed(() => route.query.q)
+const displayStyle = ref('')
+
+const changeDisplayStyle = (style: string) =>{
+  displayStyle.value = style
+}
 
 const {
-  data: tag,
+  data: topic,
   error,
   refresh,
   pending
-} = await useFetch(`tags/${slug.value}`)
+} = await useFetch(`topics/${slug.value}`, {
+  lazy: true
+})
 
 const query = ref({
   search: searchQuery.value,
-  tags__in: tag.value ? tag.value.id : ''
+  topics__in: topic.value ? topic.value.id : ''
 })
 
 const {
@@ -109,19 +124,19 @@ const {
 })
 
 const title = computed(() => {
-  if (tag.value) {
+  if (topic.value) {
     return locale.value === 'pt'
-      ? `Receba insights sobre ${tag.value.pt_name || tag.value.name} - Insights | Uhtred M.`
-      : `Get insights about ${tag.value.name} - Insights | Uhtred M.` 
+      ? `Insights sobre ${topic.value.pt_name || topic.value.name} - Insights | Uhtred M`
+      : `Insights about ${topic.value.name} - Insights | Uhtred M` 
   }
-  return 'Insights | Uhtred M.'
+  return 'Insights | Uhtred M'
 })
 
 const description = computed(() => {
-  if (tag.value) {
+  if (topic.value) {
     return locale.value === 'pt'
-      ? `Descubra mais insights sobre ${tag.value.pt_name || tag.value.name} entre outros tópicos.`
-      : `Discover more insights about ${tag.value.name} among other topics` 
+      ? `Descubra mais insights sobre ${topic.value.pt_name || topic.value.name} entre outros tópicos.`
+      : `Discover more insights about ${topic.value.name} among other topics` 
   }
   return '...'
 })
@@ -133,8 +148,6 @@ useSeoMeta({
   twitterTitle: title,
   ogDescription: description,
   twitterDescription: description
-}, {
-  mode: 'all'
 })
 
 useSchemaOrg([
