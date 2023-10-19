@@ -101,32 +101,35 @@
                 class="mt-5.5 flex items-center gap-x-4"
               >
                 <div class="w-10 h-10 rounded-full bdr-2 bg-2 overflow-hidden">
-                  <a
-                    :href="insight.author.website"
-                    target="_blank"
+                  <NuxtLink
+                    :to="localePath({
+                      name: 'authors-@username',
+                      params: {
+                        username: insight.author.username
+                      }
+                    })"
                   >
                     <UhImage
                       :image-src="insight.author.avatar?.url"
                       :thumbnail-src="insight.author.avatar?.thumbnail_url"
                     />
-                  </a>
+                  </NuxtLink>
                 </div>
                 <div>
                   <p class="text-14 text-color-1 font-semibold hover:underline">
-                    <a
-                      :href="insight.author.website"
-                      target="_blank"
+                    <NuxtLink
+                      :to="localePath({
+                        name: 'authors-@username',
+                        params: {
+                          username: insight.author.username
+                        }
+                      })"
                     >
                       {{ insight.author.name }}
-                    </a>
+                    </NuxtLink>
                   </p>
                   <p class="text-13 text-color-2 mt-1 hover:underline">
-                    <a
-                      :href="insight.author.website"
-                      target="_blank"
-                    >
-                      {{ insight.author.headline }}
-                    </a>
+                    {{ insight.author.headline }}
                   </p>
                 </div>
               </div>

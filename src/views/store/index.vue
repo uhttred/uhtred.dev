@@ -3,12 +3,12 @@
     <div class="row">
       <div class="col-span-full">
         <h1 class="text-34 text-color-1 font-bold mt-6 lg:mt-14">
-          {{ $t('t021' )}}
+          {{ $t('t021' )}}<span class="text-green-brand">.</span>
         </h1>
       </div>
     </div>
     <!--  -->
-    <div class="row py-20 gap-y-10 bdr-b-1">
+    <div class="row py-20 gap-y-10">
       <CardProductBasic
         v-for="product in entries"
         :key="product.uid"
@@ -31,7 +31,8 @@
       </div>
     </div>
     <!--  -->
-    <PageSectionInsightsList class="py-16 lg:py-20" />
+    <SectionAllAndCategoryTopics />
+    <AdsenseDisplayHorizontalFull class="my-10" />
   </div>
 </template>
 

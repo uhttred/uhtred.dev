@@ -141,6 +141,12 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  validate: async (route) => {
+    return /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(route.params.slug)
+  }
+})
+
 const { locale } = useI18n()
 const { $config } = useNuxtApp()
 const route = useRoute()

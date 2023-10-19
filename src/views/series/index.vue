@@ -26,7 +26,7 @@
               @search="reset"
             />
           </div>
-          <!-- insights listing -->
+          <!-- series listing -->
           <div class="w-full flex flex-wrap gap-y-10 pt-5">
             <CardSerieList
               v-for="serie in entries"
@@ -93,7 +93,6 @@
 <script setup lang="ts">
 const { t, locale } = useI18n()
 const route = useRoute()
-const displayStyle = ref('')
 const searchQuery = computed(() => route.query.q)
 const query = ref({
   search: searchQuery.value
@@ -109,10 +108,6 @@ const {
   query,
   pageLimit: 4,
 })
-
-const changeDisplayStyle = (style: string) =>{
-  displayStyle.value = style
-}
 
 const pageTitle = ref(t('pages.series.index.title'))
 if (query.value.search) {

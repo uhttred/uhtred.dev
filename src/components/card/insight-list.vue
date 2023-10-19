@@ -5,7 +5,14 @@
       <!-- author space -->
       <div class="flex items-center gap-x-4">
         <div class="w-9 h-9 rounded-full bdr-2 bg-2 overflow-hidden">
-          <NuxtLink>
+          <NuxtLink
+            :to="localePath({
+              name: 'authors-@username',
+              params: {
+                username: insight.author.username
+              }
+            })"
+          >
             <UhImage
               :image-src="insight?.author?.avatar?.url"
               :thumbnail-src="insight?.author?.avatar?.thumbnail_url"
@@ -16,7 +23,14 @@
         <div>
           <div class="flex items-center gap-x-2">
             <p class="text-13 text-color-1 font-bold hover:underline">
-              <NuxtLink>
+              <NuxtLink
+                :to="localePath({
+                  name: 'authors-@username',
+                  params: {
+                    username: insight.author.username
+                  }
+                })"
+              >
                 {{
                   locale === 'pt'
                     ? insight.author.pt_name || insight.author.name

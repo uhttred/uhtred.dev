@@ -23,7 +23,12 @@
         >
           <div class="w-24 h-24 rounded-full bdr-2 bg-2 overflow-hidden">
             <NuxtLink
-              to="#"
+              :to="localePath({
+                name: 'authors-@username',
+                params: {
+                  username: author.username
+                }
+              })"
             >
               <UhImage
                 :image-src="author?.avatar?.url"
@@ -34,7 +39,12 @@
           </div>
           <h2 class="font-bold text-16 text-color-1 mt-5.5 hover:underline">
             <NuxtLink
-              to="#"
+              :to="localePath({
+                name: 'authors-@username',
+                params: {
+                  username: author.username
+                }
+              })"
             >
               {{
                 locale === 'pt'
