@@ -57,7 +57,7 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
           ...query.value,
           ...paginator.value.next
         },
-        lazy: true
+        lazy: false
       })
       loading.value = false
       if (status.value === 'success') {

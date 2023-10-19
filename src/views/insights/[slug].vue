@@ -260,7 +260,7 @@ const route = useRoute()
 
 const slug = computed(() => route.params.slug)
 const { data: insight, error, refresh, pending } = await useFetch(`insights/${slug.value}`, {
-  lazy: true
+  lazy: false
 })
 const { locale } = useI18n()
 const { $config } = useNuxtApp()
@@ -308,7 +308,7 @@ if (insight.value) {
     defineArticle({
       '@type': 'BlogPosting',
       image: image.value,
-      datePublished: insight.value.created_at,
+      datePublished: insight.value.published_at,
       dateModified: insight.value.updated_at,
       author: [
         {

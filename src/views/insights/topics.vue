@@ -36,10 +36,10 @@
       </div>
     </div>
     <SectionJoinCommunityGroup />
-    <div class="row-c">
+    <!-- <div class="row-c">
       <div class="row">
         <div class="col-span-full linex-1" />
       </div>
-    </div>
+    </div> -->
   </div>
 </template>

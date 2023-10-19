@@ -104,7 +104,7 @@ const {
   refresh,
   pending
 } = await useFetch(`topics/${slug.value}`, {
-  lazy: true
+  lazy: false
 })
 
 const query = ref({
