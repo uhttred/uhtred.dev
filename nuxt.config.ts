@@ -163,6 +163,12 @@ export default defineNuxtConfig({
           topRightSidebar: process.env.NUXT_PUBLIC_ADSENSE_SLOT_TOP_RIGHT_SIDEBAR || '1137047805',
           horizontalMainContent: process.env.NUXT_PUBLIC_ADSENSE_SLOT_HORIZONTAL_MAIN_CONTENT || '8857725344'
         }
+      },
+      topic: {
+        programmingId: process.env.NUXT_PUBLIC_TOPIC_PROGRAMMING_ID,
+        businessId: process.env.NUXT_PUBLIC_TOPIC_BUSINESS_ID,
+        marketingId: process.env.NUXT_PUBLIC_TOPIC_MARKETING_ID,
+        financeId: process.env.NUXT_PUBLIC_TOPIC_FINANCE_ID,
       }
     }
   }

@@ -56,6 +56,7 @@
 
 <script setup lang="ts">
 const props = defineProps(['author'])
+const { locale } = useI18n()
 const route = useRoute()
 const searchQuery = computed(() => route.query.q)
 
@@ -74,4 +75,37 @@ const {
   query,
   pageLimit: 6,
 })
+
+const title = locale.value === 'pt'
+  ? `Séries de Insights - ${props.author.pt_name || props.author.name} (@${props.author.username}) | Uhtred M`
+  : `Series of Insights - ${props.author.name} (@${props.author.username}) | Uhtred M`
+
+const description = locale.value === 'pt'
+  ? props.author.pt_title || props.author.title
+  : props.author.title
+
+const image = computed(() => {
+  if (props.author.avatar) {
+    return props.author.avatar?.url || $config.public.defaultCoverUrl
+  }
+  return '/icon.png'
+})
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  twitterTitle: title,
+  ogDescription: description,
+  twitterDescription: description,
+  twitterImage: image,
+  ogImage: image,
+  ogImageUrl: image
+})
+
+useSchemaOrg([
+  defineWebPage({
+    '@type': ['CollectionPage', 'SearchResultsPage'],
+  })
+])
 </script>

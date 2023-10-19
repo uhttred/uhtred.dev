@@ -34,14 +34,10 @@ const head = useLocaleHead({
   addSeoAttributes: true
 })
 
-// const title = computed(() => t(route.meta.title || 'pages.index.title'))
 const title = computed(() => t('layouts.title', { title: t(route.meta.title || 'pages.index.title') }))
 const description = computed(() => t(route.meta.description || 'pages.index.description'))
 const iconPath = '/icon.svg'
 
-// const titleTemplate = (title) => title
-//   ? `${title} | Uhtred M.`
-//   : 'Uhtred M.'
 useHead({
   // titleTemplate,
   link: [
@@ -77,18 +73,18 @@ useSeoMeta({
   twitterImage: iconPath,
   ogImage: iconPath,
   appleMobileWebAppCapable: 'yes',
-  appleMobileWebAppTitle: 'Uhtred M.',
-  applicationName: 'Uhtred M.',
+  appleMobileWebAppTitle: 'Uhtred M',
+  applicationName: 'Uhtred M',
   appleMobileWebAppStatusBarStyle: 'black',
   msapplicationTileColor: '#101010',
   msapplicationTileImage: iconPath,
   colorScheme: '#101010',
   themeColor: '#101010',
   author: 'Uhtred Miller',
-  publisher: 'Uhtred M.',
-  creator: 'Uhtred M.',
+  publisher: 'Uhtred M',
+  creator: 'Uhtred M',
   mobileWebAppCapable: 'yes',
-  ogImageAlt: 'Uhtred M. image',
+  ogImageAlt: 'Uhtred M image',
   robots: {
     index: true,
     follow: true,
@@ -96,7 +92,7 @@ useSeoMeta({
 })
 useSchemaOrg([
   definePerson({
-    name: 'Uhtred M.',
+    name: 'Uhtred M',
     image: '/uhtred.png',
     sameAs: [
       'https://uhtred.dev',

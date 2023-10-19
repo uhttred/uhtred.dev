@@ -12,7 +12,7 @@
           />
           <!-- title -->
           <h1 class="text-40 text-color-1 font-bold mt-6 lg:mt-8">
-            Series<span class="text-green-brand">.</span>
+            {{ $t('Series') }}<span class="text-green-brand">.</span>
           </h1>
           <!-- serach bar and view toggle -->
           <div class="py-4 lg:pt-5.5 sticky top-12 bg-1 z-10">
@@ -109,16 +109,15 @@ const {
   pageLimit: 4,
 })
 
-const pageTitle = ref(t('pages.series.index.title'))
+const pageTitle = ref('')
 if (query.value.search) {
   pageTitle.value = locale.value === 'pt'
     ? `${query.value.search} - Buscar por series | Uhtred M`
     : `${query.value.search} - Insight Search | Uhtred M`
+  useSeoMeta({
+    title: pageTitle
+  })
 }
-
-useSeoMeta({
-  title: pageTitle
-})
 
 definePageMeta({
   title: 'pages.series.index.title',
@@ -130,7 +129,7 @@ useSchemaOrg([
   }),
   defineWebPage({
     description: t('pages.series.index.description'),
-    name: pageTitle.value //|| t('pages.series.index.title')
+    name: pageTitle.value || t('pages.series.index.title')
   })
 ])
 </script>

@@ -7,13 +7,10 @@
         <div class="col-span-full lg:col-span-5 xl:col-span-6">
           <div class="p-12 w-full bg-2 bdr-2 rounded-lg -join-chat-bg">
             <h1 class="text-gray-9x50 text-color-1 font-bold text-38">
-              Join our Community in Telegram<span class="text-green-500">.</span>
+              {{ $t('t034') }}<span class="text-green-500">.</span>
             </h1>
             <p class="text-14/7 text-gray-500 mt-4">
-              Get more involved with our community in Telegram,
-              interact with others to get help and tips around digital business,
-              programming, marketing and personal finance.
-              In a well-defined topic groups.
+              {{ $t('t035') }}
             </p>
             <!-- -->
             <a
@@ -22,13 +19,13 @@
               :href="$config.public.socialLink.whatsappCommunity"
               target="_blank"
             >
-              Do you prefer WhatsApp?
+              {{ $t('t036') }}
             </a>
           </div>
         </div>
         <aside class="col-span-4 lg:col-start-7 mt-8 lg:mt-0 xl:col-start-8">
           <h2 class="text-24 font-bold text-color-1">
-            What is included?
+            {{ $t('t037')}}
           </h2>
           <ul class="mt-8">
             <li
@@ -45,7 +42,7 @@
               :href="$config.public.socialLink.telegramCommunity"
               target="_blank"
             >
-            Join now!
+            {{ $t('Join now!') }}
           </a>
         </aside>
       </div>
@@ -65,20 +62,20 @@
 const { locale } = useI18n()
 const features = ref([
   {
-    pt: 'Anuncios. Seja o primeiro a saber o que foi e será lançado.',
-    en: ''
+    pt: 'Anúncios. Seja o primeiro a saber o que foi e será lançado.',
+    en: 'Announcement. Be the first to know what has been and will be released.'
   },
   {
     pt: 'Interaja com a comunidade. Ajude, seja ajudado, receba e compartilha dicas.',
-    en: ''
+    en: 'Interact with the community. Help, be helped, receive and share tips.'
   },
   {
-    pt: 'Interaja direitamente comigo e com a minha equipe.',
-    en: ''
+    pt: 'Interaja diretamente comigo e com a minha equipe.',
+    en: 'Interact directly with me and my team.'
   },
   {
     pt: 'Cupons grátis de até 100% de descontos.',
-    en: ''
+    en: 'Free coupons for up to 100% discounts.'
   }
 ])
 </script>

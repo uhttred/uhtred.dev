@@ -5,7 +5,7 @@
         <h1
           class="text-color-1 font-bold text-38 text-center"
         >
-          Author in Focus<span class="text-green-500">.</span>
+          {{ $t('t039') }}<span class="text-green-500">.</span>
         </h1>
       </header>
     </div>
@@ -71,7 +71,7 @@
               <span class="font-medium text-color-1">
                 {{ author.count_series }}
               </span>
-              Series
+              {{ $t('Series') }}
             </p>
           </div>
         </article>

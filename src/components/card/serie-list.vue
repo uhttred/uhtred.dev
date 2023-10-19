@@ -30,7 +30,7 @@
           •
         </p>
         <p class="text-13 text-color-3">
-          {{ useCompactNumberFormat(serie.count_insights_views).value }} Reads
+          {{ useCompactNumberFormat(serie.count_insights_views).value }} {{ $t('Reads') }}
         </p>
       </div>
     </header>
@@ -53,7 +53,6 @@
         </NuxtLink>
       </li>
     </ul>
-    <!-- <div class="linex-2 w-[40%] mt-5.5" /> -->
   </article>
 </template>
 

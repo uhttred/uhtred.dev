@@ -1,6 +1,6 @@
 <template>
   <p>
-    {{ views }} views
+    {{ views }} {{ $t('Reads') }}
   </p>
 </template>
 

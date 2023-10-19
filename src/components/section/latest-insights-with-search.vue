@@ -8,7 +8,7 @@
         <h1
           class="text-color-1 font-bold text-38 text-center"
         >
-          Read the latest<span class="text-green-500">.</span>
+          {{ $t('Read the latest') }}<span class="text-green-500">.</span>
         </h1>
       </div>
       <!-- search bar -->
@@ -17,7 +17,11 @@
           md:col-span-6 md:col-start-2 lg:col-start-3"
       >
         <InputSearchBar
-          placeholder="Search for greatest insights"
+          :placeholder="
+            locale === 'pt'
+              ? 'Buscar por insights'
+              : 'Search for greatest insights'
+          "
           @search="goSearch"
         />
       </div>
@@ -47,6 +51,7 @@
 <script setup lang="ts">
 const localePath = useLocalePath()
 const { push } = useRouter()
+const { locale } = useI18n()
 const { entries, loading, reset, error } = await usePaginator('insights', {
   pageLimit: 4
 })

@@ -122,16 +122,16 @@ onBeforeRouteUpdate(route => {
   }
 })
 
-const pageTitle =  ref(t('pages.insights.index.title'))
+const pageTitle =  ref('')
 if (query.value.search) {
   pageTitle.value = locale.value === 'pt'
     ? `${query.value.search} - Buscar por Insights | Uhtred M`
     : `${query.value.search} - Insight Search | Uhtred M`
+  
+  useSeoMeta({
+    title: pageTitle
+  })
 }
-
-useSeoMeta({
-  title: pageTitle
-})
 
 definePageMeta({
   title: 'pages.insights.index.title',
@@ -143,7 +143,7 @@ useSchemaOrg([
   }),
   defineWebPage({
     description: t('pages.insights.index.description'),
-    name: pageTitle.value //|| t('pages.insights.index.title')
+    name: pageTitle.value || t('pages.insights.index.title')
   })
 ])
 </script>

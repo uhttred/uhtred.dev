@@ -9,7 +9,7 @@
         <h1
           class="text-color-1 font-bold text-34 text-center max-w-[490px]"
         >
-          Read from topics that most matters you<span class="text-green-500">.</span>
+          {{ $t('t038') }}<span class="text-green-500">.</span>
         </h1>
         <ul class="flex flex-wrap gap-2 mt-5.5 justify-center items-center max-w-[640px]">
           <li
@@ -49,7 +49,7 @@
         <h1
           class="text-color-1 font-bold text-28"
         >
-          Programing & Marketing<span class="text-green-500">.</span>
+          {{ t1.name[locale] }} & {{ t2.name[locale] }}<span class="text-green-500">.</span>
         </h1>
       </header>
       <CardInsightFlex
@@ -73,6 +73,43 @@
 </template>
 
 <script setup lang="ts">
+const { $config } = useNuxtApp()
+const { locale } = useI18n()
+
+const topicsOptions = [
+  {
+    name: {
+      pt: 'Negócios Digitas',
+      en: 'Digital Business'
+    },
+    id: $config.public.topic.businessId
+  },
+  {
+    name: {
+      pt: 'Marketing',
+      en: 'Marketing'
+    },
+    id: $config.public.topic.marketingId
+  },
+  {
+    name: {
+      pt: 'Finanças Pessoais',
+      en: 'Personal Finance'
+    },
+    id: $config.public.topic.financeId
+  },
+  {
+    name: {
+      pt: 'Programação',
+      en: 'Programing'
+    },
+    id: $config.public.topic.programmingId
+  }
+]
+
+const t1 = topicsOptions.splice(Math.floor(Math.random()*topicsOptions.length), 1)[0]
+const t2 = topicsOptions.splice(Math.floor(Math.random()*topicsOptions.length), 1)[0]
+
 // topics
 const {
     entries: topics,
@@ -88,7 +125,10 @@ const {
     loading: insightLoading,
     reset: insightReset,
     error: insightError 
-  } = await usePaginator('insights?topics__in=4,2', {
-  pageLimit: 4
+  } = await usePaginator('insights', {
+  pageLimit: 4,
+  query: {
+    topics__in: `${t1.id},${t2.id}`
+  }
 })
 </script>

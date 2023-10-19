@@ -4,10 +4,10 @@
       <section class="col-span-full xl:col-span-8">
         <header class="my-14">
           <h1 class="text-color-1 font-bold text-38">
-            Insight series<span class="text-green-500">.</span>
+            {{ $t('Insight series') }}<span class="text-green-500">.</span>
           </h1>
           <p class="text-16/7 text-color-2 mt-4">
-            With series of insights you get more deep and valuable content.
+            {{ $t('t033') }}
           </p>
         </header>
         <!-- series -->

@@ -8,14 +8,14 @@
         <h1
           class="text-center md:text-left font-bold text-34/[52px] text-color-1"
         >
-          Get update from what matter you most<span class="text-green-500">.</span>
+          {{ $t('t040')}}<span class="text-green-500">.</span>
         </h1>
         <div class="mt-4 text-center md:text-left">
           <p class="text-14 font-medium text-color-1">
-            Choose topics you wish to receive updates.
+            {{ $t('t041')}}
           </p>
           <p class="text-13/6 font-normal text-color-3 mt-1">
-            You can choose the topics after subscription and e-mail validation.
+            {{ $t('t042')}}
           </p>
         </div>
       </header>

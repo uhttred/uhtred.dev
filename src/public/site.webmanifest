@@ -1,12 +1,12 @@
 {
-  "name": "Uhtred M.",
-  "short_name": "Uhtred M.",
-  "start_url": "/insights?from=pwa-homescreen",
+  "name": "Uhtred M",
+  "short_name": "Uhtred M",
+  "start_url": "/?from=pwa-homescreen",
   "display": "fullscreen",
   "background_color": "#101010",
   "theme_color": "#101010",
   "orientation": "portrait",
-  "description": "Hi, I'm a Product Developer. I help companies and entrepreneurs with business analysis for structuring, designing and developing scalable digital products. And I write a lot of insights about business, programming, design, etc.",
+  "description": "A space where you can gain lots of insights and connect with others to be a better programmer and/or start and run your own digital businesses. Programming, Digital Business, Marketing and Personal Finance.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

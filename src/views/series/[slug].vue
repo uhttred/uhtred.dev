@@ -9,6 +9,14 @@
           <!-- newsletter or ads -->
           <CardHorizontalAutoNewsletterOrAds
             class="mt-8"
+            :newsletter-title="
+              serie && serie.status === 'in_launch'
+                ? {
+                    en: 'This serie is In Launch, get latest updates',
+                    pt: 'Esta série está em lançamento, receba as atualizações'
+                  }
+                : null
+            "
           />
           <!-- tag loading error -->
           <div
@@ -50,7 +58,7 @@
                   •
                 </p>
                 <p class="text-13 text-color-3">
-                  {{ useCompactNumberFormat(serie.count_insights_views).value }} Reads
+                  {{ useCompactNumberFormat(serie.count_insights_views).value }} {{ $t('Reads') }}
                 </p>
               </div>
             </header>
@@ -184,7 +192,7 @@ const title = computed(() => {
     const t =  locale.value === 'pt'
       ? serie.value.pt_title || serie.value.title
       : serie.value.title
-    return `${t} | Uhtred M`
+    return `${t} - Serie | Uhtred M`
   }
   return '404 Error - Series | Uhtred M'
 })

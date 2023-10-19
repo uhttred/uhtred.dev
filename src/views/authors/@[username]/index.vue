@@ -56,6 +56,7 @@
 </template>
 
 <script setup lang="ts">
+const { locale } = useI18n()
 const props = defineProps(['author'])
 const route = useRoute()
 const searchQuery = computed(() => route.query.q)
@@ -80,4 +81,44 @@ const {
   query,
   pageLimit: 8,
 })
+
+const title = locale.value === 'pt'
+  ? `Insights por ${props.author.pt_name || props.author.name} (@${props.author.username}) | Uhtred M`
+  : `Insights by ${props.author.name} (@${props.author.username}) | Uhtred M`
+
+const description = locale.value === 'pt'
+  ? props.author.pt_title || props.author.title
+  : props.author.title
+
+const image = computed(() => {
+  if (props.author.avatar) {
+    return props.author.avatar?.url || $config.public.defaultCoverUrl
+  }
+  return '/icon.png'
+})
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  twitterTitle: title,
+  ogDescription: description,
+  twitterDescription: description,
+  twitterImage: image,
+  ogImage: image,
+  ogImageUrl: image
+})
+
+useSchemaOrg([
+  definePerson({
+    name: props.author.name,
+    image: image,
+    sameAs: [
+      props.author.linkedin,
+      props.author.website,
+      props.author.instagram,
+    ]
+  }),
+  defineWebPage()
+])
 </script>
