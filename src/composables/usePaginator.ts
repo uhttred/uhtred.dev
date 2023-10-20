@@ -56,8 +56,7 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
         query: {
           ...query.value,
           ...paginator.value.next
-        },
-        lazy: false
+        }
       })
       loading.value = false
       if (status.value === 'success') {
@@ -69,21 +68,18 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
   const paginatorFetch = async () => {
     loading.value = true
     error.value = false
-    const { data, status, error: err } = await useFetch(path, {
+    const { data, status } = await useFetch(path, {
       query: {
         ...query.value,
         init: 0,
         limit: pageLimit.value
-      },
-      immediate: true,
-      lazy: true
+      }
     })
     loading.value = false
     if (status.value === 'success') {
       updatePaginator(data.value as PaginatorData, true)
     } else {
       error.value = true
-      console.log(err)
     }
   }
 

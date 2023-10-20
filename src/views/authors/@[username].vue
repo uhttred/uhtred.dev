@@ -179,7 +179,5 @@ const {
   error,
   refresh,
   pending
-} = await useFetch(`authors/${username.value}`, {
-  lazy: false
-})
+} = await useFetch(`authors/${username.value}`)
 </script>

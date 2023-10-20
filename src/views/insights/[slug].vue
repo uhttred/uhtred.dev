@@ -262,9 +262,7 @@ definePageMeta({
 const route = useRoute()
 
 const slug = computed(() => route.params.slug)
-const { data: insight, error, refresh, pending } = await useFetch(`insights/${slug.value}`, {
-  lazy: false
-})
+const { data: insight, error, refresh, pending } = await useFetch(`insights/${slug.value}`)
 const { locale } = useI18n()
 const { $config } = useNuxtApp()
 

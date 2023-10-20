@@ -4,7 +4,7 @@
     class="w-full flex flex-wrap bg-2 bdr-2 rounded-md py-5 px-5.5 relative md:gap-x-14"
   >
     <p class="text-24/[40px] font-bold text-color-1 max-w-[300px]">
-      {{ newsletterTitle[locale] }}<span class="text-green-brand">.</span>
+      {{ msg[locale] }}<span class="text-green-brand">.</span>
     </p>
     <form
       class="w-full mt-5 md:w-[240px] md:mt-0 flex flex-wrap justify-start gap-5"
@@ -64,14 +64,15 @@ const hideCard = useCookie('hide-card-horizontal-auto-newsletter', {
   maxAge: 604800
 })
 
-defineProps({
-  newsletterTitle: {
-    type: Object,
-    default: {
+const props = defineProps(['newsletterTitle'])
+
+const msg = computed(() => {
+  return props.newsletterTitle
+    ? props.newsletterTitle
+    : {
       pt: 'Receba atualizações do que mais te interessa',
       en: 'Get update from what matter you most'
     }
-  }
 })
 
 const email = ref('')

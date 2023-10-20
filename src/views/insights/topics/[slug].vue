@@ -103,9 +103,7 @@ const {
   error,
   refresh,
   pending
-} = await useFetch(`topics/${slug.value}`, {
-  lazy: false
-})
+} = await useFetch(`topics/${slug.value}`)
 
 const query = ref({
   search: searchQuery.value,
