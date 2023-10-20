@@ -11,11 +11,11 @@
         </template>
       </Head>
       <Body>
-        <NuxtLoadingIndicator
+        <!-- <NuxtLoadingIndicator
           color="#10b981"
           :height="1"
           class="z-50"
-        />
+        /> -->
         <UhMenu />
         <NuxtPage />
         <SmallCookieConcent />

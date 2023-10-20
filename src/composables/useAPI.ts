@@ -14,11 +14,13 @@ export const useAPI = async (path: string, opts?: Options) => {
     messages?: Array<string>
   }> = ref({})
   const loading = ref(false)
+  const $r = ref(null)
 
   const refresh = async () => {
     try {
       loading.value = true
       error.value = false
+      $r.value = null
       const r = okResponse(
         await $api({
           ...opts,
@@ -27,6 +29,7 @@ export const useAPI = async (path: string, opts?: Options) => {
         'data'
       )
       loading.value = false
+      $r.value = r
       if (r.$ok) {
         error.value = false
         data.value = r.data

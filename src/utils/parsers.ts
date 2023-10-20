@@ -61,7 +61,7 @@ export const okResponse = (
     $ok: true,
     $response: r,
     $code: r.status,
-    $data: r.data || {},
+    $data: r.data || null,
     $message: typeof r.data === 'string'
       ? r.data
       : r.data.detail || '' 

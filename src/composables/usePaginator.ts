@@ -34,7 +34,6 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
   const query = ref(options?.query ?? {})
   const pageLimit = ref(options?.pageLimit ?? 10)
   const paginator: Ref<PaginatorData> = ref({})
-  const { $config } = useNuxtApp()
 
   const canLoadMore = computed(() => {
     return paginator.value.next ? true : false
@@ -53,16 +52,14 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
     if (paginator.value.next && !loading.value) {
       loading.value = true
       error.value = false
-      const { data, status } = await useFetch(path, {
-        query: {
+      const { data } = await useAPI(path, {
+        params: {
           ...query.value,
           ...paginator.value.next
-        },
-        lazy: false,
-        baseURL: $config.public.apiBaseUrl
+        }
       })
       loading.value = false
-      if (status.value === 'success') {
+      if (data) {
         updatePaginator(data.value as PaginatorData)
       }
     }
@@ -71,22 +68,18 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
   const paginatorFetch = async () => {
     loading.value = true
     error.value = false
-    const { data, status, error: err } = await useFetch(path, {
-      query: {
+    const { data, error: err } = await useAPI(path, {
+      params: {
         ...query.value,
         init: 0,
         limit: pageLimit.value
-      },
-      immediate: true,
-      lazy: true,
-      baseURL: $config.public.apiBaseUrl
+      }
     })
     loading.value = false
-    if (status.value === 'success') {
+    if (!err.value) {
       updatePaginator(data.value as PaginatorData, true)
     } else {
       error.value = true
-      console.log(err)
     }
   }
 

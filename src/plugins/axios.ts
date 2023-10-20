@@ -18,6 +18,10 @@ export default defineNuxtPlugin((nuxtApp) => {
     api.defaults.headers.common['Accept-Language'] = newLocale
   })
 
+  nuxtApp.hook('app:created', () => {
+    api.defaults.headers.common['Accept-Language'] = nuxtApp.$i18n.locale.value
+  })
+
   return {
     provide: {
       api

@@ -179,9 +179,6 @@ const {
   data: author,
   error,
   refresh,
-  pending
-} = await useFetch(`authors/${username.value}`, {
-  lazy: false,
-  baseURL: $config.public.apiBaseUrl
-})
+  loading: pending
+} = await useAPI(`authors/${username.value}`)
 </script>

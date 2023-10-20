@@ -166,14 +166,17 @@ const changeDisplayStyle = (style: string) =>{
 }
 
 const slug = computed(() => route.params.slug)
-const { data: serie, error, refresh, pending } = await useFetch(`series/${slug.value}`, {
-  lazy: true,
-  baseURL: $config.public.apiBaseUrl
-})
+console.log(slug.value)
+const {
+  data: serie,
+  error,
+  refresh,
+  loading: pending
+} = await useAPI(`series/${slug.value}`)
 
 const query = ref({
   search: searchQuery.value,
-  series__in: serie.value.id
+  series__in: serie.value ? serie.value.id : ''
 })
 
 const {

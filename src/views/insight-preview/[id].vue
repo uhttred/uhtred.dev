@@ -172,7 +172,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const insightId = computed(() => route.params.id)
-const { data, error, refresh, pending } = await useFetch(`insights/draft/${insightId.value}`)
+const { data, error, refresh, loading: pending } = await useAPI(`insights/draft/${insightId.value}`)
 const { locale } = useI18n()
 
 const title = computed(() => {
