@@ -170,6 +170,7 @@ definePageMeta({
   }
 })
 
+const { $config } = useNuxtApp()
 const { locale } = useI18n()
 const route = useRoute()
 const username = computed(() => route.params.username)
@@ -180,6 +181,7 @@ const {
   refresh,
   pending
 } = await useFetch(`authors/${username.value}`, {
-  lazy: false
+  lazy: false,
+  baseURL: $config.public.apiBaseUrl
 })
 </script>

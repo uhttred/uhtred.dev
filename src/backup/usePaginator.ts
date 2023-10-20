@@ -34,7 +34,6 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
   const query = ref(options?.query ?? {})
   const pageLimit = ref(options?.pageLimit ?? 10)
   const paginator: Ref<PaginatorData> = ref({})
-  const { $config } = useNuxtApp()
 
   const canLoadMore = computed(() => {
     return paginator.value.next ? true : false
@@ -58,8 +57,7 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
           ...query.value,
           ...paginator.value.next
         },
-        lazy: false,
-        baseURL: $config.public.apiBaseUrl
+        lazy: false
       })
       loading.value = false
       if (status.value === 'success') {
@@ -78,8 +76,7 @@ export const usePaginator = async (path: string, options?: UsePaginatorOptions) 
         limit: pageLimit.value
       },
       immediate: true,
-      lazy: true,
-      baseURL: $config.public.apiBaseUrl
+      lazy: true
     })
     loading.value = false
     if (status.value === 'success') {
