@@ -19,6 +19,7 @@
         <UhMenu />
         <NuxtPage />
         <SmallCookieConcent />
+        <PopupNewsletterPreferencesWrapper />
         <FooterWithNewsletterMarquee />
       </Body>
     </Html>
