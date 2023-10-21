@@ -100,7 +100,7 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
   'google-adsense': {
-    id: '',
+    id: 'ca-pub-2215680955780165',
     analyticsUacct: ''
   },
   googleFonts: {
