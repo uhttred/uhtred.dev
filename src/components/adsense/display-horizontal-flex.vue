@@ -4,12 +4,12 @@
   >
     <Adsbygoogle
       class="max-w-100"
-      :ad-slot="$config.public.adsense.slot.dHorizontal668px"
+      ad-slot="6291668535"
       :ad-style="{display: 'inline-block', height: '100px', width: '668px'}"
     />
     <!-- <Adsbygoogle
       class="md:hidden"
-      :ad-slot="$config.public.adsense.slot.mobileFull"
+      ad-slot="4507813574"
       ad-format="auto"
       :ad-style="{display: 'inline-block', height: '100px', width: 'auto'}"
     /> -->

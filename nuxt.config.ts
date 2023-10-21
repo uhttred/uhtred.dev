@@ -156,18 +156,9 @@ export default defineNuxtConfig({
       },
       'google-adsense': {
         id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID || '',
-        analyticsUacct: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ANALYTICS_UACCT || '',
+        // analyticsUacct: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ANALYTICS_UACCT || '',
         test: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_TEST === 'true',
-      },
-      adsense: {
-        showAds: process.env.NUXT_PUBLIC_ADSENSE_SHOW_ADS === 'true',
-        slot: {
-          dVertical: '5094136933',
-          dSquare238px: '1137047805',
-          dHorizontalFull: '3922076947',
-          dHorizontal668px: '6291668535',
-          mobileFull: '4507813574'
-        }
+        // analyticsDomainName: process.env.NUXT_PUBLIC_ANALYTICS_DOMAIN_NAME|| 'uhtred.dev'
       },
       topic: {
         programmingId: process.env.NUXT_PUBLIC_TOPIC_PROGRAMMING_ID,

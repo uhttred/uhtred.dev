@@ -6,7 +6,7 @@
       <div class="col-span-full flex justify-center">
         <div class="min-h-[90px] max-w-[800px]">
           <Adsbygoogle
-            :ad-slot="$config.public.adsense.slot.dHorizontalFull"
+            ad-slot="3922076947"
             ad-format="display"
           />
         </div>
