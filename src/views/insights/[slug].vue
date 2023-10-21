@@ -45,7 +45,7 @@
               </p>
             </div>
             <template v-else>
-              <div class="flex items-center mb-4 gap-x-3">
+              <div class="flex items-center mb-2 md:mb-3 gap-x-3">
                 <p class="text-13 text-color-3">
                   <span
                     v-if="insight.show_updated_at"
@@ -82,6 +82,12 @@
                 <i class="icon-star mr-1" />
                 In serie
                 <NuxtLink
+                  :to="localePath({
+                    name: 'series-slug',
+                    params: {
+                      slug: insight.serie.slug
+                    }
+                  })"
                   class="text-color-2 hover:underline"
                 >
                   {{

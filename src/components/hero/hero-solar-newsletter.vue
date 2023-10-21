@@ -4,7 +4,7 @@
     class="bdr-b-p bg-2 row-c pb-12"
   >
     <!-- hi -->
-    <div class="row mt-10">
+    <div class="row mt-5 md:mt-10">
       <div class="col-span-full flex justify-center">
         <h1
           class="text-13 lg:text-14 font-bold text-gradient-2 text-center"

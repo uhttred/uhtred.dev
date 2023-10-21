@@ -6,7 +6,7 @@
       <div class="row py-12 items-center">
         <div class="col-span-full lg:col-span-5 xl:col-span-6">
           <div class="p-12 w-full bg-2 bdr-2 rounded-lg -join-chat-bg">
-            <h1 class="text-gray-9x50 text-color-1 font-bold text-38">
+            <h1 class="text-gray-9x50 text-color-1 font-bold text-28 md:text-38">
               {{ $t('t034') }}<span class="text-green-500">.</span>
             </h1>
             <p class="text-14/7 text-gray-500 mt-4">
