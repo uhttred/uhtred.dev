@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="$config.public.adsense.showAds"
     class="w-full max-w-full"
   >
     <Adsbygoogle

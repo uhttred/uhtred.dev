@@ -1,6 +1,5 @@
 <template>
   <section
-    v-if="$config.public.adsense.showAds"
     class="row-c"
   >
     <div class="row">
