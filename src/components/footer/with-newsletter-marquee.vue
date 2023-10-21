@@ -1,8 +1,6 @@
 <template>
   <SectionNewsletterForBottom />
-  <ClientOnly>
-    <SectionMarqueeInsightsTitle class="bdr-b-1 bdr-t-1" />
-  </ClientOnly>
+  <SectionMarqueeInsightsTitle class="bdr-b-1 bdr-t-1" />
   <footer class="row-c bg-2">
     <div class="row my-7">
       <div class="col-span-4 my-7">

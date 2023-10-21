@@ -2,9 +2,7 @@
   <main>
     <UhMenuSub class="bg-2"/>
     <HeroSolarNewsletter />
-    <ClientOnly>
-      <SectionMarqueeInsightsTitle class="bdr-b-1" />
-    </ClientOnly>
+    <SectionMarqueeInsightsTitle class="bdr-b-1" />
     <SectionLatestInsightsWithSearch />
     <SectionSeriesWithAsideAds />
     <SectionJoinCommunityGroup />
