@@ -1,18 +1,18 @@
 <template>
   <div
     v-if="$config.public.adsense.showAds"
-    class="h-[100px] w-full"
+    class="h-[100px] max-w-full flex"
   >
     <Adsbygoogle
-      class="md:block"
+      class="max-w-100"
       :ad-slot="$config.public.adsense.slot.dHorizontal668px"
       :ad-style="{display: 'inline-block', height: '100px', width: '668px'}"
     />
-    <Adsbygoogle
+    <!-- <Adsbygoogle
       class="md:hidden"
       :ad-slot="$config.public.adsense.slot.mobileFull"
       ad-format="auto"
       :ad-style="{display: 'inline-block', height: '100px', width: 'auto'}"
-    />
+    /> -->
   </div>
 </template>

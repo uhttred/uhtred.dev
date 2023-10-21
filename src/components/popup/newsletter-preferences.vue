@@ -262,7 +262,6 @@ if (route.query['email-confirmation'] && emailObject.value && emailObject.value.
   }
   $toast.success(msg[locale.value])
   on_join_group('verified_newsletter')
-  clearUrl()
 }
 
 const removePopup = () => {

@@ -9,7 +9,7 @@
     <div class="row h-full">
       <div class="col-span-full h-full flex justify-between items-center">
         <!-- brand logo -->
-        <div>
+        <div class="cursor-pointer">
           <NuxtLink
             :to="localePath('index')"
             @click.native="showMobileMenu=false"

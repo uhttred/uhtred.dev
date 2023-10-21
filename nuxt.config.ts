@@ -162,11 +162,11 @@ export default defineNuxtConfig({
       adsense: {
         showAds: process.env.NUXT_PUBLIC_ADSENSE_SHOW_ADS === 'true',
         slot: {
-          dVertical: process.env.NUXT_PUBLIC_ADSENSE_SLOT_D_VERTICAL || '5094136933',
-          dSquare238px: process.env.NUXT_PUBLIC_ADSENSE_SLOT_D_SQUARE238PX || '1137047805',
-          dHorizontalFull: process.env.NUXT_PUBLIC_ADSENSE_SLOT_D_HORIZONTAL_FULL || '3922076947',
-          dHorizontal668px: process.env.NUXT_PUBLIC_ADSENSE_SLOT_D_HORIZONTAL668PX || '6291668535',
-          mobileFull: process.env.NUXT_PUBLIC_ADSENSE_SLOT_MOBILE_FULL || '4507813574'
+          dVertical: '5094136933',
+          dSquare238px: '1137047805',
+          dHorizontalFull: '3922076947',
+          dHorizontal668px: '6291668535',
+          mobileFull: '4507813574'
         }
       },
       topic: {
