@@ -13,6 +13,8 @@
             :url-path="route.path"
             :title="title"
             :description="description"
+            :item-id="insight.slug"
+            content-type="insight"
             class="mt-40 sticky top-24"
           />
         </div>

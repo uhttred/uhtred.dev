@@ -18,6 +18,7 @@
               class="inline-block text-14 text-color-1 underline decoration-green-brand mt-4"
               :href="$config.public.socialLink.whatsappCommunity"
               target="_blank"
+              @click.native="on_join_group('whatsapp')"
             >
               {{ $t('t036') }}
             </a>
@@ -41,6 +42,7 @@
               class="btn-link mt-8"
               :href="$config.public.socialLink.telegramCommunity"
               target="_blank"
+              @click.native="on_join_group('telegram')"
             >
             {{ $t('Join now!') }}
           </a>
@@ -60,6 +62,7 @@
 
 <script setup lang="ts">
 const { locale } = useI18n()
+const { on_join_group } = useGtagEvent()
 const features = ref([
   {
     pt: 'Anúncios. Seja o primeiro a saber o que foi e será lançado.',

@@ -3,6 +3,7 @@ import { errorResponse } from '@/utils/parsers'
 
 export const useNewsletterSubscription = () => {
   
+  const { on_join_group } = useGtagEvent()
   const { $toast } = useNuxtApp()
   const { locale } = useI18n()
   const pending = ref(false)
@@ -13,13 +14,12 @@ export const useNewsletterSubscription = () => {
     pt: 'Sucesso! Acesse a sua caixa de e-mail ({email}) para verificar o e-mail. Depois você poderá definir os tópicos do seu interesse para receber atualizações.'
   }
 
-
   type subscribeOptions = {
     onSuccess?: Function
   }
   type subscribeData= {
     email: string,
-    name?: string
+    name: string
   }
 
   const subscribe = (body: subscribeData, options: subscribeOptions = {}) => {
@@ -33,6 +33,7 @@ export const useNewsletterSubscription = () => {
       })
       .then(() => {
         pending.value = false
+        on_join_group('newsletter')
         $toast.success(successMessage[locale.value].replace('{email}', body.email), {
           timeout: 15000
         })

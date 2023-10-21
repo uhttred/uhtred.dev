@@ -12,10 +12,10 @@
       :placeholder="$attrs.placeholder || $t('t015')"
       :value="modelValue"
       @input="$emit('update:modelValue', $event.target.value)"
-      @keydown.enter="$emit('search', $event.target.value)"
+      @keydown.enter="goSearch"
     >
     <button
-      @click="$emit('search', $refs.input.value)"
+      @click="goSearch"
     >
       <i
         class="icon-search text-18 text-color-1"
@@ -25,8 +25,14 @@
 </template>
 
 <script setup>
+const input = ref('')
+const emit = defineEmits(['update:modelValue', 'search'])
+const { on_search } = useGtagEvent()
 defineProps([
   'modelValue'
 ])
-defineEmits(['update:modelValue', 'search'])
+const goSearch = () => {
+  emit('search', input.value.value)
+  on_search(input.value.value)
+}
 </script>

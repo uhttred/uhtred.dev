@@ -196,6 +196,7 @@
 <script setup lang="ts">
 const route = useRoute()
 const localePath = useLocalePath()
+const { on_search } = useGtagEvent()
 const { push } = useRouter()
 const searchQuery = ref('')
 const showMobileMenu = ref(false)
@@ -208,6 +209,7 @@ const goSearch = () => {
       q: searchQuery.value
     }
   }))
+  on_search(searchQuery.value)
   showMobileMenu.value = false
 }
 </script>

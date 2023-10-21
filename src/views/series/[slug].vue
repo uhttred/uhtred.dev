@@ -3,7 +3,21 @@
     <UhMenuSub />
     <!--  -->
     <section class="row-c">
-      <div class="row bdr-b-1">
+      <div class="row bdr-b-1 relative">
+        <!-- share icons -->
+        <div
+          class="col-span-1 absolute h-full right-full hidden xl:block pb-14 mr-8"
+        >
+          <PageAsideSocialShare
+            v-if="serie"
+            :url-path="route.path"
+            :title="title"
+            :description="description"
+            :item-id="serie.slug"
+            content-type="serie"
+            class="mt-40 sticky top-24"
+          />
+        </div>
         <!-- left container -->
         <section class="col-span-full xl:col-span-8">
           <!-- newsletter or ads -->
@@ -40,7 +54,7 @@
           <div v-else>
             <header class="flex flex-col-reverse mt-6 xl:mt-8">
               <!-- title -->
-              <h1 class="text-40/[58px] text-color-1 font-bold mt-1">
+              <h1 class="text-28 md:text-40/[58px] text-color-1 font-bold mt-1">
                 {{ 
                   locale === 'pt'
                     ? serie.pt_title || serie.title

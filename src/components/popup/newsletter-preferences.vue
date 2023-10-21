@@ -220,7 +220,9 @@
 <script setup lang="ts">
 const $emit = defineEmits(['remove'])
 const { locale } = useI18n()
+const { on_join_group } = useGtagEvent()
 const { $toast, $config } = useNuxtApp()
+const router = useRouter()
 const route = useRoute()
 const email = computed(() => route.query.email)
 const sign = computed(() => route.query.sign)
@@ -234,13 +236,19 @@ const preferred_language = ref(null)
 const name = ref('')
 const selected_topics_id = ref([])
 
+const clearUrl = () => {
+  router.replace({
+    ...route,
+    query: {}
+  })
+}
+
 const {
   data: emailObject,
   error: emailError,
   refresh,
   pending
 } = await useFetch(`notify/emails/${sign.value}/verified`, {
-  lazy: false,
   method: 'PATCH',
   query: {
     email: email.value
@@ -253,11 +261,14 @@ if (route.query['email-confirmation'] && emailObject.value && emailObject.value.
     en: 'Your email has been successfully verified!'
   }
   $toast.success(msg[locale.value])
+  on_join_group('verified_newsletter')
+  clearUrl()
 }
 
 const removePopup = () => {
   if (!loading.value && !pending.value && !updating.value) {
     $emit('remove')
+    clearUrl()
   }
 }
 

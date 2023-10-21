@@ -84,7 +84,8 @@ const {
 
 const onSubscribe = () => {
   const data = {
-    email: email.value
+    email: email.value,
+    name: ''
   }
   subscribe(data, {
     onSuccess () {

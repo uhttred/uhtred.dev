@@ -13,6 +13,7 @@
               :key="index"
               :to="localePath(subNavItem.route)"
               class="text-13 text-gray-500 dark:text-gray-400 hover:text-color-1"
+              @click.native="on_select_content(subNavItem.route.params.slug)"
             >
               {{
                 locale === 'pt'
@@ -28,6 +29,7 @@
 
 <script setup lang="ts">
 const { locale } = useI18n()
+const { on_select_content } = useGtagEvent()
 // TODO: GA4 on topic interest
 const subNavItems = [
   {
