@@ -22,10 +22,11 @@ export const useGtagEvent = () => {
 
     if (group_id === 'whatsapp' || group_id === 'telegram') {
       gtag('event', 'community_join', { group_id })
+      gtag('event', `join_${group_id}`, { group_id })
     } else if (group_id === 'newsletter') {
-      gtag('event', 'newsletter_subscription', { group_id })
+      gtag('event', 'newsletter_sbt', { group_id })
     } else if (group_id === 'verified_newsletter') {
-      gtag('event', 'verified_newsletter_subscription', { group_id })
+      gtag('event', 'newsletter_vsb', { group_id })
     }
   }
 

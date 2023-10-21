@@ -155,7 +155,7 @@ export default defineNuxtConfig({
         id: process.env.NUXT_PUBLIC_GTAG_ID
       },
       'google-adsense': {
-        id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID || '',
+        id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID || 'ca-pub-2215680955780165',
         // analyticsUacct: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ANALYTICS_UACCT || '',
         test: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_TEST === 'true',
         // analyticsDomainName: process.env.NUXT_PUBLIC_ANALYTICS_DOMAIN_NAME|| 'uhtred.dev'
