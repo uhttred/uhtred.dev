@@ -11,17 +11,22 @@ export const useGtagEvent = () => {
       content_id,
       content_type
     })
-    console.log('GTAG EVENT:', 'select_content', {content_id, content_type})
   }
 
   const on_search = (search_term: string) => {
     gtag('event', 'search', { search_term })
-    console.log('GTAG EVENT:', 'search', search_term)
   }
 
   const on_join_group = (group_id: string) => {
     gtag('event', 'join_group', { group_id })
-    console.log('GTAG EVENT:', 'join_group', group_id)
+
+    if (group_id === 'whatsapp' || group_id === 'telegram') {
+      gtag('event', 'community_join', { group_id })
+    } else if (group_id === 'newsletter') {
+      gtag('event', 'newsletter_subscription', { group_id })
+    } else if (group_id === 'verified_newsletter') {
+      gtag('event', 'verified_newsletter_subscription', { group_id })
+    }
   }
 
   type ShareParams = {
@@ -31,7 +36,6 @@ export const useGtagEvent = () => {
   }
   const on_share = (params: ShareParams) => {
     gtag('event', 'share', params)
-    console.log('GTAG EVENT:', 'share', params)
   }
 
   return {

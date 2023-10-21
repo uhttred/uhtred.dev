@@ -101,6 +101,7 @@ export default defineNuxtConfig({
   },
   'google-adsense': {
     id: '',
+    analyticsUacct: ''
   },
   googleFonts: {
     download: false,
@@ -155,13 +156,17 @@ export default defineNuxtConfig({
       },
       'google-adsense': {
         id: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ID || '',
+        analyticsUacct: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_ANALYTICS_UACCT || '',
         test: process.env.NUXT_PUBLIC_GOOGLE_ADSENSE_TEST === 'true',
       },
       adsense: {
         showAds: process.env.NUXT_PUBLIC_ADSENSE_SHOW_ADS === 'true',
         slot: {
-          topRightSidebar: process.env.NUXT_PUBLIC_ADSENSE_SLOT_TOP_RIGHT_SIDEBAR || '1137047805',
-          horizontalMainContent: process.env.NUXT_PUBLIC_ADSENSE_SLOT_HORIZONTAL_MAIN_CONTENT || '8857725344'
+          dVertical: process.env.NUXT_PUBLIC_ADSENSE_SLOT_D_VERTICAL || '5094136933',
+          dSquare238px: process.env.NUXT_PUBLIC_ADSENSE_SLOT_D_SQUARE238PX || '1137047805',
+          dHorizontalFull: process.env.NUXT_PUBLIC_ADSENSE_SLOT_D_HORIZONTAL_FULL || '3922076947',
+          dHorizontal668px: process.env.NUXT_PUBLIC_ADSENSE_SLOT_D_HORIZONTAL668PX || '6291668535',
+          mobileFull: process.env.NUXT_PUBLIC_ADSENSE_SLOT_MOBILE_FULL || '4507813574'
         }
       },
       topic: {
