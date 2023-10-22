@@ -79,6 +79,7 @@
               v-else
               href="http://"
               target="_blank"
+              @click.native="onClick(link)"
             >
               {{ link.text[locale] }}
             </a>
@@ -99,6 +100,7 @@
 <script setup lang="ts">
 const { locale } = useI18n()
 const { $config } = useNuxtApp()
+const { on_join_group } = useGtagEvent()
 const ulGroups = [
   // help center links
   {
@@ -159,6 +161,7 @@ const ulGroups = [
       {
         isExternal: true,
         route: $config.public.socialLink.telegramCommunity,
+        ga_group_id: 'telegram',
         text: {
           pt: 'Comunidade Telegram',
           en: 'Telegram Community',
@@ -167,6 +170,7 @@ const ulGroups = [
       {
         isExternal: true,
         route: $config.public.socialLink.whatsappCommunity,
+        ga_group_id: 'whatsapp',
         text: {
           pt: 'Comunidade WhatsApp',
           en: 'WhatsApp Community',
@@ -183,4 +187,10 @@ const ulGroups = [
     ]
   }
 ]
+
+const onClick = (groupItem: object) => {
+  if (groupItem.ga_group_id) {
+    on_join_group(groupItem.ga_group_id)
+  }
+}
 </script>
