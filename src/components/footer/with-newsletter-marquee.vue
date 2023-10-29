@@ -77,7 +77,7 @@
             </NuxtLink>
             <a
               v-else
-              href="http://"
+              :href="link.route"
               target="_blank"
               @click.native="onClick(link)"
             >
