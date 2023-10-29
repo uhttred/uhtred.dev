@@ -180,7 +180,7 @@ const title = computed(() => {
     const t =  locale.value === 'pt'
       ? data.value.pt_title || data.value.title
       : data.value.title
-    return `${t} | Uhtred M.`
+    return `Draft - ${t} | Uhtred M`
   }
   return '404 Error'
 })
@@ -215,7 +215,5 @@ useSeoMeta({
     index: 'false',
     follow: 'false'
   }
-}, {
-  mode: 'all'
 })
 </script>

@@ -204,7 +204,7 @@ const title = computed(() => {
     const t =  locale.value === 'pt'
       ? serie.value.pt_title || serie.value.title
       : serie.value.title
-    return `${t} - Serie | Uhtred M`
+    return `${t} | Uhtred M`
   }
   return '404 Error - Series | Uhtred M'
 })

@@ -231,7 +231,5 @@ useSeoMeta({
   twitterImage: image,
   ogImage: image,
   ogImageUrl: image
-}, {
-  mode: 'all'
 })
 </script>
