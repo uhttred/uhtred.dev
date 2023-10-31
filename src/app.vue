@@ -47,6 +47,9 @@ useHead({
     { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
     { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' }
   ],
+  meta: [
+    { property: 'fb:app:id', content: '599473588895545'}
+  ]
   // script: [
   //   {
   //     src: '/js/mautic-tracking.js',
