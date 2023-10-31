@@ -310,7 +310,7 @@ useSeoMeta({
   twitterDescription: description,
   twitterImage: image,
   ogImage: image,
-  ogImageAlt: `cover image of ${title}`,
+  ogImageAlt: `cover image of ${title.value}`,
   ogImageUrl: image
 })
 
