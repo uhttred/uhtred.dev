@@ -85,7 +85,8 @@ useSeoMeta({
   publisher: 'Uhtred M',
   creator: 'Uhtred M',
   mobileWebAppCapable: 'yes',
-  ogImageAlt: 'Uhtred M image',
+  ogImageAlt: 'An image from Uhtred M',
+  ogType: 'website',
   robots: {
     index: true,
     follow: true,

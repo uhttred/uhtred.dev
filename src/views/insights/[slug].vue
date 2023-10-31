@@ -306,13 +306,50 @@ useSeoMeta({
   ogTitle: title,
   twitterTitle: title,
   ogDescription: description,
+  ogType: 'article',
   twitterDescription: description,
   twitterImage: image,
   ogImage: image,
+  ogImageAlt: `cover image of ${title}`,
   ogImageUrl: image
 })
 
 if (insight.value) {
+  const getOgArticleSection = () => {
+    if (insight.value.topics.length) {
+      const topic = insight.value.topics[0]
+      return {
+        property: 'article:section',
+        content: locale.value === 'pt'
+          ? topic.pt_name || topic.name
+          : topic.name
+      }
+    }
+    return { property: 'article:section', content: 'Technology'}
+  }
+  const getOgTags = () => {
+    const tags = []
+    insight.value.topics.forEach(topic => {
+      tags.push({
+        property: 'article:tag',
+        content: locale.value === 'pt'
+          ? topic.pt_name || topic.name
+          : topic.name
+      })
+    })
+    return tags
+  }
+  useHead({
+    meta: [
+      ...getOgTags(),
+      getOgArticleSection(),
+      { property: 'article:published_time', content: insight.value.published_at },
+      { property: 'article:modified_time', content: insight.value.updated_at },
+      { property: 'article:author', content: `${$config.public.appBaseUrl}/authors/@${insight.value.author.username}`  },
+      { property: 'profile:username', content: insight.value.author.username },
+      { property: 'profile:first_name', content: insight.value.author.name }
+    ],
+  })
   useSchemaOrg([
     defineArticle({
       '@type': 'BlogPosting',

@@ -106,7 +106,15 @@ useSeoMeta({
   twitterDescription: description,
   twitterImage: image,
   ogImage: image,
-  ogImageUrl: image
+  ogImageUrl: image,
+  ogType: 'profile',
+})
+
+useHead({
+  meta: [
+    { property: 'profile:username', content: props.author.username },
+    { property: 'profile:first_name', content: props.author.name }
+  ],
 })
 
 useSchemaOrg([
