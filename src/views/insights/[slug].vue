@@ -133,7 +133,11 @@
                         }
                       })"
                     >
-                      {{ insight.author.name }}
+                      {{
+                        locale === 'pt'
+                          ? insight.author.pt_name || insight.author.name
+                          : insight.author.name
+                      }}
                     </NuxtLink>
                   </p>
                   <p class="text-13 text-color-2 mt-1 hover:underline">

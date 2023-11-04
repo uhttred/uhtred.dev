@@ -1,7 +1,10 @@
 <template>
+  <AdsenseDisplayHorizontalFlex
+    class="mt-6 lg:mt-8"
+  />
   <div
     v-if="!hideCard"
-    class="w-full flex flex-wrap bg-2 bdr-2 rounded-md py-5 px-5.5 relative md:gap-x-14"
+    class="w-full flex flex-wrap bg-2 mt-6 lg:mt-8 bdr-2 rounded-md py-5 px-5.5 relative md:gap-x-14"
   >
     <p class="text-24/[40px] font-bold text-color-1 max-w-[300px]">
       {{ msg[locale] }}<span class="text-green-brand">.</span>
@@ -53,9 +56,6 @@
       <i class="icon-x text-gray-50 text-16" />
     </button>
   </div>
-  <AdsenseDisplayHorizontalFlex
-    v-else
-  />
 </template>
 
 <script setup lang="ts">
