@@ -154,8 +154,8 @@ const ulGroups = [
   // community
   {
     title: {
-      pt: 'Comunidade',
-      en: 'Community',
+      pt: 'Canais',
+      en: 'Channels',
     },
     items: [
       {
@@ -163,8 +163,8 @@ const ulGroups = [
         route: $config.public.socialLink.telegramCommunity,
         ga_group_id: 'telegram',
         text: {
-          pt: 'Comunidade Telegram',
-          en: 'Telegram Community',
+          pt: 'Telegram',
+          en: 'Telegram',
         }
       },
       {
@@ -172,8 +172,8 @@ const ulGroups = [
         route: $config.public.socialLink.whatsappCommunity,
         ga_group_id: 'whatsapp',
         text: {
-          pt: 'Comunidade WhatsApp',
-          en: 'WhatsApp Community',
+          pt: 'WhatsApp',
+          en: 'WhatsApp',
         }
       },
       {

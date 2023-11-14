@@ -148,17 +148,9 @@
       </div>
     </section>
     <!--  -->
-    <SectionJoinCommunityGroup />
-    <!-- line -->
-    <div class="row-c">
-      <div class="row">
-        <div class="linex-1 col-span-full" />
-      </div>
-    </div>
-    <!-- products -->
-    <PageSectionProductListSimple class="mt-14" />
-    <!-- ads -->
-    <AdsenseDisplayHorizontalFull class="mb-10" />
+    <Section4ProductSuggestion class="mt-14 mb-4" />
+    <!-- all topics -->
+    <SectionAllAndCategoryTopics />
   </div>
 </template>
 

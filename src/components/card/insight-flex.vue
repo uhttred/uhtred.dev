@@ -3,7 +3,10 @@
     class="col-span-4 sm:col-span-3 md:col-span-4 lg:col-span-3"
   >
     <header>
-      <div class="max-h-[9.875rem] bg-2 rounded-lg overflow-hidden bdr-2">
+      <div
+        class="h-[9.875rem] sm:h-[7.25rem] md:h-[9.875rem] lg:h-[7.25rem]
+          bg-2 rounded-lg overflow-hidden bdr-2"
+      >
         <!-- image -->
         <NuxtLink
           :to="localePath({

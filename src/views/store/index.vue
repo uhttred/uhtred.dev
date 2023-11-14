@@ -8,12 +8,12 @@
       </div>
     </div>
     <!--  -->
-    <div class="row py-20 gap-y-10">
+    <div class="row py-14 gap-y-8">
       <CardProductBasic
         v-for="product in entries"
         :key="product.uid"
         :product="product"
-        class="col-span-4"
+        class="col-span-4 sm:col-span-3 md:col-span-4 lg:col-span-3"
       />
       <!--  -->
       <div
@@ -32,7 +32,6 @@
     </div>
     <!--  -->
     <SectionAllAndCategoryTopics />
-    <AdsenseDisplayHorizontalFull class="my-10" />
   </div>
 </template>
 

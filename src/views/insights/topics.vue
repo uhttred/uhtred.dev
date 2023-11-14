@@ -27,19 +27,7 @@
         </aside>
       </div>
     </section>
-    <!-- ads -->
-    <AdsenseDisplayHorizontalFull class="my-14" />
     <!--  -->
-    <div class="row-c">
-      <div class="row">
-        <div class="col-span-full linex-1" />
-      </div>
-    </div>
-    <SectionJoinCommunityGroup />
-    <!-- <div class="row-c">
-      <div class="row">
-        <div class="col-span-full linex-1" />
-      </div>
-    </div> -->
+    <Section4ProductSuggestion class="mt-14 mb-4" />
   </div>
 </template>

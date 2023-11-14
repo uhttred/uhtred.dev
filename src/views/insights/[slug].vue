@@ -199,6 +199,10 @@
             :serie-id="insight.serie.id"
             class="bdr-t-1"
           />
+          <!--  -->
+          <AdsenseDisplayHorizontalFlex
+            class="my-6 lg:my-8"
+          />
           <!-- comments -->
           <div class="w-full py-10 bdr-t-1">
             <DisqusComments
@@ -241,26 +245,16 @@
         </aside>
       </div>
     </div>
-    <!-- ads -->
-    <AdsenseDisplayHorizontalFull class="my-14" />
     <!--  -->
-    <div class="row-c">
+    <Section4ProductSuggestion class="mt-14 mb-4" />
+    <!-- <div class="row-c">
       <div class="row">
         <div class="col-span-full linex-1" />
       </div>
-    </div>
-    <SectionJoinCommunityGroup />
-    <div class="row-c">
-      <div class="row">
-        <div class="col-span-full linex-1" />
-      </div>
-    </div>
+    </div> -->
     <!--  -->
     <!-- <SectionAllAndCategoryTopics /> -->
     <!-- rknow more cases -->
-    <!-- <PageSectionGetMoreInsights class="py-24" /> -->
-    <!-- products -->
-    <PageSectionProductListSimple class="my-14" />
   </div>
 </template>
 

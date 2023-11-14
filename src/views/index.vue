@@ -5,17 +5,18 @@
     <SectionMarqueeInsightsTitle class="bdr-b-1" />
     <SectionLatestInsightsWithSearch />
     <SectionSeriesWithAsideAds />
-    <SectionJoinCommunityGroup />
+    <!-- <SectionJoinCommunityGroup /> -->
+    <!-- products -->
+    <Section4ProductSuggestion class="mt-14 mb-8" />
     <SectionAllAndCategoryTopics />
     <SectionAuthorInFocus />
-    <AdsenseDisplayHorizontalFull class="mb-10" />
   </main>
 </template>
 
 <script setup lang="ts">
 useSchemaOrg([
   defineWebSite({
-    name: 'Uhtred M.',
+    name: 'Uhtred M',
     potentialAction: [
       defineSearchAction({
         target: '/insights?q={search_term_string}'

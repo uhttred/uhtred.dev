@@ -1,7 +1,4 @@
 <template>
-  <AdsenseDisplayHorizontalFlex
-    class="mt-6 lg:mt-8"
-  />
   <div
     v-if="!hideCard"
     class="w-full flex flex-wrap bg-2 mt-6 lg:mt-8 bdr-2 rounded-md py-5 px-5.5 relative md:gap-x-14"
