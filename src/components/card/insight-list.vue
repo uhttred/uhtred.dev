@@ -4,7 +4,7 @@
     >
       <!-- author space -->
       <div class="flex items-center gap-x-4">
-        <div class="w-9 h-9 rounded-full bdr-2 bg-2 overflow-hidden">
+        <div class="w-9 h-9 flex-shrink-0 rounded-full bdr-2 bg-2 overflow-hidden">
           <NuxtLink
             :to="localePath({
               name: 'authors-@username',

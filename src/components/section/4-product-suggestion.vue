@@ -2,7 +2,7 @@
   <div class="row-c">
     <div class="row">
       <div class="col-span-full flex justify-between items-center">
-        <h2 class="text-26 text-color-1 lg:text-38 font-bold">
+        <h2 class="text-26 text-color-1 lg:text-30 font-bold">
           {{ $t('t016') }}<span class="text-green-brand">.</span>
         </h2>
         <!--  -->

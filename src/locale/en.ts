@@ -87,6 +87,7 @@ export default {
   'Updated': 'Updated',
   'See prices': 'See prices',
   'Join now!': 'Join now!',
+  'Featured product': 'Featured product',
   'in_launch': 'In Launch',
   'completed': 'Completed',
   'Load more': 'Load more',

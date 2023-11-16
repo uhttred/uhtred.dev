@@ -89,6 +89,7 @@ export default {
   'in_launch': 'Em Lançamento',
   'completed': 'Concluído',
   'Join now!': 'Entre agora!',
+  'Featured product': 'Produto destaque',
   'Updated': 'Atualizado',
   'See prices': 'Ver preços',
   'Your name (Optional)': 'Seu nome (Opcional)',

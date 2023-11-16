@@ -15,14 +15,17 @@
         <!-- sidebar container -->
         <aside class="col-span-3 col-start-10 hidden xl:block pb-12">
           <!-- sticky content -->
-          <div class="sticky top-[72px]">
+          <div class="sticky top-[72px]"><!--  -->
+            <AsideProductSlides
+              class="mt-8"
+            />
             <!-- ADS -->
             <AdsenseDisplayVertical class="mt-8" />
             <!-- content block -->
-            <AsideInsightTopics
+            <!-- <AsideInsightTopics
               class="mt-8"
               :page-limit="10"
-            />
+            /> -->
           </div>
         </aside>
       </div>

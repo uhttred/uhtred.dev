@@ -108,7 +108,7 @@
                 v-if="insight.author"
                 class="mt-5.5 flex items-center gap-x-4"
               >
-                <div class="w-10 h-10 rounded-full bdr-2 bg-2 overflow-hidden">
+                <div class="w-10 h-10 flex-shrink-0 rounded-full bdr-2 bg-2 overflow-hidden">
                   <NuxtLink
                     :to="localePath({
                       name: 'authors-@username',
@@ -219,13 +219,8 @@
         <aside class="col-span-3 col-start-10 hidden xl:block pb-12">
           <!-- sticky content -->
           <div class="sticky top-[72px]">
-            <!-- ADS -->
-            <AdsenseDisplaySquare238x238
-              v-if="insight && insight.serie"
-              class="mt-8"
-            />
-            <AdsenseDisplayVertical
-              v-else
+            <!--  -->
+            <AsideProductSlides
               class="mt-8"
             />
             <!-- serie insights -->
@@ -236,10 +231,19 @@
               :active-insight="insight"
             />
             <!-- insight topics -->
-            <AsideInsightTopics
+            <!-- <AsideInsightTopics
               v-else
               class="mt-8"
               :page-limit="8"
+            /> -->
+            <!-- ADS -->
+            <!-- <AdsenseDisplaySquare238x238
+              v-if="insight && insight.serie"
+              class="mt-8"
+            /> -->
+            <AdsenseDisplayVertical
+              v-if="insight && !insight.serie"
+              class="mt-8"
             />
           </div>
         </aside>
@@ -253,7 +257,9 @@
       </div>
     </div> -->
     <!--  -->
-    <!-- <SectionAllAndCategoryTopics /> -->
+    <ClientOnly>
+      <SectionAllAndCategoryTopics />
+    </ClientOnly>
     <!-- rknow more cases -->
   </div>
 </template>
